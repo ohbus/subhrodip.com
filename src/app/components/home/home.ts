@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   private phrases = [
     "Software Developer",
     "Full Stack Engineer",
-    "UI/UX Designer",
     "DevOps and Cloud Computing Consultant"
   ];
   private phraseIndex = 0;
