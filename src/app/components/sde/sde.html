@@ -1,0 +1,121 @@
+<app-search-header></app-search-header>
+
+<!-- Main Layout -->
+<div class="flex-grow flex w-full md:px-0 py-4 gap-16 font-body-snippet">
+  <!-- Left Column: Search Results -->
+  <main class="w-full md:w-[652px] md:ml-[180px] flex flex-col px-4 md:px-0">
+    <div class="text-[#70757a] text-[14px] mb-6">
+      About 1 result (0.24 seconds)
+    </div>
+
+    <!-- Result 1 - Definition -->
+    <div class="mb-[28px] group">
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-7 h-7 rounded-full bg-[#f1f3f4] flex items-center justify-center border border-[#dfe1e5] overflow-hidden">
+          <span class="material-symbols-outlined text-[#4d5156] text-[16px]">menu_book</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[14px] text-[#202124] leading-tight">Dictionary</span>
+          <div class="flex items-center gap-1 text-[12px] text-[#4d5156] leading-tight">
+            <span>https://dictionary.com › software-developer</span>
+            <span class="material-symbols-outlined text-[#70757a] text-[16px] cursor-pointer ml-1">more_vert</span>
+          </div>
+        </div>
+      </div>
+      <a class="inline-block group mb-1" href="#">
+        <h3 class="text-[20px] text-[#1a0dab] group-hover:underline font-normal leading-[1.3] font-result-title">Software Developer - Definition & Meaning</h3>
+      </a>
+      <p class="text-[14px] text-[#4d5156] leading-[1.58] max-w-[600px]">
+        A software developer is a person concerned with facets of the software development process, including the research, design, programming, and testing of computer software.
+      </p>
+    </div>
+
+    <!-- Result 2 - Philosophy -->
+    <div class="mb-[28px] group">
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-7 h-7 rounded-full bg-[#f1f3f4] flex items-center justify-center border border-[#dfe1e5]">
+          <span class="material-symbols-outlined text-[#4d5156] text-[16px]">school</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[14px] text-[#202124] leading-tight">Subhrodip's Blog</span>
+          <div class="flex items-center gap-1 text-[12px] text-[#4d5156] leading-tight">
+            <span>https://subhrodip.dev › blog › learning-curve</span>
+          </div>
+        </div>
+      </div>
+      <a class="inline-block group mb-1" href="#">
+        <h3 class="text-[20px] text-[#1a0dab] group-hover:underline font-normal leading-[1.3] font-result-title">CS Degree is not enough - The Learning Curve</h3>
+      </a>
+      <p class="text-[14px] text-[#4d5156] leading-[1.58] max-w-[600px] mb-3">
+        Companies look for people who are constantly in touch with Technology. I have learned it the hard way that it's only hard work and determination which gives you fruitful benefits. We can be jack of all trades and later determine what interests us to become the master.
+      </p>
+    </div>
+
+    <!-- Result 3 - GitHub -->
+    <div class="mb-[28px] group">
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-7 h-7 rounded-full bg-[#f1f3f4] flex items-center justify-center border border-[#dfe1e5]">
+          <span class="material-symbols-outlined text-[#4d5156] text-[16px]">code</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[14px] text-[#202124] leading-tight">GitHub</span>
+          <div class="flex items-center gap-1 text-[12px] text-[#4d5156] leading-tight">
+            <span>https://github.com › ohbus</span>
+          </div>
+        </div>
+      </div>
+      <a class="inline-block group mb-1" href="https://github.com/ohbus" target="_blank">
+        <h3 class="text-[20px] text-[#1a0dab] group-hover:underline font-normal leading-[1.3] font-result-title">Showcase what you build - ohbus</h3>
+      </a>
+      <p class="text-[14px] text-[#4d5156] leading-[1.58] max-w-[600px] mb-3">
+        GitHub is a platform where you can showcase how you develop your applications. It helps us to do collaborative development thereby enhancing our programming skills and contributing to the idea of open source. Talk is cheap, show me the code!
+      </p>
+    </div>
+
+    <!-- Related Searches -->
+    <div class="mb-[28px]">
+      <div class="flex items-center gap-2 mb-3">
+        <h2 class="text-[20px] text-[#202124] font-normal">Related Searches (Inspirations)</h2>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://en.wikipedia.org/wiki/Dennis_Ritchie" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-[#f1f3f4] hover:bg-[#e8eaed] rounded-full text-[14px] text-[#202124] transition-colors border border-transparent">
+          <span class="material-symbols-outlined text-[16px] text-[#70757a]">search</span> Dennis Ritchie
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Linus_Torvalds" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-[#f1f3f4] hover:bg-[#e8eaed] rounded-full text-[14px] text-[#202124] transition-colors border border-transparent">
+          <span class="material-symbols-outlined text-[16px] text-[#70757a]">search</span> Linus Torvalds
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Alan_Turing" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-[#f1f3f4] hover:bg-[#e8eaed] rounded-full text-[14px] text-[#202124] transition-colors border border-transparent">
+          <span class="material-symbols-outlined text-[16px] text-[#70757a]">search</span> Alan Turing
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Right Column: Knowledge Panel -->
+  <aside class="hidden xl:block w-[369px] flex-shrink-0 pr-8">
+    <div class="border border-[#dfe1e5] rounded-[16px] overflow-hidden bg-white mb-8">
+      <div class="flex h-[150px] overflow-hidden bg-[#f8f9fa] border-b border-[#dfe1e5]">
+        <div class="w-full h-full bg-primary-container/20 flex items-center justify-center relative">
+          <span class="material-symbols-outlined text-primary text-[80px]">computer</span>
+          <div class="absolute bottom-2 right-2 text-xs text-[#4d5156] bg-white/80 px-2 py-1 rounded">"If debugging is process of removing bugs..."</div>
+        </div>
+      </div>
+      <div class="p-4">
+        <h2 class="text-[32px] font-normal leading-tight text-[#202124] mb-1 font-result-title">Subhrodip Mohanta</h2>
+        <p class="text-[16px] text-[#4d5156]">Software Developer</p>
+      </div>
+      <div class="px-4 py-4 border-t border-[#dfe1e5]">
+        <p class="text-[#202124] text-[14px] leading-[1.58] mb-1">
+          Open for project development. I will be able to assess your needs and make you a proposal.
+        </p>
+      </div>
+      <div class="px-4 pb-4">
+        <button routerLink="/contact" class="w-full flex items-center justify-center gap-2 bg-[#1a73e8] hover:bg-[#1b66c9] text-white py-2 px-4 rounded-full font-medium text-[14px] transition-colors shadow-sm">
+          <span class="material-symbols-outlined text-[18px]">mail</span> Contact Me
+        </button>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<app-footer></app-footer>

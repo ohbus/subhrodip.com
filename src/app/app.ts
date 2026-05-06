@@ -5,6 +5,9 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet],
   template: '<router-outlet />',
+  host: {
+    'class': 'flex flex-col min-h-screen w-full'
+  },
   styles: []
 })
 export class App {}

@@ -1,0 +1,50 @@
+<!-- TopAppBar Component -->
+<header class="bg-white sticky w-full top-0 z-50">
+  <div class="flex flex-col w-full pt-4 md:px-8 border-b border-[#dfe1e5] flat no-shadows">
+    <div class="flex items-center justify-between w-full mb-6 px-4 md:px-0">
+      <div class="flex items-center gap-8 w-full">
+        <!-- Brand Logo -->
+        <a class="text-2xl font-medium tracking-tight whitespace-nowrap font-result-title pl-2 md:pl-4 cursor-pointer" (click)="onHome()">
+          <span class="brand-s">S</span><span class="brand-u">u</span><span class="brand-b">b</span><span class="brand-h">h</span><span class="brand-r">r</span><span class="brand-o">o</span><span class="brand-d">d</span><span class="brand-i">i</span><span class="brand-p">p</span>
+        </a>
+        <!-- Search Bar -->
+        <div class="flex-grow max-w-[692px] relative group">
+          <input class="w-full h-[44px] rounded-full border border-[#dfe1e5] px-4 pl-4 pr-12 focus:outline-none focus:border-transparent focus:shadow-[0_1px_6px_rgba(32,33,36,.28)] hover:shadow-[0_1px_6px_rgba(32,33,36,.28)] transition-shadow duration-200 text-[16px] bg-white text-[#202124]" type="text" value="Subhrodip Mohanta"/>
+          <div class="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center gap-3 text-[#70757a]">
+            <span class="material-symbols-outlined cursor-pointer hover:text-[#202124] text-[20px]">close</span>
+            <div class="w-px h-6 bg-[#dfe1e5]"></div>
+            <span class="material-symbols-outlined cursor-pointer text-[#4285f4] text-[20px]">mic</span>
+            <span class="material-symbols-outlined cursor-pointer text-[#4285f4] text-[20px]">search</span>
+          </div>
+        </div>
+      </div>
+      <!-- Trailing Actions -->
+      <div class="flex items-center gap-4 hidden md:flex pr-4">
+        <span class="material-symbols-outlined cursor-pointer text-[#5f6368] p-2 hover:bg-gray-100 rounded-full transition-colors duration-200">settings</span>
+        <span class="material-symbols-outlined cursor-pointer text-[#5f6368] p-2 hover:bg-gray-100 rounded-full transition-colors duration-200">apps</span>
+        <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary text-center leading-8 font-bold cursor-pointer">S</div>
+      </div>
+    </div>
+    <!-- Navigation Links -->
+    <div class="flex items-center gap-6 md:ml-[164px] overflow-x-auto no-scrollbar text-[14px] px-4 md:px-0">
+      <a class="flex items-center gap-1.5 text-[#1a0dab] border-b-[3px] border-[#1a0dab] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/search">
+        <span class="material-symbols-outlined text-sm">search</span> All
+      </a>
+      <a class="flex items-center gap-1.5 text-[#70757a] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/sde">
+        <span class="material-symbols-outlined text-sm">code</span> Projects & SDE
+      </a>
+      <a class="flex items-center gap-1.5 text-[#70757a] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/cde">
+        <span class="material-symbols-outlined text-sm">cloud</span> DevOps & Cloud
+      </a>
+      <a class="flex items-center gap-1.5 text-[#70757a] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/education">
+        <span class="material-symbols-outlined text-sm">school</span> Education
+      </a>
+      <a class="flex items-center gap-1.5 text-[#70757a] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/skills">
+        <span class="material-symbols-outlined text-sm">psychology</span> Skills
+      </a>
+      <a class="flex items-center gap-1.5 text-[#70757a] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/contact">
+        <span class="material-symbols-outlined text-sm">contact_page</span> Contact
+      </a>
+    </div>
+  </div>
+</header>
