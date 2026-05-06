@@ -124,3 +124,58 @@ Currently, these are simple router links.
   2. If the user types exactly `"do a barrel roll"`, inject a CSS class `animate-spin` onto the `<body>` tag for 2 seconds.
   3. If the user types exactly `"sudo rm -rf /"`, trigger a full-screen black overlay with green falling "Matrix" text or a mock kernel panic screen for 3 seconds before "rebooting" back to the portfolio.
 - **Acceptance Criteria:** Entering specific secret phrases triggers unique, fun animations without breaking the core application state.
+
+---
+
+## Milestone 5: SEO, Discoverability, & PWA
+
+**Objective:** Ensure the portfolio is easily indexable by search engines, looks professional when shared on social media, and behaves like a modern web application.
+
+### Task 5.1: Server-Side Rendering (SSR) or Prerendering
+Currently, the SPA provides an empty shell until JavaScript executes, which is bad for SEO.
+- **Action:**
+  1. Add Angular SSR by running `ng add @angular/ssr`.
+  2. Configure prerendering in `angular.json` for all known routes (`/`, `/sde`, `/cde`, `/education`, `/skills`, `/contact`).
+- **Acceptance Criteria:** `curl` or `wget` against the production URLs returns fully populated HTML content instead of just `<app-root></app-root>`.
+
+### Task 5.2: Dynamic Open Graph (OG) Tags
+- **Action:**
+  1. Use Angular's `Meta` and `Title` services.
+  2. Create a generic `SeoService` that updates `<meta property="og:title">`, `og:description`, and `og:image` depending on the current active route.
+  3. Generate and host specific preview images for each page (e.g., a specific card for the "Projects" page vs the "Education" page).
+- **Acceptance Criteria:** Sharing a sub-link (like `/#/sde`) on Twitter or LinkedIn generates a rich card accurately reflecting the content of that specific page.
+
+### Task 5.3: Progressive Web App (PWA) & Offline Mode
+- **Action:**
+  1. Install the PWA package: `ng add @angular/pwa`.
+  2. Customize `manifest.webmanifest` with the 'S' logo, theme colors, and application name.
+  3. Configure `ngsw-config.json` to aggressively cache the static JSON data files, fonts, and core assets so the site loads even without an internet connection.
+- **Acceptance Criteria:** The application prompts the user to "Install" on mobile devices, and the site functions perfectly in "Offline Mode" via Chrome DevTools.
+
+---
+
+## Milestone 6: Advanced Interactivity & CI/CD
+
+**Objective:** Implement native browser APIs for advanced input and automate the deployment pipeline to maintain professional software engineering standards.
+
+### Task 6.1: Functional Voice Search
+- **Action:**
+  1. Utilize the native HTML5 `Web Speech API` (`SpeechRecognition`).
+  2. Add a click listener to the microphone icon in the search bar. When clicked, activate the microphone, show a "Listening..." indicator, and transcribe the speech into the search input field.
+  3. Automatically trigger the search function once speech synthesis stops.
+- **Acceptance Criteria:** A user can click the microphone icon, say "DevOps", and the application will transcribe the text and navigate to the search results.
+
+### Task 6.2: Interactive "Widget" Results
+Google provides direct tools for specific queries (calculators, weather, conversions).
+- **Action:**
+  1. Build small standalone components (e.g., `<app-calculator-widget>`, `<app-weather-widget>`).
+  2. In the Search Results logic, check if the query matches a specific keyword like "calculator" or "weather".
+  3. If it matches, render the widget at the very top of the results list.
+- **Acceptance Criteria:** Searching "calculator" renders a fully functional, CSS-styled calculator directly inside the search results view.
+
+### Task 6.3: Automated CI/CD Pipeline
+- **Action:**
+  1. Create a `.github/workflows/deploy.yml` file.
+  2. Configure a GitHub Action that triggers on `push` to the `master` branch.
+  3. The pipeline must: Setup Node, run `npm ci`, run `npm run test` (headless), run `npm run build`, and finally deploy the `dist/` folder to the `gh-pages` branch.
+- **Acceptance Criteria:** Merging a PR or pushing to `master` automatically builds and deploys the latest version to production without manual intervention.
