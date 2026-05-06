@@ -7,7 +7,7 @@
 
 Welcome to the source code of my personal portfolio and professional background. This application is uniquely designed with a **"Search Engine" Identity System**, mimicking the familiar, clean, and highly functional layout of modern search engines to present my skills, projects, and experiences as "search results."
 
-🌐 **Live Demo:** [subhrodip.dev](https://subhrodip.dev) *(Or deployed GitHub Pages URL)*
+🌐 **Live Demo:** [subhrodip.com](https://subhrodip.com)
 
 ---
 
