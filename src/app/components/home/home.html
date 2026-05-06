@@ -1,0 +1,64 @@
+<!-- Top Navigation -->
+<header class="flex justify-end items-center p-4 space-x-4">
+  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" href="#">Projects</a>
+  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" href="#">Gallery</a>
+  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" href="#">About</a>
+  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" href="#">Contact</a>
+  <div class="flex items-center space-x-4 pl-4">
+    <button class="p-2 hover:bg-surface-container-high rounded-full transition-colors cursor-pointer">
+      <span class="material-symbols-outlined text-outline">apps</span>
+    </button>
+    <button class="w-8 h-8 rounded-full bg-primary-container text-on-primary text-center leading-8 font-bold cursor-pointer">
+      S
+    </button>
+  </div>
+</header>
+<!-- Main Content (Center) -->
+<main class="flex-grow flex flex-col items-center justify-center px-4 py-8">
+  <!-- Logo -->
+  <div class="mb-8 font-result-title text-[5.5rem] tracking-tighter select-none font-medium text-center leading-none">
+    <span class="brand-s">S</span><span class="brand-u">u</span><span class="brand-b">b</span><span class="brand-h">h</span><span class="brand-r">r</span><span class="brand-o">o</span><span class="brand-d">d</span><span class="brand-i">i</span><span class="brand-p">p</span>
+  </div>
+  <!-- Search Bar -->
+  <div class="w-full max-w-[584px] relative group" (click)="onSearch()">
+    <div class="flex items-center w-full h-[44px] border border-surface-variant rounded-full px-4 search-bar-shadow bg-surface-container-lowest transition-shadow duration-200 cursor-pointer">
+      <span class="material-symbols-outlined text-outline mr-3">search</span>
+      <input class="flex-grow bg-transparent border-none focus:ring-0 font-search-input text-search-input text-on-surface outline-none placeholder-outline cursor-pointer" placeholder="Search..." type="text" [value]="currentText()" readonly/>
+      <div class="flex space-x-3 items-center">
+        <span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80" data-weight="fill" style="font-variation-settings: 'FILL' 1;">mic</span>
+        <span class="material-symbols-outlined text-secondary cursor-pointer hover:opacity-80">center_focus_strong</span>
+      </div>
+    </div>
+  </div>
+  <!-- Action Buttons -->
+  <div class="flex space-x-3 mt-8">
+    <button (click)="onSearch()" class="bg-surface-container-low text-on-surface font-body-snippet text-sm px-4 py-2 rounded border border-transparent hover:border-surface-variant hover:shadow-sm focus:outline-none focus:ring-1 focus:ring-primary transition-all">
+      Search Portfolio
+    </button>
+    <button class="bg-surface-container-low text-on-surface font-body-snippet text-sm px-4 py-2 rounded border border-transparent hover:border-surface-variant hover:shadow-sm focus:outline-none focus:ring-1 focus:ring-primary transition-all">
+      I'm Feeling Curious
+    </button>
+  </div>
+  <div class="mt-6 text-sm text-on-surface-variant font-body-snippet text-center">
+    Talk is cheap, <a class="text-primary hover:underline" href="#">show me the code!</a>
+  </div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low text-on-surface-variant font-url-breadcrumb text-url-breadcrumb w-full flex flex-col border-t border-surface-variant mt-auto">
+  <div class="px-8 py-3 border-b border-surface-variant">
+    India
+  </div>
+  <div class="px-8 py-3 flex flex-wrap justify-between items-center w-full space-y-2 sm:space-y-0">
+    <div class="flex space-x-6">
+      <a class="hover:underline cursor-pointer" href="#">About</a>
+      <a class="hover:underline cursor-pointer" href="#">Advertising</a>
+      <a class="hover:underline cursor-pointer" href="#">Business</a>
+      <a class="hover:underline cursor-pointer" href="#">How Search works</a>
+    </div>
+    <div class="flex space-x-6">
+      <a class="hover:underline cursor-pointer" href="#">Privacy</a>
+      <a class="hover:underline cursor-pointer" href="#">Terms</a>
+      <a class="hover:underline cursor-pointer" href="#">Settings</a>
+    </div>
+  </div>
+</footer>
