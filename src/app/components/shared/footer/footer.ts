@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { ContentService } from '../../../services/content.service';
+import { LanguagePickerComponent } from '../language-picker/language-picker';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterLink, LanguagePickerComponent],
   templateUrl: './footer.html',
   styles: []
 })
-export class FooterComponent {}
+export class FooterComponent {
+  private contentService = inject(ContentService);
+  readonly c = this.contentService.c;
+  readonly currentLang = this.contentService.currentLang;
+}

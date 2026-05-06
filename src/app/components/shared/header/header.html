@@ -1,15 +1,20 @@
 <!-- Top Navigation -->
 <header class="flex justify-end items-center p-4 space-x-4 w-full">
-  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" routerLink="/sde">Projects</a>
-  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" routerLink="/skills">Skills</a>
-  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" routerLink="/education">Education</a>
-  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" routerLink="/contact">Contact</a>
+  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" routerLink="/sde">{{c().navigation.sde}}</a>
+  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" routerLink="/skills">{{c().navigation.skills}}</a>
+  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" routerLink="/education">{{c().navigation.education}}</a>
+  <a class="hover:underline cursor-pointer text-sm font-url-breadcrumb text-url-breadcrumb text-on-surface-variant" routerLink="/contact">{{c().navigation.contact}}</a>
   <div class="flex items-center space-x-4 pl-4">
+    <app-language-picker #picker placement="down">
+      <button (click)="picker.toggle()" class="p-2 hover:bg-surface-container-high rounded-full transition-colors cursor-pointer focus:outline-none" [title]="currentLang() === 'en' ? 'Change Language' : 'ভাষা পরিবর্তন করুন'">
+        <span class="material-symbols-outlined text-outline">language</span>
+      </button>
+    </app-language-picker>
     <button class="p-2 hover:bg-surface-container-high rounded-full transition-colors cursor-pointer" routerLink="/">
-      <span class="material-symbols-outlined text-outline">apps</span>
+      <span class="material-symbols-outlined text-outline">{{c().common.apps}}</span>
     </button>
     <button class="w-8 h-8 rounded-full bg-primary-container text-on-primary text-center leading-8 font-bold cursor-pointer" routerLink="/">
-      S
+      {{c().common.brand[0]}}
     </button>
   </div>
 </header>

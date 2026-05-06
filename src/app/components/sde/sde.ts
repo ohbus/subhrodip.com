@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SearchHeaderComponent } from '../shared/search-header/search-header';
 import { FooterComponent } from '../shared/footer/footer';
+import { ContentService } from '../../services/content.service';
 
 @Component({
   selector: 'app-sde',
@@ -13,4 +14,7 @@ import { FooterComponent } from '../shared/footer/footer';
   },
   styles: []
 })
-export class SdeComponent {}
+export class SdeComponent {
+  private contentService = inject(ContentService);
+  readonly c = this.contentService.c;
+}

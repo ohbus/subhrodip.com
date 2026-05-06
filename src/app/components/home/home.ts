@@ -1,8 +1,9 @@
-import { Component, OnInit, signal, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, signal, OnDestroy, Inject, PLATFORM_ID, computed } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../shared/header/header';
 import { FooterComponent } from '../shared/footer/footer';
+import { ContentService } from '../../services/content.service';
 
 @Component({
   selector: 'app-home',
@@ -16,12 +17,9 @@ import { FooterComponent } from '../shared/footer/footer';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   protected readonly currentText = signal('');
-
-  private phrases = [
-    "Software Developer",
-    "Full Stack Engineer",
-    "DevOps and Cloud Computing Consultant"
-  ];
+  readonly c;
+  private roles;
+  
   private phraseIndex = 0;
   private charIndex = 0;
   private isDeleting = false;
@@ -30,8 +28,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private router: Router
-  ) {}
+    private router: Router,
+    private contentService: ContentService
+  ) {
+    this.c = this.contentService.c;
+    this.roles = computed(() => this.c().common.roles);
+  }
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -54,7 +56,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private type() {
-    const currentPhrase = this.phrases[this.phraseIndex];
+    const currentRoles = this.roles();
+    const currentPhrase = currentRoles[this.phraseIndex % currentRoles.length];
 
     if (this.isDeleting) {
       this.currentText.set(currentPhrase.substring(0, this.charIndex - 1));
@@ -67,7 +70,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     if (!this.isDeleting && this.charIndex === currentPhrase.length) {
-      if (this.phraseIndex === this.phrases.length - 1) return;
       this.isDeleting = true;
       this.typeSpeed = 2000;
     } else if (this.isDeleting && this.charIndex === 0) {

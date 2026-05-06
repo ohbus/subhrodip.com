@@ -3,30 +3,30 @@
 <main class="flex-grow flex flex-col items-center justify-center px-4 py-8 min-h-[70vh]">
   <!-- Logo -->
   <div class="mb-8 font-result-title text-[5.5rem] tracking-tighter select-none font-medium text-center leading-none">
-    <span class="brand-s">S</span><span class="brand-u">u</span><span class="brand-b">b</span><span class="brand-h">h</span><span class="brand-r">r</span><span class="brand-o">o</span><span class="brand-d">d</span><span class="brand-i">i</span><span class="brand-p">p</span>
+    <span class="brand-s">{{c().common.brand[0]}}</span><span class="brand-u">{{c().common.brand[1]}}</span><span class="brand-b">{{c().common.brand[2]}}</span><span class="brand-h">{{c().common.brand[3]}}</span><span class="brand-r">{{c().common.brand[4]}}</span><span class="brand-o">{{c().common.brand[5]}}</span><span class="brand-d">{{c().common.brand[6]}}</span><span class="brand-i">{{c().common.brand[7]}}</span><span class="brand-p">{{c().common.brand[8]}}</span>
   </div>
   <!-- Search Bar -->
   <div class="w-full max-w-[584px] relative group" (click)="onSearch()">
     <div class="flex items-center w-full h-[44px] border border-surface-variant rounded-full px-4 search-bar-shadow bg-surface-container-lowest transition-shadow duration-200 cursor-pointer">
       <span class="material-symbols-outlined text-outline mr-3">search</span>
-      <input class="flex-grow bg-transparent border-none focus:ring-0 font-search-input text-search-input text-on-surface outline-none placeholder-outline cursor-pointer" placeholder="Search..." type="text" [value]="currentText()" readonly/>
+      <input class="flex-grow bg-transparent border-none focus:ring-0 font-search-input text-search-input text-on-surface outline-none placeholder-outline cursor-pointer" [placeholder]="c().home.placeholder" type="text" [value]="currentText()" readonly/>
       <div class="flex space-x-3 items-center">
-        <span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80" data-weight="fill" style="font-variation-settings: 'FILL' 1;">mic</span>
-        <span class="material-symbols-outlined text-secondary cursor-pointer hover:opacity-80">center_focus_strong</span>
+        <span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80" data-weight="fill" style="font-variation-settings: 'FILL' 1;">{{c().common.mic}}</span>
+        <span class="material-symbols-outlined text-secondary cursor-pointer hover:opacity-80">{{c().common.lens}}</span>
       </div>
     </div>
   </div>
   <!-- Action Buttons -->
   <div class="flex space-x-3 mt-8">
     <button (click)="onSearch()" class="bg-surface-container-low text-on-surface font-body-snippet text-sm px-4 py-2 rounded border border-transparent hover:border-surface-variant hover:shadow-sm focus:outline-none focus:ring-1 focus:ring-primary transition-all">
-      Search Portfolio
+      {{c().home.searchBtn}}
     </button>
     <button (click)="onCurious()" class="bg-surface-container-low text-on-surface font-body-snippet text-sm px-4 py-2 rounded border border-transparent hover:border-surface-variant hover:shadow-sm focus:outline-none focus:ring-1 focus:ring-primary transition-all">
-      I'm Feeling Curious
+      {{c().home.curiousBtn}}
     </button>
   </div>
   <div class="mt-6 text-sm text-on-surface-variant font-body-snippet text-center">
-    Talk is cheap, <a class="text-primary hover:underline" href="https://github.com/ohbus" target="_blank">show me the code!</a>
+    {{c().home.footerText}} <a class="text-primary hover:underline" href="https://github.com/ohbus" target="_blank">{{c().home.footerLink}}</a>
   </div>
 </main>
 <app-footer></app-footer>

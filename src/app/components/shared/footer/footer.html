@@ -1,18 +1,24 @@
 <!-- Footer -->
 <footer class="bg-surface-container-low text-on-surface-variant font-url-breadcrumb text-url-breadcrumb w-full flex flex-col border-t border-surface-variant mt-auto">
-  <div class="px-8 py-3 border-b border-surface-variant">
-    Earth
+  <div class="px-8 pt-3 pb-4 border-b border-surface-variant flex items-center gap-2">
+    <app-language-picker #picker>
+      <button (click)="picker.toggle()" class="hover:underline flex items-center gap-1.5 focus:outline-none group pt-1 pb-2">
+        <span class="material-symbols-outlined text-[18px] text-[#70757a] group-hover:text-primary transition-colors">language</span>
+        <span class="text-[#70757a]">{{c().footer.location}}</span>
+        <span class="text-[12px] text-[#70757a] opacity-70 flex items-center h-full translate-y-[1px]">({{currentLang() === 'en' ? 'English' : currentLang() === 'bn' ? 'বাংলা' : 'Deutsch'}})</span>
+      </button>
+    </app-language-picker>
   </div>
-  <div class="px-8 py-3 flex flex-wrap justify-between items-center w-full space-y-2 sm:space-y-0">
+  <div class="px-8 pt-3 pb-5 flex flex-wrap justify-between items-center w-full space-y-2 sm:space-y-0">
     <div class="flex space-x-6">
-      <a class="hover:underline cursor-pointer" routerLink="/sde">Software Engineer</a>
-      <a class="hover:underline cursor-pointer" routerLink="/cde">DevOps & Cloud</a>
-      <a class="hover:underline cursor-pointer" routerLink="/education">Education</a>
+      <a class="hover:underline cursor-pointer" routerLink="/sde">{{c().navigation.sde}}</a>
+      <a class="hover:underline cursor-pointer" routerLink="/cde">{{c().navigation.cde}}</a>
+      <a class="hover:underline cursor-pointer" routerLink="/education">{{c().navigation.education}}</a>
     </div>
     <div class="flex space-x-6">
-      <a class="hover:underline cursor-pointer" routerLink="/contact">Privacy</a>
-      <a class="hover:underline cursor-pointer" routerLink="/contact">Terms</a>
-      <a class="hover:underline cursor-pointer" routerLink="/contact">Contact</a>
+      <a class="hover:underline cursor-pointer" routerLink="/contact">{{c().footer.privacy}}</a>
+      <a class="hover:underline cursor-pointer" routerLink="/contact">{{c().footer.terms}}</a>
+      <a class="hover:underline cursor-pointer" routerLink="/contact">{{c().footer.contact}}</a>
     </div>
   </div>
 </footer>

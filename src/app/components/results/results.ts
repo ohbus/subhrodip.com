@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { SearchHeaderComponent } from '../shared/search-header/search-header';
 import { FooterComponent } from '../shared/footer/footer';
+import { ContentService } from '../../services/content.service';
 
 @Component({
   selector: 'app-results',
@@ -14,7 +15,10 @@ import { FooterComponent } from '../shared/footer/footer';
   styles: []
 })
 export class ResultsComponent {
-  constructor(private router: Router) {}
+  private router = inject(Router);
+  private contentService = inject(ContentService);
+
+  readonly c = this.contentService.c;
 
   onHome() {
     this.router.navigate(['/']);
