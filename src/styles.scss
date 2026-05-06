@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.brand-s { color: #4285f4; }
+.brand-u { color: #ea4335; }
+.brand-b { color: #fbbc05; }
+.brand-h { color: #4285f4; }
+.brand-r { color: #34a853; }
+.brand-o { color: #ea4335; }
+.brand-d { color: #4285f4; }
+.brand-i { color: #34a853; }
+.brand-p { color: #ea4335; }
+
+.search-bar-shadow:hover, .search-bar-shadow:focus-within {
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    border-color: transparent !important;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: currentColor;
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+    vertical-align: middle;
+}
