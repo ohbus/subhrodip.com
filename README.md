@@ -108,7 +108,7 @@ This repository includes a GitHub Actions workflow (`.github/workflows/deploy.ym
 ## 📫 Contact
 
 **Subhrodip Mohanta**
-*   Email: [hire@subho.xyz](mailto:hire@subho.xyz)
+*   Email: [hi@subhrodip.com](mailto:hi@subhrodip.com)
 *   LinkedIn: [linkedin.com/in/ohbusm](https://www.linkedin.com/in/ohbusm/)
 *   GitHub: [@ohbus](https://github.com/ohbus)
 
