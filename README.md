@@ -1,59 +1,116 @@
-# SubhrodipCom
+# 🔍 Subhrodip's Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
-## Development server
+Welcome to the source code of my personal portfolio and professional background. This application is uniquely designed with a **"Search Engine" Identity System**, mimicking the familiar, clean, and highly functional layout of modern search engines to present my skills, projects, and experiences as "search results."
 
-To start a local development server, run:
+🌐 **Live Demo:** [subhrodip.dev](https://subhrodip.dev) *(Or deployed GitHub Pages URL)*
 
-```bash
-ng serve
+---
+
+## ✨ Key Features
+
+*   **Search Identity Design:** A minimalist, highly intuitive UI utilizing Google's Material Symbols and a strict, content-first layout.
+*   **Modern Angular Architecture:** Built with the latest Angular featuring **Standalone Components**—eliminating `NgModules` for a cleaner, more maintainable codebase.
+*   **Optimized Performance (Lazy Loading):** Content sections (SDE, DevOps, Education, Skills, Contact) are lazy-loaded via `loadComponent` in the router, ensuring lightning-fast initial load times.
+*   **Responsive & Accessible:** Styled completely with **Tailwind CSS**, ensuring a perfect layout across mobile, tablet, and desktop devices without relying on heavy external UI component libraries.
+*   **Automated CI/CD:** Fully integrated with **GitHub Actions** to automatically build and deploy the production-ready application to GitHub Pages upon every push to the `master` branch.
+*   **Form Integration:** Serverless contact form functionality powered by Formspree.
+
+---
+
+## 🛠️ Technology Stack
+
+*   **Framework:** [Angular](https://angular.dev/) (v17+)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Icons:** [Google Material Symbols](https://fonts.google.com/icons)
+*   **Fonts:** [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) & Inter
+*   **Deployment:** GitHub Pages via GitHub Actions
+
+---
+
+## 🚀 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+Make sure you have Node.js installed (v20 LTS recommended).
+*   [Node.js](https://nodejs.org/en/) (v20.x or higher)
+*   npm (v10.x or higher)
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/ohbus/subhrodip.com.git
+    cd subhrodip.com
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm ci
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm start
+    ```
+    The application will automatically open or be available at `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+---
+
+## 🏗️ Project Structure
+
+The project follows a modular, feature-based architecture utilizing Angular's standalone components:
+
+```text
+src/
+├── app/
+│   ├── components/
+│   │   ├── cde/             # DevOps & Cloud Computing page
+│   │   ├── contact/         # Serverless Contact Form
+│   │   ├── education/       # Academic Background
+│   │   ├── home/            # Main Landing/Search Page
+│   │   ├── results/         # General 'All' Results Page
+│   │   ├── sde/             # Software Development Projects
+│   │   ├── shared/          # Reusable UI (Header, Footer, SearchHeader)
+│   │   └── skills/          # Technical Proficiencies
+│   ├── app.routes.ts        # Lazy-loaded route definitions
+│   └── app.ts               # Root component
+├── assets/
+├── styles.css               # Global Tailwind configuration & custom classes
+└── index.html
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## ⚙️ Building for Production
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+To create a production build, run:
 ```bash
-ng generate component component-name
+npm run build
 ```
+This will compile the project into the `dist/subhrodip.com/browser` directory, optimizing the application for performance and speed.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🤖 CI/CD Pipeline
 
-## Building
+This repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automates the deployment process:
+1.  **Pull Requests:** Verifies the build successfully compiles using `npm ci` and `npm run build`.
+2.  **Master Pushes:** Builds the application and securely deploys the artifact directly to GitHub Pages.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 📫 Contact
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+**Subhrodip Mohanta**
+*   Email: [hire@subho.xyz](mailto:hire@subho.xyz)
+*   LinkedIn: [linkedin.com/in/ohbusm](https://www.linkedin.com/in/ohbusm/)
+*   GitHub: [@ohbus](https://github.com/ohbus)
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+*Built with ❤️ and Angular.*
