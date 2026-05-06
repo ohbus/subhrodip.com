@@ -27,22 +27,28 @@
     </div>
     <!-- Navigation Links -->
     <div class="flex items-center gap-6 md:ml-[164px] overflow-x-auto no-scrollbar text-[14px] px-4 md:px-0">
-      <a class="flex items-center gap-1.5 text-[#1a0dab] border-b-[3px] border-[#1a0dab] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/search">
+      <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
+         routerLink="/search" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [routerLinkActiveOptions]="{exact: true}" [class.text-[#70757a]]="!rlaAll.isActive" #rlaAll="routerLinkActive">
         <span class="material-symbols-outlined text-sm">search</span> All
       </a>
-      <a class="flex items-center gap-1.5 text-[#70757a] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/sde">
+      <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
+         routerLink="/sde" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaSde.isActive" #rlaSde="routerLinkActive">
         <span class="material-symbols-outlined text-sm">code</span> Projects & SDE
       </a>
-      <a class="flex items-center gap-1.5 text-[#70757a] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/cde">
+      <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
+         routerLink="/cde" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaCde.isActive" #rlaCde="routerLinkActive">
         <span class="material-symbols-outlined text-sm">cloud</span> DevOps & Cloud
       </a>
-      <a class="flex items-center gap-1.5 text-[#70757a] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/education">
+      <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
+         routerLink="/education" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaEdu.isActive" #rlaEdu="routerLinkActive">
         <span class="material-symbols-outlined text-sm">school</span> Education
       </a>
-      <a class="flex items-center gap-1.5 text-[#70757a] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/skills">
+      <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
+         routerLink="/skills" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaSkills.isActive" #rlaSkills="routerLinkActive">
         <span class="material-symbols-outlined text-sm">psychology</span> Skills
       </a>
-      <a class="flex items-center gap-1.5 text-[#70757a] pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" routerLink="/contact">
+      <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
+         routerLink="/contact" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaContact.isActive" #rlaContact="routerLinkActive">
         <span class="material-symbols-outlined text-sm">contact_page</span> Contact
       </a>
     </div>
