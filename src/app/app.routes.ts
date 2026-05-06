@@ -9,5 +9,6 @@ export const routes: Routes = [
   { path: 'education', loadComponent: () => import('./components/education/education').then(m => m.EducationComponent) },
   { path: 'skills', loadComponent: () => import('./components/skills/skills').then(m => m.SkillsComponent) },
   { path: 'contact', loadComponent: () => import('./components/contact/contact').then(m => m.ContactComponent) },
+  { path: 'go/:slug', loadComponent: () => import('./components/redirect/redirect').then(m => m.RedirectComponent) },
   { path: '**', redirectTo: '' }
 ];
