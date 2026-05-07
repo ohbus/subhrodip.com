@@ -1,24 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
+import { SearchHeaderComponent } from './components/shared/search-header/search-header';
+import { FooterComponent } from './components/shared/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: '<router-outlet />',
+  standalone: true,
+  imports: [RouterOutlet, CommonModule, SearchHeaderComponent, FooterComponent],
+  template: `
+    @if (isSearchMode()) {
+      <app-search-header />
+    }
+    
+    <main class="flex-grow flex flex-col w-full">
+      <router-outlet />
+    </main>
+
+    @if (showFooter()) {
+      <app-footer />
+    }
+  `,
   host: {
     'class': 'flex flex-col min-h-screen w-full'
   },
   styles: []
 })
 export class App implements OnInit {
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private titleService: Title,
-    private metaService: Meta
-  ) {}
+  private router = inject(Router);
+  private activatedRoute = inject(ActivatedRoute);
+  private titleService = inject(Title);
+  private metaService = inject(Meta);
+
+  isSearchMode = () => this.router.url !== '/' && !this.router.url.startsWith('/go/');
+  showFooter = () => !this.router.url.startsWith('/go/');
 
   ngOnInit() {
     this.router.events.pipe(
@@ -33,15 +50,32 @@ export class App implements OnInit {
       filter(route => route.outlet === 'primary'),
       mergeMap(route => route.data)
     ).subscribe(data => {
-      const title = data['title'] || 'Subhrodip Search';
-      const description = data['description'] || 'Personal portfolio and professional background of Subhrodip Mohanta. Software Developer specializing in backend systems, robust APIs, and modern web applications.';
+      const title = data['title'] || 'Subhrodip Mohanta | Senior Software Engineer';
+      const description = data['description'] || 'Professional portfolio of Subhrodip Mohanta. Expert in Senior Software Engineering, Cloud Architecture, and Distributed Systems. Explore technical case studies, DevOps implementations, and scalable backend solutions.';
+      const keywords = data['keywords'] || 'Subhrodip Mohanta, Senior Software Engineer, Backend Developer, Cloud Architect, DevOps Engineer, Java Design Patterns, Distributed Systems, AWS, Kubernetes, Microservices Architecture';
+      const url = `https://subhrodip.com${this.router.url}`;
       
       this.titleService.setTitle(title);
-      this.metaService.updateTag({ name: 'description', content: description });
       
-      // Open Graph Tags
+      // Standard Meta Tags
+      this.metaService.updateTag({ name: 'description', content: description });
+      this.metaService.updateTag({ name: 'keywords', content: keywords });
+      this.metaService.updateTag({ name: 'author', content: 'Subhrodip Mohanta' });
+      this.metaService.updateTag({ name: 'robots', content: 'index, follow' });
+      
+      // Open Graph / Facebook
+      this.metaService.updateTag({ property: 'og:type', content: 'website' });
+      this.metaService.updateTag({ property: 'og:url', content: url });
       this.metaService.updateTag({ property: 'og:title', content: title });
       this.metaService.updateTag({ property: 'og:description', content: description });
+      this.metaService.updateTag({ property: 'og:image', content: 'https://subhrodip.com/assets/og-image.png' }); // Placeholder URL
+      
+      // Twitter
+      this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+      this.metaService.updateTag({ name: 'twitter:url', content: url });
+      this.metaService.updateTag({ name: 'twitter:title', content: title });
+      this.metaService.updateTag({ name: 'twitter:description', content: description });
+      this.metaService.updateTag({ name: 'twitter:image', content: 'https://subhrodip.com/assets/og-image.png' });
     });
   }
 }

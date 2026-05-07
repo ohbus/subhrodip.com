@@ -8,7 +8,7 @@ import { ContentService } from '../../services/content.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent],
+  imports: [HeaderComponent],
   templateUrl: './home.html',
   host: {
     'class': 'flex flex-col flex-grow w-full'
