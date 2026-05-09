@@ -79,7 +79,7 @@ export const EN_CONTENT: AppContent = {
     }
   },
   experience: {
-    metrics: 'About 4 major roles (5+ years)',
+    metrics: 'About 6 major roles (6+ years)',
     items: [
       {
         role: 'Senior Software Engineer',
@@ -127,6 +127,30 @@ export const EN_CONTENT: AppContent = {
           'Eased integration P99 latency by 45% by leading API orchestration using Apache Camel and JBoss Fuse.',
           'Improved response time by 23% by implementing ESB-based middleware.',
           'Leveraged Apache CXF to integrate SOAP and REST services for high-volume telco workloads.'
+        ]
+      },
+      {
+        role: 'Software Developer',
+        company: 'GreenField Software',
+        location: 'Kolkata, India',
+        duration: 'Aug 2019 – Sep 2020',
+        breadcrumb: 'https://greenfieldsoft.com › engineering',
+        highlights: [
+          'Reduced infrastructure cost by containerising applications with Docker, improving scalability and optimal resource utilisation.',
+          'Increased sprint velocity by 43% by driving Agile practices as Scrum Master, improving delivery predictability for customers.',
+          'Lessened P90 query latency from 10.8s to 16ms by optimising SQL queries and indexing, enhancing dashboard experience.'
+        ]
+      },
+      {
+        role: 'Software Developer Intern',
+        company: 'GreenField Software',
+        location: 'Kolkata, India',
+        duration: 'Aug 2019 – Dec 2019',
+        breadcrumb: 'https://greenfieldsoft.com › engineering',
+        highlights: [
+          'Formalized Multi-Tenant DCIM deployment, improving scalability by 38% and enabling efficient management.',
+          'Optimized SQL queries, reducing average fetch time from 10s to 0.00001s and significantly enhancing application performance.',
+          'Migrated every existing project from SVN to Git using an on-premises server and mirrors for Backup.'
         ]
       }
     ],

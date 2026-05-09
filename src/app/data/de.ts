@@ -79,7 +79,7 @@ export const DE_CONTENT: AppContent = {
     }
   },
   experience: {
-    metrics: 'Ungefähr 4 Hauptrollen (5+ Jahre)',
+    metrics: 'Ungefähr 6 Hauptrollen (6+ Jahre)',
     items: [
       {
         role: 'Senior Software Engineer',
@@ -127,6 +127,30 @@ export const DE_CONTENT: AppContent = {
           'Verringerung der Integrations-P99-Latenz um 45 % durch Leitung der API-Orchestrierung mit Apache Camel und JBoss Fuse.',
           'Verbesserung der Antwortzeit um 23 % durch Implementierung von ESB-basierter Middleware.',
           'Nutzung von Apache CXF zur Integration von SOAP- und REST-Diensten für hochvolumige Telco-Workloads.'
+        ]
+      },
+      {
+        role: 'Software Developer',
+        company: 'GreenField Software',
+        location: 'Kalkutta, Indien',
+        duration: 'Aug 2019 – Sep 2020',
+        breadcrumb: 'https://greenfieldsoft.com › engineering',
+        highlights: [
+          'Reduzierung der Infrastrukturkosten durch Containerisierung von Anwendungen mit Docker zur Verbesserung der Skalierbarkeit.',
+          'Steigerung der Sprint-Geschwindigkeit um 43 % durch Leitung von Agile-Praktiken als Scrum Master.',
+          'Verringerung der P90-Abfragelatenz von 10,8 s auf 16 ms durch Optimierung von SQL-Abfragen und Indexierung.'
+        ]
+      },
+      {
+        role: 'Software Developer Intern',
+        company: 'GreenField Software',
+        location: 'Kalkutta, Indien',
+        duration: 'Aug 2019 – Dez 2019',
+        breadcrumb: 'https://greenfieldsoft.com › engineering',
+        highlights: [
+          'Formalisierung der Multi-Tenant-DCIM-Bereitstellung, wodurch die Skalierbarkeit um 38 % verbessert wurde.',
+          'Optimierung von SQL-Abfragen mit einer Reduzierung der durchschnittlichen Abrufzeit von 10 s auf 0,00001 s.',
+          'Migration aller bestehenden Projekte von SVN zu Git unter Verwendung eines On-Premises-Servers.'
         ]
       }
     ],
