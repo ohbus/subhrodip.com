@@ -51,8 +51,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.router.navigate(['/search']);
   }
 
-  onCurious() {
-    this.router.navigate(['/sde']);
+  onExperience() {
+    this.router.navigate(['/experience']);
   }
 
   private type() {

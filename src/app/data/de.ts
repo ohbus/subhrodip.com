@@ -22,12 +22,13 @@ export const DE_CONTENT: AppContent = {
   home: {
     placeholder: 'Anfrage: Erfahrung, Engineering, Architektur...',
     searchBtn: 'Qualifikationen prüfen',
-    curiousBtn: 'Ausgewählte Fallstudie',
+    curiousBtn: 'Berufserfahrung ansehen',
     footerText: 'Talk is cheap,',
     footerLink: 'show me the code!'
   },
   navigation: {
     all: 'Alle',
+    experience: 'Erfahrung',
     sde: 'Projekte & SDE',
     cde: 'DevOps & Cloud',
     education: 'Bildung',
@@ -75,6 +76,69 @@ export const DE_CONTENT: AppContent = {
       resume: 'Portfolio-PDF herunterladen',
       snippet: 'Ingenieur mit Fokus auf High-Integrity-Software und robustes Systemdesign. Spezialisiert auf den Aufbau sicherer, verteilter Backend-Infrastrukturen.',
       profiles: 'Berufliche Profile'
+    }
+  },
+  experience: {
+    metrics: 'Ungefähr 4 Hauptrollen (5+ Jahre)',
+    items: [
+      {
+        role: 'Senior Software Engineer',
+        company: 'ChargePoint',
+        location: 'Radstadt, Österreich',
+        duration: 'Dez 2024 – Heute',
+        breadcrumb: 'https://chargepoint.com › engineering',
+        highlights: [
+          'Verantwortung und Skalierung der Station-to-Cloud-Kommunikationsplattform mit OCPP-basierten verteilten Diensten für 1,3 Mio.+ EV-Ladeanschlüsse.',
+          'Leitung der Re-Architektur der Fehlerverwaltungsdomäne mittels CQRS und Einführung von Service-Level-Metriken.',
+          'Optimierung der Infrastrukturkosten mit einer Reduzierung der AWS RDS-Ausgaben um 85.000 $/Jahr.'
+        ]
+      },
+      {
+        role: 'Software Engineer',
+        company: 'Denuvo',
+        location: 'Salzburg, Österreich',
+        duration: 'Sep 2023 – Aug 2024',
+        breadcrumb: 'https://denuvo.com › engineering',
+        highlights: [
+          'Implementierung einer CQRS-basierten Architektur über verteilte Dienste zur Bewältigung von hochdurchsatzstarkem mobilem Client-Traffic (200K rps).',
+          'Aufbau einer Greenfield Cloud-Native-Infrastruktur durch Bereitstellung von Diensten auf AWS ECS mit Kafka-basiertem Event-Streaming.',
+          'Reduzierung der Infrastrukturkosten von 20.000 $/Monat auf 4.800 $/Monat durch Tuning von AWS ECS-Workloads.'
+        ]
+      },
+      {
+        role: 'Software Engineer',
+        company: 'Irdeto',
+        location: 'Neu-Delhi, Indien',
+        duration: 'Jul 2021 – Aug 2023',
+        breadcrumb: 'https://irdeto.com › engineering',
+        highlights: [
+          'Reduzierung der Systemlast um 73 % durch Entwicklung asynchroner Microservices für die Dateiverarbeitung.',
+          'Beschleunigung der UI-Plattform-Bereitstellung um 39 % durch Entwicklung wiederverwendbarer Angular-basierter Anwendungs-Frameworks.',
+          'Leitung von End-to-End-Design und -Entwicklung von Trending Day-Funktionen auf der Irdeto-Middleware.'
+        ]
+      },
+      {
+        role: 'Project Engineer',
+        company: 'Wipro',
+        location: 'Bengaluru, Indien',
+        duration: 'Sep 2020 – Jul 2021',
+        breadcrumb: 'https://wipro.com › engineering',
+        highlights: [
+          'Verringerung der Integrations-P99-Latenz um 45 % durch Leitung der API-Orchestrierung mit Apache Camel und JBoss Fuse.',
+          'Verbesserung der Antwortzeit um 23 % durch Implementierung von ESB-basierter Middleware.',
+          'Nutzung von Apache CXF zur Integration von SOAP- und REST-Diensten für hochvolumige Telco-Workloads.'
+        ]
+      }
+    ],
+    knowledgePanel: {
+      title: 'Berufserfahrung',
+      subtitle: 'Karriereverlauf & Wirkung',
+      downloadBtn: 'Vollständigen Lebenslauf herunterladen',
+      linkedinBtn: 'Auf LinkedIn ansehen'
+    },
+    related: {
+      title: 'Verwandte Suchanfragen (Rollen)',
+      items: ['Backend-Architektur', 'Cloud-Migration', 'Skalierung von Microservices']
     }
   },
   sde: {

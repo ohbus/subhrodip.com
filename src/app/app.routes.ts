@@ -21,6 +21,15 @@ export const routes: Routes = [
     } 
   },
   { 
+    path: 'experience', 
+    loadComponent: () => import('./components/experience/experience').then(m => m.ExperienceComponent), 
+    data: { 
+      title: 'Professional Experience | Subhrodip Mohanta', 
+      description: 'Professional experience and career trajectory of Subhrodip Mohanta. Roles at ChargePoint, Denuvo, Irdeto, and Wipro.',
+      keywords: 'Senior Software Engineer Experience, Cloud Architect Career, ChargePoint Engineer, Denuvo, Irdeto, Backend Roles'
+    } 
+  },
+  { 
     path: 'sde', 
     loadComponent: () => import('./components/sde/sde').then(m => m.SdeComponent), 
     data: { 

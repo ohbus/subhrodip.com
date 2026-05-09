@@ -22,6 +22,7 @@ export interface AppContent {
   };
   navigation: {
     all: string;
+    experience: string;
     sde: string;
     cde: string;
     education: string;
@@ -69,6 +70,27 @@ export interface AppContent {
       resume: string;
       snippet: string;
       profiles: string;
+    };
+  };
+  experience: {
+    metrics: string;
+    items: {
+      role: string;
+      company: string;
+      location: string;
+      duration: string;
+      highlights: string[];
+      breadcrumb: string;
+    }[];
+    knowledgePanel: {
+      title: string;
+      subtitle: string;
+      downloadBtn: string;
+      linkedinBtn: string;
+    };
+    related: {
+      title: string;
+      items: string[];
     };
   };
   sde: {

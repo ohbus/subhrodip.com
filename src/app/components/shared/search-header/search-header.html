@@ -39,6 +39,10 @@
         <span class="material-symbols-outlined text-sm">search</span> {{c().navigation.all}}
       </a>
       <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
+         routerLink="/experience" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaExp.isActive" #rlaExp="routerLinkActive">
+        <span class="material-symbols-outlined text-sm">work</span> {{c().navigation.experience}}
+      </a>
+      <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
          routerLink="/sde" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaSde.isActive" #rlaSde="routerLinkActive">
         <span class="material-symbols-outlined text-sm">code</span> {{c().navigation.sde}}
       </a>

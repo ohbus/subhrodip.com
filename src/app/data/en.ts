@@ -22,12 +22,13 @@ export const EN_CONTENT: AppContent = {
   home: {
     placeholder: 'Inquiry: Experience, Engineering, Architecture...',
     searchBtn: 'Review Credentials',
-    curiousBtn: 'Featured Case Study',
+    curiousBtn: 'I\'m Feeling Curious',
     footerText: 'Talk is cheap,',
     footerLink: 'show me the code!'
   },
   navigation: {
     all: 'All',
+    experience: 'Experience',
     sde: 'Projects & SDE',
     cde: 'DevOps & Cloud',
     education: 'Education',
@@ -75,6 +76,69 @@ export const EN_CONTENT: AppContent = {
       resume: 'Download Portfolio PDF',
       snippet: 'Engineer with a focus on high-integrity software and robust system design. Specialized in building secure, distributed backend infrastructures.',
       profiles: 'Professional Profiles'
+    }
+  },
+  experience: {
+    metrics: 'About 4 major roles (5+ years)',
+    items: [
+      {
+        role: 'Senior Software Engineer',
+        company: 'ChargePoint',
+        location: 'Radstadt, Austria',
+        duration: 'Dec 2024 – Present',
+        breadcrumb: 'https://chargepoint.com › engineering',
+        highlights: [
+          'Owned and scaled station-to-cloud communication platform leveraging OCPP-based distributed services handling 1.3M+ EV charging ports.',
+          'Led re-architecture of the fault management domain using CQRS and introduced service-level metrics.',
+          'Drove infrastructure cost optimisation reducing AWS RDS spend by $85K/year.'
+        ]
+      },
+      {
+        role: 'Software Engineer',
+        company: 'Denuvo',
+        location: 'Salzburg, Austria',
+        duration: 'Sep 2023 – Aug 2024',
+        breadcrumb: 'https://denuvo.com › engineering',
+        highlights: [
+          'Implemented a CQRS-based architecture across distributed services, handling high-throughput mobile client traffic of 200K rps.',
+          'Built greenfield cloud-native infrastructure deploying services on AWS ECS with Kafka-based event streaming.',
+          'Reduced infrastructure cost from $20K/month to $4.8K/month by tuning AWS ECS workloads.'
+        ]
+      },
+      {
+        role: 'Software Engineer',
+        company: 'Irdeto',
+        location: 'New Delhi, India',
+        duration: 'Jul 2021 – Aug 2023',
+        breadcrumb: 'https://irdeto.com › engineering',
+        highlights: [
+          'Reduced system load by 73% by building asynchronous microservices for file processing.',
+          'Accelerated UI platform delivery by 39% by developing reusable Angular-based application frameworks.',
+          'Lead End-to-End Design and Development of Trending Day features on Irdeto Middleware.'
+        ]
+      },
+      {
+        role: 'Project Engineer',
+        company: 'Wipro',
+        location: 'Bengaluru, India',
+        duration: 'Sep 2020 – Jul 2021',
+        breadcrumb: 'https://wipro.com › engineering',
+        highlights: [
+          'Eased integration P99 latency by 45% by leading API orchestration using Apache Camel and JBoss Fuse.',
+          'Improved response time by 23% by implementing ESB-based middleware.',
+          'Leveraged Apache CXF to integrate SOAP and REST services for high-volume telco workloads.'
+        ]
+      }
+    ],
+    knowledgePanel: {
+      title: 'Professional Experience',
+      subtitle: 'Career Trajectory & Impact',
+      downloadBtn: 'Download Full Resume',
+      linkedinBtn: 'View on LinkedIn'
+    },
+    related: {
+      title: 'Related Searches (Roles)',
+      items: ['Backend Architecture', 'Cloud Migration', 'Microservices Scaling']
     }
   },
   sde: {
