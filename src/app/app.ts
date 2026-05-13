@@ -1,8 +1,9 @@
-import { Component, OnInit, inject , ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy, signal, computed } from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SearchHeaderComponent } from './components/shared/search-header/search-header';
 import { FooterComponent } from './components/shared/footer/footer';
 
@@ -35,10 +36,19 @@ export class App implements OnInit {
   private titleService = inject(Title);
   private metaService = inject(Meta);
 
-  isSearchMode = () => this.router.url !== '/' && !this.router.url.startsWith('/go/');
-  showFooter = () => !this.router.url.startsWith('/go/');
+  private currentUrl = signal<string>(this.router.url);
 
-  ngOnInit() {
+  isSearchMode = computed(() => this.currentUrl() !== '/' && !this.currentUrl().startsWith('/go/'));
+  showFooter = computed(() => !this.currentUrl().startsWith('/go/'));
+
+  constructor() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      takeUntilDestroyed()
+    ).subscribe((event: any) => {
+      this.currentUrl.set(event.urlAfterRedirects);
+    });
+
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map(() => this.activatedRoute),
@@ -49,12 +59,13 @@ export class App implements OnInit {
         return route;
       }),
       filter(route => route.outlet === 'primary'),
-      mergeMap(route => route.data)
+      mergeMap(route => route.data),
+      takeUntilDestroyed()
     ).subscribe(data => {
       const title = data['title'] || 'Subhrodip Mohanta | Senior Software Engineer';
       const description = data['description'] || 'Professional portfolio of Subhrodip Mohanta. Expert in Senior Software Engineering, Cloud Architecture, and Distributed Systems. Explore technical case studies, DevOps implementations, and scalable backend solutions.';
       const keywords = data['keywords'] || 'Subhrodip Mohanta, Senior Software Engineer, Backend Developer, Cloud Architect, DevOps Engineer, Java Design Patterns, Distributed Systems, AWS, Kubernetes, Microservices Architecture';
-      const url = `https://subhrodip.com${this.router.url}`;
+      const url = `https://subhrodip.com${this.currentUrl()}`;
       
       this.titleService.setTitle(title);
       
@@ -79,4 +90,6 @@ export class App implements OnInit {
       this.metaService.updateTag({ name: 'twitter:image', content: 'https://subhrodip.com/assets/og-image.png' });
     });
   }
+
+  ngOnInit() {}
 }
