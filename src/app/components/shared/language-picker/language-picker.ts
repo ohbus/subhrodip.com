@@ -20,12 +20,12 @@ import { ContentService, LanguageCode } from '../../../services/content.service'
             @for (lang of languages; track lang.code) {
               <button
                 (click)="selectLanguage(lang.code)"
-                class="flex items-center justify-between w-full px-4 py-2 text-sm text-[#202124] hover:bg-gray-100 transition-colors"
+                class="flex items-center justify-between w-full px-4 py-2 text-sm text-on-surface hover:bg-gray-100 transition-colors"
                 [class.bg-blue-50]="currentLang() === lang.code"
                 role="menuitem">
                 <div class="flex flex-col items-start text-left">
                   <span class="text-[14px]" [class.text-primary]="currentLang() === lang.code">{{ lang.nativeLabel }}</span>
-                  <span class="text-[11px] text-[#70757a]">{{ lang.label }}</span>
+                  <span class="text-[11px] text-outline">{{ lang.label }}</span>
                 </div>
                 @if (currentLang() === lang.code) {
                   <span class="material-symbols-outlined text-primary text-[18px]">check</span>

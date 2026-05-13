@@ -245,19 +245,19 @@ export const EN_CONTENT: AppContent = {
         title: 'Bachelor of Technology from UEM, Kolkata',
         institution: 'University of Engineering & Management',
         breadcrumb: 'https://uem.edu.in › uem-kolkata',
-        snippet: 'Completed my Computer Science and Engineering degree for undergraduate studies. <br> <strong>CGPA:</strong> 8.75 | <strong>Marks:</strong> 80% <br> <span class="text-[#70757a]">2016 - 2020</span>'
+        snippet: 'Completed my Computer Science and Engineering degree for undergraduate studies. <br> <strong>CGPA:</strong> 8.75 | <strong>Marks:</strong> 80% <br> <span class="text-outline">2016 - 2020</span>'
       },
       isc: {
         title: 'ISC (CISCE) from AGCS, Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'http://agcschools.edu.in › park-street',
-        snippet: 'I completed my High School with Physics, Chemistry, Maths and Computer Applications. <br> <strong>Marks:</strong> 69.17% <br> <span class="text-[#70757a]">2016</span>'
+        snippet: 'I completed my High School with Physics, Chemistry, Maths and Computer Applications. <br> <strong>Marks:</strong> 69.17% <br> <span class="text-outline">2016</span>'
       },
       icse: {
         title: 'ICSE (CISCE) from AGCS, Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'http://agcschools.edu.in › park-street',
-        snippet: 'I completed my 10 years of schooling and appeared for my first public examination. <br> <strong>Marks:</strong> 74.67% <br> <span class="text-[#70757a]">2014</span>'
+        snippet: 'I completed my 10 years of schooling and appeared for my first public examination. <br> <strong>Marks:</strong> 74.67% <br> <span class="text-outline">2014</span>'
       }
     },
     knowledgePanel: {

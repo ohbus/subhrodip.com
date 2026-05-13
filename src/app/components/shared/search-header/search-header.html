@@ -1,6 +1,6 @@
 <!-- Top AppBar Component -->
 <header class="bg-white sticky w-full top-0 z-50">
-  <div class="flex flex-col w-full pt-4 md:px-8 border-b border-[#dfe1e5] flat no-shadows">
+  <div class="flex flex-col w-full pt-4 md:px-8 border-b border-surface-variant flat no-shadows">
     <div class="flex items-center justify-between w-full mb-6 px-4 md:px-0">
       <div class="flex items-center gap-4 md:gap-8 flex-grow max-w-[850px]">
         <!-- Brand Logo -->
@@ -12,54 +12,54 @@
         </a>
         <!-- Search Bar -->
         <div class="flex-grow max-w-[692px] relative group">
-          <input class="w-full h-[44px] rounded-full border border-[#dfe1e5] px-4 pl-4 pr-12 focus:outline-none focus:border-transparent focus:shadow-[0_1px_6px_rgba(32,33,36,.28)] hover:shadow-[0_1px_6px_rgba(32,33,36,.28)] transition-shadow duration-200 text-[16px] bg-white text-[#202124]" 
+          <input class="w-full h-[44px] rounded-full border border-surface-variant px-4 pl-4 pr-12 focus:outline-none focus:border-transparent focus:shadow-[0_1px_6px_rgba(32,33,36,.28)] hover:shadow-[0_1px_6px_rgba(32,33,36,.28)] transition-shadow duration-200 text-[16px] bg-white text-on-surface" 
                  type="text" 
                  [value]="c().common.name" />
-          <div class="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center gap-2 md:gap-3 text-[#70757a]">
-            <span class="hidden md:block material-symbols-outlined cursor-pointer hover:text-[#202124] text-[20px]">close</span>
-            <div class="hidden md:block w-px h-6 bg-[#dfe1e5]"></div>
-            <span class="material-symbols-outlined cursor-pointer text-[#4285f4] text-[20px]">{{c().common.mic}}</span>
-            <span class="material-symbols-outlined cursor-pointer text-[#4285f4] text-[20px]">search</span>
+          <div class="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center gap-2 md:gap-3 text-outline">
+            <span class="hidden md:block material-symbols-outlined cursor-pointer hover:text-on-surface text-[20px]">close</span>
+            <div class="hidden md:block w-px h-6 bg-surface-variant"></div>
+            <span class="material-symbols-outlined cursor-pointer text-secondary text-[20px]">{{c().common.mic}}</span>
+            <span class="material-symbols-outlined cursor-pointer text-secondary text-[20px]">search</span>
           </div>
         </div>
       </div>
       <!-- Trailing Actions -->
       <div class="flex items-center gap-4 hidden md:flex pr-2 md:pr-4">
         <app-language-picker #picker placement="down">
-          <span (click)="picker.toggle()" class="material-symbols-outlined cursor-pointer text-[#5f6368] p-2 hover:bg-gray-100 rounded-full transition-colors duration-200" [title]="currentLang() === 'en' ? 'Settings' : 'সেটিংস'">{{c().common.settings}}</span>
+          <span (click)="picker.toggle()" class="material-symbols-outlined cursor-pointer text-outline p-2 hover:bg-gray-100 rounded-full transition-colors duration-200" [title]="currentLang() === 'en' ? 'Settings' : 'সেটিংস'">{{c().common.settings}}</span>
         </app-language-picker>
-        <span class="material-symbols-outlined cursor-pointer text-[#5f6368] p-2 hover:bg-gray-100 rounded-full transition-colors duration-200">{{c().common.apps}}</span>
-        <div class="w-8 h-8 rounded-full bg-[#4285f4] text-white text-center leading-8 font-bold cursor-pointer hover:shadow-md transition-shadow">{{c().common.brand[0]}}</div>
+        <span class="material-symbols-outlined cursor-pointer text-outline p-2 hover:bg-gray-100 rounded-full transition-colors duration-200">{{c().common.apps}}</span>
+        <div class="w-8 h-8 rounded-full bg-secondary text-white text-center leading-8 font-bold cursor-pointer hover:shadow-md transition-shadow">{{c().common.brand[0]}}</div>
       </div>
     </div>
     <!-- Navigation Links -->
     <div class="flex items-center gap-6 md:ml-[164px] overflow-x-auto no-scrollbar text-[14px] px-4 md:px-0">
       <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
-         routerLink="/search" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [routerLinkActiveOptions]="{exact: true}" [class.text-[#70757a]]="!rlaAll.isActive" #rlaAll="routerLinkActive">
+         routerLink="/search" routerLinkActive="text-primary-container border-b-[3px] border-primary-container" [routerLinkActiveOptions]="{exact: true}" [class.text-outline]="!rlaAll.isActive" #rlaAll="routerLinkActive">
         <span class="material-symbols-outlined text-sm">search</span> {{c().navigation.all}}
       </a>
       <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
-         routerLink="/experience" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaExp.isActive" #rlaExp="routerLinkActive">
+         routerLink="/experience" routerLinkActive="text-primary-container border-b-[3px] border-primary-container" [class.text-outline]="!rlaExp.isActive" #rlaExp="routerLinkActive">
         <span class="material-symbols-outlined text-sm">work</span> {{c().navigation.experience}}
       </a>
       <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
-         routerLink="/sde" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaSde.isActive" #rlaSde="routerLinkActive">
+         routerLink="/sde" routerLinkActive="text-primary-container border-b-[3px] border-primary-container" [class.text-outline]="!rlaSde.isActive" #rlaSde="routerLinkActive">
         <span class="material-symbols-outlined text-sm">code</span> {{c().navigation.sde}}
       </a>
       <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
-         routerLink="/cde" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaCde.isActive" #rlaCde="routerLinkActive">
+         routerLink="/cde" routerLinkActive="text-primary-container border-b-[3px] border-primary-container" [class.text-outline]="!rlaCde.isActive" #rlaCde="routerLinkActive">
         <span class="material-symbols-outlined text-sm">cloud</span> {{c().navigation.cde}}
       </a>
       <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
-         routerLink="/education" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaEdu.isActive" #rlaEdu="routerLinkActive">
+         routerLink="/education" routerLinkActive="text-primary-container border-b-[3px] border-primary-container" [class.text-outline]="!rlaEdu.isActive" #rlaEdu="routerLinkActive">
         <span class="material-symbols-outlined text-sm">school</span> {{c().navigation.education}}
       </a>
       <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
-         routerLink="/skills" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaSkills.isActive" #rlaSkills="routerLinkActive">
+         routerLink="/skills" routerLinkActive="text-primary-container border-b-[3px] border-primary-container" [class.text-outline]="!rlaSkills.isActive" #rlaSkills="routerLinkActive">
         <span class="material-symbols-outlined text-sm">psychology</span> {{c().navigation.skills}}
       </a>
       <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
-         routerLink="/contact" routerLinkActive="text-[#1a0dab] border-b-[3px] border-[#1a0dab]" [class.text-[#70757a]]="!rlaContact.isActive" #rlaContact="routerLinkActive">
+         routerLink="/contact" routerLinkActive="text-primary-container border-b-[3px] border-primary-container" [class.text-outline]="!rlaContact.isActive" #rlaContact="routerLinkActive">
         <span class="material-symbols-outlined text-sm">contact_page</span> {{c().navigation.contact}}
       </a>
     </div>

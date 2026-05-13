@@ -245,19 +245,19 @@ export const BN_CONTENT: AppContent = {
         title: 'ইউইএম কলকাতা থেকে ব্যাচেলর অফ টেকনোলজি',
         institution: 'ইউনিভার্সিটি অফ ইঞ্জিনিয়ারিং অ্যান্ড ম্যানেজমেন্ট',
         breadcrumb: 'https://uem.edu.in › uem-kolkata',
-        snippet: 'স্নাতক স্তরের পড়াশোনার জন্য কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং ডিগ্রি সম্পন্ন করেছি। <br> <strong>সিজিপিএ:</strong> ৮.৭৫ | <strong>নম্বর:</strong> ৮০% <br> <span class="text-[#70757a]">২০১৬ - ২০২০</span>'
+        snippet: 'স্নাতক স্তরের পড়াশোনার জন্য কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং ডিগ্রি সম্পন্ন করেছি। <br> <strong>সিজিপিএ:</strong> ৮.৭৫ | <strong>নম্বর:</strong> ৮০% <br> <span class="text-outline">২০১৬ - ২০২০</span>'
       },
       isc: {
         title: 'এজিসিএস পার্ক স্ট্রিট থেকে আইএসসি (CISCE)',
         institution: 'দি অ্যাসেম্বলি অফ গড চার্চ স্কুল',
         breadcrumb: 'http://agcschools.edu.in › park-street',
-        snippet: 'আমি পদার্থবিদ্যা, রসায়ন, গণিত এবং কম্পিউটার অ্যাপ্লিকেশন সহ আমার হাই স্কুল সম্পন্ন করেছি। <br> <strong>নম্বর:</strong> ৬৯.১৭% <br> <span class="text-[#70757a]">২০১৬</span>'
+        snippet: 'আমি পদার্থবিদ্যা, রসায়ন, গণিত এবং কম্পিউটার অ্যাপ্লিকেশন সহ আমার হাই স্কুল সম্পন্ন করেছি। <br> <strong>নম্বর:</strong> ৬৯.১৭% <br> <span class="text-outline">২০১৬</span>'
       },
       icse: {
         title: 'এজিসিএস পার্ক স্ট্রিট থেকে আইসিএসই (CISCE)',
         institution: 'দি অ্যাসেম্বলি অফ গড চার্চ স্কুল',
         breadcrumb: 'http://agcschools.edu.in › park-street',
-        snippet: 'আমি আমার ১০ বছরের স্কুলিং সম্পন্ন করেছি এবং আমার প্রথম পাবলিক পরীক্ষায় অংশ নিয়েছি। <br> <strong>নম্বর:</strong> ৭৪.৬৭% <br> <span class="text-[#70757a]">২০১৪</span>'
+        snippet: 'আমি আমার ১০ বছরের স্কুলিং সম্পন্ন করেছি এবং আমার প্রথম পাবলিক পরীক্ষায় অংশ নিয়েছি। <br> <strong>নম্বর:</strong> ৭৪.৬৭% <br> <span class="text-outline">২০১৪</span>'
       }
     },
     knowledgePanel: {
