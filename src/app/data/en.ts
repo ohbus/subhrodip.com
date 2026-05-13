@@ -219,7 +219,7 @@ export const EN_CONTENT: AppContent = {
       sclr: {
         title: 'sclr.ac - Distributed URL Infrastructure',
         breadcrumb: 'https://github.com › ohbus › sclr.ac-backend',
-        snippet: 'High-performance redirection service engineered for sub-millisecond latency and horizontal throughput scaling.'
+        snippet: 'High-9erformance redirection service engineered for sub-millisecond latency and horizontal throughput scaling.'
       },
       lunch: {
         title: 'Enterprise Reservation & Resource Management',

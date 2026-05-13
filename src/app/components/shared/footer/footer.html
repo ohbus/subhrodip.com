@@ -3,9 +3,9 @@
   <div class="px-8 pt-3 pb-3 border-b border-surface-variant flex items-center gap-2">
     <app-language-picker #picker>
       <button (click)="picker.toggle()" class="hover:underline flex items-center gap-1.5 focus:outline-none group py-1.5">
-        <span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors leading-none">language</span>
+        <span class="material-symbols-outlined text-lg text-outline group-hover:text-primary transition-colors leading-none">language</span>
         <span class="text-outline leading-none">{{c().footer.location}}</span>
-        <span class="text-[12px] text-outline opacity-70 flex items-center leading-none translate-y-[0.5px]">({{currentLang() === 'en' ? 'English' : currentLang() === 'bn' ? 'বাংলা' : 'Deutsch'}})</span>
+        <span class="text-xs text-outline opacity-70 flex items-center leading-none translate-y-[0.5px]">({{currentLang() === 'en' ? 'English' : currentLang() === 'bn' ? 'বাংলা' : 'Deutsch'}})</span>
       </button>
     </app-language-picker>
   </div>

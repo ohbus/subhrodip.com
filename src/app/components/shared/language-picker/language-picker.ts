@@ -24,11 +24,11 @@ import { ContentService, LanguageCode } from '../../../services/content.service'
                 [class.bg-blue-50]="currentLang() === lang.code"
                 role="menuitem">
                 <div class="flex flex-col items-start text-left">
-                  <span class="text-[14px]" [class.text-primary]="currentLang() === lang.code">{{ lang.nativeLabel }}</span>
+                  <span class="text-body-snippet" [class.text-primary]="currentLang() === lang.code">{{ lang.nativeLabel }}</span>
                   <span class="text-[11px] text-outline">{{ lang.label }}</span>
                 </div>
                 @if (currentLang() === lang.code) {
-                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  <span class="material-symbols-outlined text-primary text-lg">check</span>
                 }
               </button>
             }

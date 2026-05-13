@@ -12,14 +12,14 @@
         </a>
         <!-- Search Bar -->
         <div class="flex-grow max-w-[692px] relative group">
-          <input class="w-full h-[44px] rounded-full border border-surface-variant px-4 pl-4 pr-12 focus:outline-none focus:border-transparent focus:shadow-[0_1px_6px_rgba(32,33,36,.28)] hover:shadow-[0_1px_6px_rgba(32,33,36,.28)] transition-shadow duration-200 text-[16px] bg-white text-on-surface" 
+          <input class="w-full h-[44px] rounded-full border border-surface-variant px-4 pl-4 pr-12 focus:outline-none focus:border-transparent focus:shadow-[0_1px_6px_rgba(32,33,36,.28)] hover:shadow-[0_1px_6px_rgba(32,33,36,.28)] transition-shadow duration-200 text-base bg-white text-on-surface" 
                  type="text" 
                  [value]="c().common.name" />
           <div class="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center gap-2 md:gap-3 text-outline">
-            <span class="hidden md:block material-symbols-outlined cursor-pointer hover:text-on-surface text-[20px]">close</span>
-            <div class="hidden md:block w-px h-6 bg-surface-variant"></div>
-            <span class="material-symbols-outlined cursor-pointer text-secondary text-[20px]">{{c().common.mic}}</span>
-            <span class="material-symbols-outlined cursor-pointer text-secondary text-[20px]">search</span>
+            <span class="hidden md:block material-symbols-outlined cursor-pointer hover:text-on-surface text-xl">close</span>
+            <div class="hidden md:block w-px h-9 bg-surface-variant"></div>
+            <span class="material-symbols-outlined cursor-pointer text-secondary text-xl">{{c().common.mic}}</span>
+            <span class="material-symbols-outlined cursor-pointer text-secondary text-xl">search</span>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
       </div>
     </div>
     <!-- Navigation Links -->
-    <div class="flex items-center gap-6 md:ml-[164px] overflow-x-auto no-scrollbar text-[14px] px-4 md:px-0">
+    <div class="flex items-center gap-6 md:ml-[164px] overflow-x-auto no-scrollbar text-body-snippet px-4 md:px-0">
       <a class="flex items-center gap-1.5 pb-[13px] hover:bg-gray-100 transition-colors duration-200 px-2 rounded-t-sm whitespace-nowrap" 
          routerLink="/search" routerLinkActive="text-primary-container border-b-[3px] border-primary-container" [routerLinkActiveOptions]="{exact: true}" [class.text-outline]="!rlaAll.isActive" #rlaAll="routerLinkActive">
         <span class="material-symbols-outlined text-sm">search</span> {{c().navigation.all}}

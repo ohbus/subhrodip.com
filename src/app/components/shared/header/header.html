@@ -10,11 +10,11 @@
   <div class="flex items-center space-x-1 md:space-x-4 pl-2 md:pl-4">
     <app-language-picker #picker placement="down">
       <button (click)="picker.toggle()" class="p-2 hover:bg-surface-container-high rounded-full transition-colors cursor-pointer focus:outline-none flex items-center justify-center" [title]="currentLang() === 'en' ? 'Change Language' : 'ভাষা পরিবর্তন করুন'">
-        <span class="material-symbols-outlined text-outline text-[20px]">language</span>
+        <span class="material-symbols-outlined text-outline text-xl">language</span>
       </button>
     </app-language-picker>
     <button class="p-2 hover:bg-surface-container-high rounded-full transition-colors cursor-pointer flex items-center justify-center" routerLink="/">
-      <span class="material-symbols-outlined text-outline text-[20px]">{{c().common.apps}}</span>
+      <span class="material-symbols-outlined text-outline text-xl">{{c().common.apps}}</span>
     </button>
     <button class="w-8 h-8 rounded-full bg-primary-container text-on-primary text-center flex items-center justify-center font-bold cursor-pointer hover:shadow-sm transition-shadow" routerLink="/">
       <span class="leading-none select-none">{{c().common.brand[0]}}</span>
