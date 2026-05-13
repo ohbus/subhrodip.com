@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer class="bg-surface-container-low text-on-surface-variant font-url-breadcrumb text-url-breadcrumb w-full flex flex-col border-t border-surface-variant mt-auto">
-  <div class="px-8 pt-3 pb-3 border-b border-surface-variant flex items-center gap-2">
+  <div class="px-4 md:px-8 pt-3 pb-3 border-b border-surface-variant flex items-center gap-2">
     <app-language-picker #picker>
       <button (click)="picker.toggle()" class="hover:underline flex items-center gap-1.5 focus:outline-none group py-1.5">
         <span class="material-symbols-outlined text-lg text-outline group-hover:text-primary transition-colors leading-none">language</span>
@@ -9,15 +9,15 @@
       </button>
     </app-language-picker>
   </div>
-  <div class="px-8 pt-3 pb-5 flex flex-wrap justify-between items-center w-full space-y-2 sm:space-y-0 text-sm">
-    <div class="flex space-x-4 md:space-x-6">
+  <div class="px-4 md:px-8 pt-3 pb-5 flex flex-wrap justify-between items-center w-full gap-y-3 text-sm">
+    <div class="flex flex-wrap gap-x-4 md:gap-x-6">
       <a class="hover:underline cursor-pointer" routerLink="/sde">{{c().navigation.sde}}</a>
-      <a class="hidden sm:block hover:underline cursor-pointer" routerLink="/cde">{{c().navigation.cde}}</a>
-      <a class="hidden md:block hover:underline cursor-pointer" routerLink="/education">{{c().navigation.education}}</a>
+      <a class="hover:underline cursor-pointer" routerLink="/cde">{{c().navigation.cde}}</a>
+      <a class="hover:underline cursor-pointer" routerLink="/education">{{c().navigation.education}}</a>
     </div>
-    <div class="flex space-x-4 md:space-x-6">
+    <div class="flex flex-wrap gap-x-4 md:gap-x-6">
       <a class="hover:underline cursor-pointer" href="https://linkedin.com/in/ohbusm" target="_blank">{{c().footer.privacy}}</a>
-      <a class="hidden xs:block hover:underline cursor-pointer" href="https://linkedin.com/in/ohbusm" target="_blank">{{c().footer.terms}}</a>
+      <a class="hover:underline cursor-pointer" href="https://linkedin.com/in/ohbusm" target="_blank">{{c().footer.terms}}</a>
       <a class="hover:underline cursor-pointer" routerLink="/contact">{{c().footer.contact}}</a>
     </div>
   </div>
