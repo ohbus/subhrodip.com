@@ -1,17 +1,17 @@
 import { Component, inject , ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContentService } from '../../../services/content.service';
-import { LanguagePickerComponent } from '../language-picker/language-picker';
+import { LanguagePickerComponent } from '../../../shared/ui/language-picker/language-picker';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'app-footer',
+  selector: 'app-header',
   standalone: true,
   imports: [RouterLink, LanguagePickerComponent],
-  templateUrl: './footer.html',
+  templateUrl: './header.html',
   styles: []
 })
-export class FooterComponent {
+export class HeaderComponent {
   private contentService = inject(ContentService);
   readonly c = this.contentService.c;
   readonly currentLang = this.contentService.currentLang;

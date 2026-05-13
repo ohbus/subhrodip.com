@@ -1,7 +1,7 @@
 import { Component, inject , ChangeDetectionStrategy } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ContentService } from '../../../services/content.service';
-import { LanguagePickerComponent } from '../language-picker/language-picker';
+import { LanguagePickerComponent } from '../../../shared/ui/language-picker/language-picker';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,8 +1,8 @@
 import { Component, OnInit, signal, OnDestroy, Inject, PLATFORM_ID, computed , ChangeDetectionStrategy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import { HeaderComponent } from '../shared/header/header';
-import { FooterComponent } from '../shared/footer/footer';
+import { HeaderComponent } from '../../core/layout/header/header';
+import { FooterComponent } from '../../core/layout/footer/footer';
 import { ContentService } from '../../services/content.service';
 
 @Component({

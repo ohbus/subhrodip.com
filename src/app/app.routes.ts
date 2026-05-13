@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home';
+import { HomeComponent } from './features/home/home';
 
 export const routes: Routes = [
   { 
@@ -13,7 +13,7 @@ export const routes: Routes = [
   },
   { 
     path: 'search', 
-    loadComponent: () => import('./components/results/results').then(m => m.ResultsComponent), 
+    loadComponent: () => import('./features/results/results').then(m => m.ResultsComponent), 
     data: { 
       title: 'Search Results | Subhrodip Mohanta', 
       description: 'Search results for Subhrodip Mohanta. Discover expertise in backend engineering, cloud architecture, and distributed systems.',
@@ -22,7 +22,7 @@ export const routes: Routes = [
   },
   { 
     path: 'experience', 
-    loadComponent: () => import('./components/experience/experience').then(m => m.ExperienceComponent), 
+    loadComponent: () => import('./features/experience/experience').then(m => m.ExperienceComponent), 
     data: { 
       title: 'Professional Experience | Subhrodip Mohanta', 
       description: 'Professional experience and career trajectory of Subhrodip Mohanta. Roles at ChargePoint, Denuvo, Irdeto, and Wipro.',
@@ -31,7 +31,7 @@ export const routes: Routes = [
   },
   { 
     path: 'sde', 
-    loadComponent: () => import('./components/sde/sde').then(m => m.SdeComponent), 
+    loadComponent: () => import('./features/sde/sde').then(m => m.SdeComponent), 
     data: { 
       title: 'Senior Software Engineering Projects | Subhrodip Mohanta', 
       description: 'Showcase of enterprise-grade software engineering projects. Specialized in Java design patterns, microservices architecture, and scalable backend infrastructure.',
@@ -40,7 +40,7 @@ export const routes: Routes = [
   },
   { 
     path: 'cde', 
-    loadComponent: () => import('./components/cde/cde').then(m => m.CdeComponent), 
+    loadComponent: () => import('./features/cde/cde').then(m => m.CdeComponent), 
     data: { 
       title: 'DevOps & Cloud Architecture | Subhrodip Mohanta', 
       description: 'Cloud infrastructure and DevOps consultancy. Expertise in AWS, Kubernetes, Terraform, and high-availability systems transformation.',
@@ -49,7 +49,7 @@ export const routes: Routes = [
   },
   { 
     path: 'education', 
-    loadComponent: () => import('./components/education/education').then(m => m.EducationComponent), 
+    loadComponent: () => import('./features/education/education').then(m => m.EducationComponent), 
     data: { 
       title: 'Education & Academic Background | Subhrodip Mohanta', 
       description: 'Academic journey of Subhrodip Mohanta. B.Tech in Computer Science and Engineering from UEM Kolkata with honors.',
@@ -58,7 +58,7 @@ export const routes: Routes = [
   },
   { 
     path: 'skills', 
-    loadComponent: () => import('./components/skills/skills').then(m => m.SkillsComponent), 
+    loadComponent: () => import('./features/skills/skills').then(m => m.SkillsComponent), 
     data: { 
       title: 'Technical Skills & Core Competencies | Subhrodip Mohanta', 
       description: 'Comprehensive overview of technical skills: Java, Python, Go, Spring Boot, AWS, Kubernetes, and Distributed Systems architecture.',
@@ -67,13 +67,13 @@ export const routes: Routes = [
   },
   { 
     path: 'contact', 
-    loadComponent: () => import('./components/contact/contact').then(m => m.ContactComponent), 
+    loadComponent: () => import('./features/contact/contact').then(m => m.ContactComponent), 
     data: { 
       title: 'Contact Subhrodip Mohanta | Consultation & Collaboration', 
       description: 'Get in touch with Subhrodip Mohanta for software engineering roles, cloud consultancy, or technical collaborations.',
       keywords: 'Contact Subhrodip Mohanta, Hire Software Engineer, Cloud Consultant Contact'
     } 
   },
-  { path: 'go/:slug', loadComponent: () => import('./components/redirect/redirect').then(m => m.RedirectComponent), data: { title: 'Redirecting... | Subhrodip Mohanta', description: 'Redirecting to a specific resource.' } },
+  { path: 'go/:slug', loadComponent: () => import('./features/redirect/redirect').then(m => m.RedirectComponent), data: { title: 'Redirecting... | Subhrodip Mohanta', description: 'Redirecting to a specific resource.' } },
   { path: '**', redirectTo: '' }
 ];

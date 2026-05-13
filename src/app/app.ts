@@ -4,8 +4,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { SearchHeaderComponent } from './components/shared/search-header/search-header';
-import { FooterComponent } from './components/shared/footer/footer';
+import { SearchHeaderComponent } from './core/layout/search-header/search-header';
+import { FooterComponent } from './core/layout/footer/footer';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
