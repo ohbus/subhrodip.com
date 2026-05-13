@@ -2,7 +2,7 @@
 <header class="bg-white sticky w-full top-0 z-50">
   <div class="flex flex-col w-full pt-4 md:px-8 border-b border-[#dfe1e5] flat no-shadows">
     <div class="flex items-center justify-between w-full mb-6 px-4 md:px-0">
-      <div class="flex items-center gap-4 md:gap-8 w-full">
+      <div class="flex items-center gap-4 md:gap-8 flex-grow max-w-[850px]">
         <!-- Brand Logo -->
         <a class="hidden sm:block text-2xl font-medium tracking-tight whitespace-nowrap font-result-title pl-2 md:pl-4 cursor-pointer" (click)="onHome()" fetchpriority="high">
           <span class="brand-s">{{c().common.brand[0]}}</span><span class="brand-u">{{c().common.brand[1]}}</span><span class="brand-b">{{c().common.brand[2]}}</span><span class="brand-h">{{c().common.brand[3]}}</span><span class="brand-r">{{c().common.brand[4]}}</span><span class="brand-o">{{c().common.brand[5]}}</span><span class="brand-d">{{c().common.brand[6]}}</span><span class="brand-i">{{c().common.brand[7]}}</span><span class="brand-p">{{c().common.brand[8]}}</span>
@@ -24,7 +24,7 @@
         </div>
       </div>
       <!-- Trailing Actions -->
-      <div class="flex items-center gap-4 hidden md:flex pr-4">
+      <div class="flex items-center gap-4 hidden md:flex pr-2 md:pr-4">
         <app-language-picker #picker placement="down">
           <span (click)="picker.toggle()" class="material-symbols-outlined cursor-pointer text-[#5f6368] p-2 hover:bg-gray-100 rounded-full transition-colors duration-200" [title]="currentLang() === 'en' ? 'Settings' : 'সেটিংস'">{{c().common.settings}}</span>
         </app-language-picker>
