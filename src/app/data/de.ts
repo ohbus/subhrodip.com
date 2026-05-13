@@ -84,6 +84,7 @@ export const DE_CONTENT: AppContent = {
       {
         role: 'Senior Software Engineer',
         company: 'ChargePoint',
+        companyUrl: 'https://www.chargepoint.com/',
         location: 'Radstadt, Österreich',
         duration: 'Dez 2024 – Heute',
         breadcrumb: 'https://chargepoint.com › engineering',
@@ -96,6 +97,7 @@ export const DE_CONTENT: AppContent = {
       {
         role: 'Software Engineer',
         company: 'Denuvo',
+        companyUrl: 'https://irdeto.com/denuvo/',
         location: 'Salzburg, Österreich',
         duration: 'Sep 2023 – Aug 2024',
         breadcrumb: 'https://denuvo.com › engineering',
@@ -108,6 +110,7 @@ export const DE_CONTENT: AppContent = {
       {
         role: 'Software Engineer',
         company: 'Irdeto',
+        companyUrl: 'https://irdeto.com/',
         location: 'Neu-Delhi, Indien',
         duration: 'Jul 2021 – Aug 2023',
         breadcrumb: 'https://irdeto.com › engineering',
@@ -120,6 +123,7 @@ export const DE_CONTENT: AppContent = {
       {
         role: 'Project Engineer',
         company: 'Wipro',
+        companyUrl: 'https://www.wipro.com/',
         location: 'Bengaluru, Indien',
         duration: 'Sep 2020 – Jul 2021',
         breadcrumb: 'https://wipro.com › engineering',
@@ -132,6 +136,7 @@ export const DE_CONTENT: AppContent = {
       {
         role: 'Software Developer',
         company: 'GreenField Software',
+        companyUrl: 'https://greenfieldsoft.com/',
         location: 'Kalkutta, Indien',
         duration: 'Aug 2019 – Sep 2020',
         breadcrumb: 'https://greenfieldsoft.com › engineering',
@@ -144,6 +149,7 @@ export const DE_CONTENT: AppContent = {
       {
         role: 'Software Developer Intern',
         company: 'GreenField Software',
+        companyUrl: 'https://greenfieldsoft.com/',
         location: 'Kalkutta, Indien',
         duration: 'Aug 2019 – Dez 2019',
         breadcrumb: 'https://greenfieldsoft.com › engineering',

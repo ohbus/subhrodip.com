@@ -84,6 +84,7 @@ export const BN_CONTENT: AppContent = {
       {
         role: 'সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার',
         company: 'ChargePoint',
+        companyUrl: 'https://www.chargepoint.com/',
         location: 'রডস্ট্যাড, অস্ট্রিয়া',
         duration: 'ডিসেম্বর ২০২৪ – বর্তমান',
         breadcrumb: 'https://chargepoint.com › engineering',
@@ -96,6 +97,7 @@ export const BN_CONTENT: AppContent = {
       {
         role: 'সফটওয়্যার ইঞ্জিনিয়ার',
         company: 'Denuvo',
+        companyUrl: 'https://irdeto.com/denuvo/',
         location: 'সালজবার্গ, অস্ট্রিয়া',
         duration: 'সেপ্টেম্বর ২০২৩ – আগস্ট ২০২৪',
         breadcrumb: 'https://denuvo.com › engineering',
@@ -108,6 +110,7 @@ export const BN_CONTENT: AppContent = {
       {
         role: 'সফটওয়্যার ইঞ্জিনিয়ার',
         company: 'Irdeto',
+        companyUrl: 'https://irdeto.com/',
         location: 'নয়াদিল্লি, ভারত',
         duration: 'জুলাই ২০২১ – আগস্ট ২০২৩',
         breadcrumb: 'https://irdeto.com › engineering',
@@ -120,6 +123,7 @@ export const BN_CONTENT: AppContent = {
       {
         role: 'প্রজেক্ট ইঞ্জিনিয়ার',
         company: 'Wipro',
+        companyUrl: 'https://www.wipro.com/',
         location: 'বেঙ্গালুরু, ভারত',
         duration: 'সেপ্টেম্বর ২০২০ – জুলাই ২০২১',
         breadcrumb: 'https://wipro.com › engineering',
@@ -132,6 +136,7 @@ export const BN_CONTENT: AppContent = {
       {
         role: 'সফটওয়্যার ডেভেলপার',
         company: 'GreenField Software',
+        companyUrl: 'https://greenfieldsoft.com/',
         location: 'কলকাতা, ভারত',
         duration: 'আগস্ট ২০১৯ – সেপ্টেম্বর ২০২০',
         breadcrumb: 'https://greenfieldsoft.com › engineering',
@@ -144,6 +149,7 @@ export const BN_CONTENT: AppContent = {
       {
         role: 'সফটওয়্যার ডেভেলপার ইন্টার্ন',
         company: 'GreenField Software',
+        companyUrl: 'https://greenfieldsoft.com/',
         location: 'কলকাতা, ভারত',
         duration: 'আগস্ট ২০১৯ – ডিসেম্বর ২০১৯',
         breadcrumb: 'https://greenfieldsoft.com › engineering',
