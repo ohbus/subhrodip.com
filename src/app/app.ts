@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject , ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
@@ -7,6 +7,7 @@ import { SearchHeaderComponent } from './components/shared/search-header/search-
 import { FooterComponent } from './components/shared/footer/footer';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, CommonModule, SearchHeaderComponent, FooterComponent],

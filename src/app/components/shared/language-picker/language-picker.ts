@@ -1,8 +1,9 @@
-import { Component, inject, signal, HostListener, ElementRef, Input } from '@angular/core';
+import { Component, inject, signal, HostListener, ElementRef, Input , ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService, LanguageCode } from '../../../services/content.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-language-picker',
   standalone: true,
   imports: [CommonModule],

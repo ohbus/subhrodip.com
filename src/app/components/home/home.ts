@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, OnDestroy, Inject, PLATFORM_ID, computed } from '@angular/core';
+import { Component, OnInit, signal, OnDestroy, Inject, PLATFORM_ID, computed , ChangeDetectionStrategy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../shared/header/header';
@@ -6,6 +6,7 @@ import { FooterComponent } from '../shared/footer/footer';
 import { ContentService } from '../../services/content.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-home',
   standalone: true,
   imports: [HeaderComponent],
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private charIndex = 0;
   private isDeleting = false;
   private typeSpeed = 100;
-  private timeoutId: any;
+  private timeoutId: ReturnType<typeof setTimeout> | undefined;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,

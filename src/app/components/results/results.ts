@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject , ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContentService } from '../../services/content.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-results',
   standalone: true,
   imports: [RouterLink],

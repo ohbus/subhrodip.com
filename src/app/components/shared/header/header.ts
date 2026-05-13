@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject , ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContentService } from '../../../services/content.service';
 import { LanguagePickerComponent } from '../language-picker/language-picker';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-header',
   standalone: true,
   imports: [RouterLink, LanguagePickerComponent],
