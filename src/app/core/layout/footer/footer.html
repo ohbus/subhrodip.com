@@ -9,15 +9,15 @@
       </button>
     </app-language-picker>
   </div>
-  <div class="px-4 md:px-8 pt-3 pb-5 flex flex-wrap justify-between items-center w-full gap-y-3 text-sm">
-    <div class="flex flex-wrap gap-x-4 md:gap-x-6">
+  <div class="px-4 md:px-8 pt-3 pb-5 flex justify-between items-center w-full text-sm">
+    <div class="flex gap-x-4 md:gap-x-6">
       <a class="hover:underline cursor-pointer" routerLink="/sde">{{c().navigation.sde}}</a>
-      <a class="hover:underline cursor-pointer" routerLink="/cde">{{c().navigation.cde}}</a>
-      <a class="hover:underline cursor-pointer" routerLink="/education">{{c().navigation.education}}</a>
+      <a class="hidden sm:inline-block hover:underline cursor-pointer" routerLink="/cde">{{c().navigation.cde}}</a>
+      <a class="hidden md:inline-block hover:underline cursor-pointer" routerLink="/education">{{c().navigation.education}}</a>
     </div>
-    <div class="flex flex-wrap gap-x-4 md:gap-x-6">
-      <a class="hover:underline cursor-pointer" href="https://linkedin.com/in/ohbusm" target="_blank">{{c().footer.privacy}}</a>
-      <a class="hover:underline cursor-pointer" href="https://linkedin.com/in/ohbusm" target="_blank">{{c().footer.terms}}</a>
+    <div class="flex gap-x-4 md:gap-x-6">
+      <a class="hidden md:inline-block hover:underline cursor-pointer" href="https://linkedin.com/in/ohbusm" target="_blank">{{c().footer.privacy}}</a>
+      <a class="hidden sm:inline-block hover:underline cursor-pointer" href="https://linkedin.com/in/ohbusm" target="_blank">{{c().footer.terms}}</a>
       <a class="hover:underline cursor-pointer" routerLink="/contact">{{c().footer.contact}}</a>
     </div>
   </div>
