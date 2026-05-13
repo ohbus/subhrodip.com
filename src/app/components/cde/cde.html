@@ -37,7 +37,7 @@
           <span class="text-[14px] text-[#202124] leading-tight">{{c().cde.projects.label}}</span>
           <div class="flex items-center gap-1 text-[12px] text-[#4d5156] leading-tight">
             <span>{{c().cde.projects.aws.breadcrumb}}</span>
-            <span class="material-symbols-outlined text-[#70757a] text-[16px] cursor-pointer ml-1">{{c().common.more_vert}}</span>
+            <a routerLink="/search" class="material-symbols-outlined text-[#70757a] text-[16px] cursor-pointer ml-1">{{c().common.more_vert}}</a>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@
           <span class="text-[14px] text-[#202124] leading-tight">{{c().cde.projects.label}}</span>
           <div class="flex items-center gap-1 text-[12px] text-[#4d5156] leading-tight">
             <span>{{c().cde.projects.sclr.breadcrumb}}</span>
-            <span class="material-symbols-outlined text-[#70757a] text-[16px] cursor-pointer ml-1">{{c().common.more_vert}}</span>
+            <a routerLink="/search" class="material-symbols-outlined text-[#70757a] text-[16px] cursor-pointer ml-1">{{c().common.more_vert}}</a>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
           <span class="text-[14px] text-[#202124] leading-tight">{{c().cde.projects.label}}</span>
           <div class="flex items-center gap-1 text-[12px] text-[#4d5156] leading-tight">
             <span>{{c().cde.projects.lunch.breadcrumb}}</span>
-            <span class="material-symbols-outlined text-[#70757a] text-[16px] cursor-pointer ml-1">{{c().common.more_vert}}</span>
+            <a routerLink="/search" class="material-symbols-outlined text-[#70757a] text-[16px] cursor-pointer ml-1">{{c().common.more_vert}}</a>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@
       </div>
       <div class="flex flex-wrap gap-3">
         @for (item of c().cde.related.items; track item) {
-          <a href="#" class="flex items-center gap-2 px-4 py-2 bg-[#f1f3f4] hover:bg-[#e8eaed] rounded-full text-[14px] text-[#202124] transition-colors border border-transparent">
+          <a routerLink="/search" class="flex items-center gap-2 px-4 py-2 bg-[#f1f3f4] hover:bg-[#e8eaed] rounded-full text-[14px] text-[#202124] transition-colors border border-transparent">
             <span class="material-symbols-outlined text-[16px] text-[#70757a]">search</span> {{item}}
           </a>
         }
