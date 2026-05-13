@@ -2,8 +2,6 @@ import { Injectable, signal, computed, Inject, PLATFORM_ID } from '@angular/core
 import { isPlatformBrowser } from '@angular/common';
 import { AppContent } from '../models/content.model';
 import { EN_CONTENT } from '../data/en';
-import { BN_CONTENT } from '../data/bn';
-import { DE_CONTENT } from '../data/de';
 
 export type LanguageCode = 'en' | 'bn' | 'de';
 
@@ -26,17 +24,12 @@ export class ContentService {
     { code: 'de', label: 'German', nativeLabel: 'Deutsch' }
   ];
 
-  // Internal state for the current language code
+  // Internal state
   private currentLangCode = signal<LanguageCode>('en');
+  private currentContent = signal<AppContent>(EN_CONTENT);
 
   // Reactive selector for the current content
-  readonly c = computed(() => {
-    switch (this.currentLangCode()) {
-      case 'bn': return BN_CONTENT;
-      case 'de': return DE_CONTENT;
-      default: return EN_CONTENT;
-    }
-  });
+  readonly c = computed(() => this.currentContent());
 
   // Reactive selector for the current language code
   readonly currentLang = computed(() => this.currentLangCode());
@@ -55,7 +48,7 @@ export class ContentService {
   private initializeLanguage() {
     const saved = localStorage.getItem(this.LANG_KEY) as LanguageCode;
     if (saved && this.languages.some(l => l.code === saved)) {
-      this.currentLangCode.set(saved);
+      this.setLanguage(saved);
     } else {
       // Auto-detect browser language
       const browserLang = navigator.language.split('-')[0] as LanguageCode;
@@ -69,6 +62,15 @@ export class ContentService {
     this.currentLangCode.set(lang);
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem(this.LANG_KEY, lang);
+    }
+
+    // Lazy load non-default languages to optimize initial bundle size
+    if (lang === 'en') {
+      this.currentContent.set(EN_CONTENT);
+    } else if (lang === 'bn') {
+      import('../data/bn').then(m => this.currentContent.set(m.BN_CONTENT));
+    } else if (lang === 'de') {
+      import('../data/de').then(m => this.currentContent.set(m.DE_CONTENT));
     }
   }
 }
