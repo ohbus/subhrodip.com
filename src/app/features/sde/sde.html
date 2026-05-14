@@ -9,8 +9,13 @@
     <!-- Result 1 - Philosophy -->
     <div class="mb-7 group">
       <div class="flex items-center gap-3 mb-1">
-        <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant">
+        <div class="relative w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
           <span class="material-symbols-outlined text-on-surface-variant text-base">school</span>
+          <img src="https://logo.clearbit.com/github.com" 
+               class="absolute inset-0 w-full h-full object-contain p-1 bg-surface-container-low" 
+               loading="lazy" 
+               alt="Philosophy"
+               (error)="$any($event.target).remove()">
         </div>
         <div class="flex flex-col">
           <span class="text-body-snippet text-on-surface leading-tight">{{c().sde.blog.label}}</span>
@@ -30,13 +35,13 @@
     <!-- Result 2 - Project 1 -->
     <div class="mb-7 group">
       <div class="flex items-center gap-3 mb-1">
-        <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
+        <div class="relative w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
+          <span class="material-symbols-outlined text-on-surface-variant text-base">code</span>
           <img src="https://logo.clearbit.com/github.com" 
-               class="w-full h-full object-contain p-1" 
+               class="absolute inset-0 w-full h-full object-contain p-1 bg-surface-container-low" 
                loading="lazy" 
                alt="GitHub"
-               (error)="$any($event.target).style.display='none'; $any($event.target).nextElementSibling.style.display='block'">
-          <span class="material-symbols-outlined text-on-surface-variant text-base hidden">code</span>
+               (error)="$any($event.target).remove()">
         </div>
         <div class="flex flex-col">
           <span class="text-body-snippet text-on-surface leading-tight">{{c().sde.projects.label}}</span>
@@ -59,8 +64,13 @@
     <!-- Result 3 - Project 2 -->
     <div class="mb-7 group">
       <div class="flex items-center gap-3 mb-1">
-        <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant">
+        <div class="relative w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
           <span class="material-symbols-outlined text-on-surface-variant text-base">account_balance</span>
+          <img src="https://logo.clearbit.com/github.com" 
+               class="absolute inset-0 w-full h-full object-contain p-1 bg-surface-container-low" 
+               loading="lazy" 
+               alt="GitHub"
+               (error)="$any($event.target).remove()">
         </div>
         <div class="flex flex-col">
           <span class="text-body-snippet text-on-surface leading-tight">{{c().sde.projects.label}}</span>
@@ -83,8 +93,13 @@
     <!-- Result 4 - Project 3 -->
     <div class="mb-7 group">
       <div class="flex items-center gap-3 mb-1">
-        <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant">
+        <div class="relative w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
           <span class="material-symbols-outlined text-on-surface-variant text-base">forum</span>
+          <img src="https://logo.clearbit.com/github.com" 
+               class="absolute inset-0 w-full h-full object-contain p-1 bg-surface-container-low" 
+               loading="lazy" 
+               alt="GitHub"
+               (error)="$any($event.target).remove()">
         </div>
         <div class="flex flex-col">
           <span class="text-body-snippet text-on-surface leading-tight">{{c().sde.projects.label}}</span>
@@ -105,43 +120,4 @@
     </div>
 
     <!-- Related Searches -->
-    <div class="mb-7">
-      <div class="flex items-center gap-2 mb-3">
-        <h2 class="text-xl text-on-surface font-normal">{{c().sde.related.title}}</h2>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        @for (item of c().sde.related.items; track item) {
-          <a routerLink="/search" class="flex items-center gap-2 px-4 py-2 bg-surface-container-low hover:bg-surface-container rounded-full text-body-snippet text-on-surface transition-colors border border-transparent">
-            <span class="material-symbols-outlined text-base text-outline">search</span> {{item}}
-          </a>
-        }
-      </div>
-    </div>
-  </main>
-
-  <!-- Right Column: Knowledge Panel -->
-  <aside class="hidden xl:block w-sidebar-width flex-shrink-0 pr-8">
-    <div class="border border-surface-variant rounded-2xl overflow-hidden bg-white mb-8">
-      <div class="flex h-40 overflow-hidden bg-surface-bright border-b border-surface-variant">
-        <div class="w-full h-full bg-primary-container/20 flex items-center justify-center relative">
-          <span class="material-symbols-outlined text-primary text-7xl">computer</span>
-          <div class="absolute bottom-2 right-2 text-xs text-on-surface-variant bg-white/80 px-2 py-1 rounded">{{c().sde.knowledgePanel.quote}}</div>
-        </div>
-      </div>
-      <div class="p-4">
-        <h2 class="text-3xl font-normal leading-tight text-on-surface mb-1 font-result-title">{{c().common.name}}</h2>
-        <p class="text-base text-on-surface-variant">{{c().common.roles[0]}}</p>
-      </div>
-      <div class="px-4 py-4 border-t border-surface-variant">
-        <p class="text-on-surface text-body-snippet leading-relaxed mb-1">
-          {{c().sde.knowledgePanel.snippet}}
-        </p>
-      </div>
-      <div class="px-4 pb-4">
-        <a href="https://github.com/ohbus" target="_blank" class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary hover:brightness-90 text-white py-2 px-4 rounded-full font-medium text-body-snippet transition-colors shadow-sm">
-          <span class="material-symbols-outlined text-lg">code</span> {{c().sde.knowledgePanel.githubBtn}}
-        </a>
-      </div>
-    </div>
-  </aside>
-</div>
+...
