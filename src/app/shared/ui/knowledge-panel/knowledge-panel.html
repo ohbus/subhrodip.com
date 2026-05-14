@@ -1,0 +1,93 @@
+<div class="border border-surface-variant rounded-2xl overflow-hidden bg-white mb-8">
+  <!-- Header Area -->
+  <div class="flex h-40 overflow-hidden bg-surface-bright border-b border-surface-variant">
+    @if (config().imageUrl) {
+      <img [src]="config().imageUrl" class="w-full h-full object-cover" [alt]="config().title">
+    } @else {
+      <div class="w-full h-full bg-primary-container/20 flex items-center justify-center relative">
+        <span class="material-symbols-outlined text-primary text-7xl">{{config().icon || 'hub'}}</span>
+        @if (config().quote) {
+          <div class="absolute bottom-2 right-2 text-xs text-on-surface-variant bg-white/80 px-2 py-1 rounded">
+            {{config().quote}}
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- Title Section -->
+  <div class="p-4">
+    <h2 class="text-3xl font-normal leading-tight text-on-surface mb-1 font-result-title">{{config().title}}</h2>
+    @if (config().subtitle) {
+      <p class="text-base text-on-surface-variant">{{config().subtitle}}</p>
+    }
+  </div>
+
+  <!-- Snippet Section -->
+  @if (config().snippet) {
+    <div class="px-4 py-4 border-t border-surface-variant">
+      <p class="text-on-surface text-body-snippet leading-relaxed" [innerHTML]="config().snippet"></p>
+    </div>
+  }
+
+  <!-- Actions Section -->
+  @if (config().actions && config().actions!.length > 0) {
+    <div class="px-4 pb-4 flex flex-col gap-3" [class.pt-4]="!config().snippet" [class.border-t]="!config().snippet && (config().actions!.length > 0)">
+      @for (action of config().actions; track action.label) {
+        @if (action.url) {
+          <a [href]="action.url" target="_blank" 
+             [class]="action.primary ? 'bg-primary text-white hover:brightness-90' : 'border border-surface-variant hover:bg-surface-bright text-primary-container'"
+             class="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-full font-medium text-body-snippet transition-colors shadow-sm">
+            @if (action.icon) { <span class="material-symbols-outlined text-lg">{{action.icon}}</span> }
+            {{action.label}}
+          </a>
+        } @else if (action.routerLink) {
+          <a [routerLink]="action.routerLink"
+             [class]="action.primary ? 'bg-primary text-white hover:brightness-90' : 'border border-surface-variant hover:bg-surface-bright text-primary-container'"
+             class="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-full font-medium text-body-snippet transition-colors shadow-sm">
+            @if (action.icon) { <span class="material-symbols-outlined text-lg">{{action.icon}}</span> }
+            {{action.label}}
+          </a>
+        }
+      }
+    </div>
+  }
+
+  <!-- Footer Section -->
+  @if (config().footer) {
+    <div class="px-4 py-4 border-t border-surface-variant">
+      @if (config().footer!.type === 'roles') {
+        <div class="flex flex-wrap gap-2">
+          @for (item of config().footer!.items; track item) {
+            <span class="px-3 py-1 bg-surface-container-low text-on-surface text-sm rounded-full">{{item}}</span>
+          }
+        </div>
+      } @else if (config().footer!.type === 'verified_roles') {
+        <div class="space-y-2">
+          @for (item of config().footer!.items; track item) {
+            <div class="text-body-snippet text-on-surface-variant flex items-center gap-2">
+              <span class="material-symbols-outlined text-base text-outline">verified</span>
+              {{item}}
+            </div>
+          }
+        </div>
+      } @else if (config().footer!.type === 'profiles') {
+         <h3 class="text-sm font-bold uppercase tracking-wider text-on-surface mb-4">Professional Profiles</h3>
+         <div class="flex space-x-5">
+           <a href="https://linkedin.com/in/ohbusm" target="_blank" class="group flex flex-col items-center gap-2">
+             <div class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center group-hover:bg-surface-container transition-colors">
+               <span class="material-symbols-outlined text-brand-linkedin text-2xl">work</span>
+             </div>
+             <span class="text-xs text-on-surface group-hover:underline">LinkedIn</span>
+           </a>
+           <a href="https://github.com/ohbus" target="_blank" class="group flex flex-col items-center gap-2">
+             <div class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center group-hover:bg-surface-container transition-colors">
+               <span class="material-symbols-outlined text-brand-github text-2xl">code</span>
+             </div>
+             <span class="text-xs text-on-surface group-hover:underline">GitHub</span>
+           </a>
+         </div>
+      }
+    </div>
+  }
+</div>
