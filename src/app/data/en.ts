@@ -50,17 +50,17 @@ export const EN_CONTENT: AppContent = {
       time: '0.42'
     },
     main: {
-      title: 'Senior Software Engineer | DevOps & Cloud Consultant — Subhrodip Mohanta',
+      title: 'Senior Software Engineer & Cloud Consultant - Subhrodip Mohanta',
       breadcrumb: 'https://subhrodip.com',
-      snippet: 'Explore the professional trajectory of <strong>Subhrodip Mohanta</strong>. Specializing in the architecture of highly available backend systems, cloud-native transformations, and scalable microservices.'
+      snippet: 'Explore the professional trajectory of <strong>Subhrodip Mohanta</strong>. Specializing in highly available backend systems, cloud-native transformations, and scalable microservices.'
     },
     github: {
       label: 'GitHub',
-      title: 'Technical Engineering Portfolio & Open Source Contributions',
+      title: 'Engineering Portfolio and Open Source Contributions',
       breadcrumb: 'https://github.com › subhrodip',
       snippet: 'Advanced implementations spanning Java, Python, and TypeScript. Focus on <strong>enterprise design patterns</strong>, distributed concurrency, and automated infrastructure.',
       links: {
-        viewProject: 'View Featured Projects',
+        viewProject: 'Featured Projects',
         viewDesc: 'Technical deep-dives and build analysis.',
         repositories: 'GitHub Repositories',
         repoDesc: 'Public source code and architectural documentation.'
@@ -173,7 +173,7 @@ export const EN_CONTENT: AppContent = {
       linkedinBtn: 'View on LinkedIn'
     },
     related: {
-      title: 'Related Searches (Roles)',
+      title: 'Related Searches',
       items: ['Backend Architecture', 'Cloud Migration', 'Microservices Scaling']
     }
   },
@@ -182,13 +182,13 @@ export const EN_CONTENT: AppContent = {
     blog: {
       label: "Subhrodip's Blog",
       title: 'Beyond Academics: Bridging the Theoretical Gap in Enterprise Engineering',
-      breadcrumb: 'https://subhrodip.com › engineering › insights',
+      breadcrumb: 'https://subhrodip.com › insights',
       snippet: 'A strategic analysis of the modern engineering learning curve. Moving beyond academic syntax to master the complexities of industrial-grade distributed architectures.'
     },
     projects: {
       label: 'GitHub',
       patterns: {
-        title: 'Enterprise Java Design Patterns - Architecture',
+        title: 'Enterprise Java Design Patterns Architecture',
         breadcrumb: 'https://github.com › ohbus › java-design-patterns',
         snippet: 'Strategic implementation of creational, structural, and behavioral patterns. Optimized for <strong>systemic scalability</strong> and long-term maintainability.'
       },
@@ -204,12 +204,12 @@ export const EN_CONTENT: AppContent = {
       }
     },
     related: {
-      title: 'Related Searches (Inspirations)',
+      title: 'Inspirations',
       items: ['Dennis Ritchie', 'Linus Torvalds', 'Alan Turing']
     },
     knowledgePanel: {
       quote: '"If debugging is process of removing bugs..."',
-      snippet: 'The following repository provides a centralized index of technical implementations, showcasing a commitment to collaborative, open-source engineering.',
+      snippet: 'Centralized index of technical implementations, showcasing a commitment to collaborative, open-source engineering.',
       githubBtn: 'Review Engineering Source'
     }
   },
@@ -217,21 +217,21 @@ export const EN_CONTENT: AppContent = {
     metrics: 'About 4 results (0.31 seconds)',
     definition: {
       label: 'Dictionary',
-      title: 'DevOps & Cloud Computing - Definition',
+      title: 'DevOps & Cloud Computing Definition',
       breadcrumb: 'https://dictionary.com › devops',
-      snippet: 'DevOps is a set of practices that combines software development and IT operations. Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power.'
+      snippet: 'DevOps is a set of practices that combines software development and IT operations. Cloud computing is the on-demand availability of system resources.'
     },
     projects: {
       label: 'GitHub',
       aws: {
-        title: 'Spring Cloud AWS - Enterprise Integration',
+        title: 'Spring Cloud AWS Enterprise Integration',
         breadcrumb: 'https://github.com › ohbus › spring-cloud-aws',
-        snippet: 'Official contribution to the Spring Cloud ecosystem. Seamless integration of the Spring Framework with Amazon Web Services for cloud-native Java applications.'
+        snippet: 'Official contribution to the Spring Cloud ecosystem. Seamless integration of the Spring Framework with AWS for cloud-native Java applications.'
       },
       sclr: {
-        title: 'sclr.ac - Distributed URL Infrastructure',
+        title: 'sclr.ac Distributed URL Infrastructure',
         breadcrumb: 'https://github.com › ohbus › sclr.ac-backend',
-        snippet: 'High-9erformance redirection service engineered for sub-millisecond latency and horizontal throughput scaling.'
+        snippet: 'High-performance redirection service engineered for sub-millisecond latency and horizontal throughput scaling.'
       },
       lunch: {
         title: 'Enterprise Reservation & Resource Management',
@@ -240,36 +240,36 @@ export const EN_CONTENT: AppContent = {
       }
     },
     related: {
-      title: 'Related Searches (People to follow)',
+      title: 'People to follow',
       items: ['Werner Vogels', 'Steve Herrod', 'Marc Benioff']
     },
     knowledgePanel: {
       role: 'Cloud Infrastructure Consultant',
       snippet: 'Strategic advisor for <strong>Cloud-Native Transformation</strong> and Infrastructure Resilience. Engineering automated, secure, and self-healing environments.',
       contactBtn: 'Request Consultation',
-      quote: 'Simply put, things always had to be in a production-ready state.'
+      quote: 'Things always had to be in a production-ready state.'
     }
   },
   education: {
-    metrics: 'About 3 results of Education (16 years)',
+    metrics: 'About 3 results (16 years)',
     items: {
       btech: {
-        title: 'Bachelor of Technology from UEM, Kolkata',
+        title: 'Bachelor of Technology from UEM Kolkata',
         institution: 'University of Engineering & Management',
         breadcrumb: 'https://uem.edu.in › uem-kolkata',
-        snippet: 'Completed my Computer Science and Engineering degree for undergraduate studies. <br> <strong>CGPA:</strong> 8.75 | <strong>Marks:</strong> 80% <br> <span class="text-outline">2016 - 2020</span>'
+        snippet: 'Completed Computer Science and Engineering degree for undergraduate studies. <br> <strong>CGPA:</strong> 8.75 | <strong>Marks:</strong> 80% <br> <span class="text-outline">2016 - 2020</span>'
       },
       isc: {
-        title: 'ISC (CISCE) from AGCS, Park Street',
+        title: 'ISC (CISCE) from AGCS Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'http://agcschools.edu.in › park-street',
-        snippet: 'I completed my High School with Physics, Chemistry, Maths and Computer Applications. <br> <strong>Marks:</strong> 69.17% <br> <span class="text-outline">2016</span>'
+        snippet: 'Completed High School with Physics, Chemistry, Maths and Computer Applications. <br> <strong>Marks:</strong> 69.17% <br> <span class="text-outline">2016</span>'
       },
       icse: {
-        title: 'ICSE (CISCE) from AGCS, Park Street',
+        title: 'ICSE (CISCE) from AGCS Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'http://agcschools.edu.in › park-street',
-        snippet: 'I completed my 10 years of schooling and appeared for my first public examination. <br> <strong>Marks:</strong> 74.67% <br> <span class="text-outline">2014</span>'
+        snippet: 'Completed 10 years of schooling and appeared for first public examination. <br> <strong>Marks:</strong> 74.67% <br> <span class="text-outline">2014</span>'
       }
     },
     knowledgePanel: {
@@ -285,12 +285,12 @@ export const EN_CONTENT: AppContent = {
     core: {
       label: 'Developer Core',
       title: 'Programming Languages - Subhrodip Mohanta',
-      breadcrumb: 'https://subhrodip.com › skills › programming-languages'
+      breadcrumb: 'https://subhrodip.com › skills › programming'
     },
     frameworks: {
       label: 'Developer Frameworks',
       title: 'Technologies and Methodologies',
-      breadcrumb: 'https://subhrodip.com › skills › technologies-methodologies'
+      breadcrumb: 'https://subhrodip.com › skills › technologies'
     },
     knowledgePanel: {
       title: 'Skills Overview',
@@ -299,7 +299,7 @@ export const EN_CONTENT: AppContent = {
   },
   contact: {
     metrics: 'About 1 result (0.12 seconds)',
-    title: 'Get in touch with Subhrodip - Ping me. Happy to help!',
+    title: 'Get in touch with Subhrodip',
     breadcrumb: 'https://subhrodip.com › contact',
     form: {
       name: 'Name',

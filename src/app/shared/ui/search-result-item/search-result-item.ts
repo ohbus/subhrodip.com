@@ -17,4 +17,5 @@ export class SearchResultItemComponent {
   breadcrumb = input.required<string>();
   title = input.required<string>();
   url = input<string>();
+  snippet = input<string>();
 }

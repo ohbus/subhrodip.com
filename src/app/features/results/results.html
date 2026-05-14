@@ -11,8 +11,8 @@
       [label]="c().results.main.title"
       [breadcrumb]="c().results.main.breadcrumb"
       routerLink="/"
-      [title]="c().results.main.title">
-      <div [innerHTML]="c().results.main.snippet"></div>
+      [title]="c().results.main.title"
+      [snippet]="c().results.main.snippet">
       <div footer class="flex flex-wrap gap-x-6 gap-y-2 text-sm mt-3">
         <a routerLink="/experience" class="text-primary-container hover:underline">{{c().navigation.experience}}</a>
         <a routerLink="/sde" class="text-primary-container hover:underline">{{c().navigation.sde}}</a>
@@ -44,8 +44,8 @@
       [label]="c().results.github.label"
       [breadcrumb]="c().results.github.breadcrumb"
       url="https://github.com/ohbus"
-      [title]="c().results.github.title">
-      <div [innerHTML]="c().results.github.snippet"></div>
+      [title]="c().results.github.title"
+      [snippet]="c().results.github.snippet">
       <div footer class="flex flex-col gap-3 max-w-xl mt-3">
         <div class="flex gap-4">
           <div class="flex-grow">

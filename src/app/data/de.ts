@@ -50,17 +50,17 @@ export const DE_CONTENT: AppContent = {
       time: '0,42'
     },
     main: {
-      title: 'Senior Software Engineer | DevOps & Cloud Consultant — Subhrodip Mohanta',
+      title: 'Senior Software Engineer & Cloud Consultant - Subhrodip Mohanta',
       breadcrumb: 'https://subhrodip.com',
-      snippet: 'Erkunden Sie den beruflichen Werdegang von <strong>Subhrodip Mohanta</strong>. Spezialisiert auf die Architektur hochverfügbarer Backend-Systeme, Cloud-Native-Transformationen und skalierbare Microservices.'
+      snippet: 'Erkunden Sie den beruflichen Werdegang von <strong>Subhrodip Mohanta</strong>. Spezialisiert auf hochverfügbare Backend-Systeme, Cloud-Native-Transformationen und skalierbare Microservices.'
     },
     github: {
       label: 'GitHub',
-      title: 'Technisches Engineering-Portfolio & Open-Source-Beiträge',
+      title: 'Engineering-Portfolio und Open-Source-Beiträge',
       breadcrumb: 'https://github.com › subhrodip',
       snippet: 'Fortgeschrittene Implementierungen in Java, Python und TypeScript. Fokus auf <strong>Enterprise-Design-Patterns</strong>, verteilte Nebenläufigkeit und automatisierte Infrastruktur.',
       links: {
-        viewProject: 'Featured Projekte ansehen',
+        viewProject: 'Featured Projekte',
         viewDesc: 'Technische Tiefenanalysen und Build-Berichte.',
         repositories: 'GitHub-Repositories',
         repoDesc: 'Öffentlicher Quellcode und Architektur-Dokumentation.'
@@ -173,7 +173,7 @@ export const DE_CONTENT: AppContent = {
       linkedinBtn: 'Auf LinkedIn ansehen'
     },
     related: {
-      title: 'Verwandte Suchanfragen (Rollen)',
+      title: 'Verwandte Suchanfragen',
       items: ['Backend-Architektur', 'Cloud-Migration', 'Skalierung von Microservices']
     }
   },
@@ -182,13 +182,13 @@ export const DE_CONTENT: AppContent = {
     blog: {
       label: "Subhrodips Blog",
       title: 'Jenseits der Wissenschaft: Die theoretische Lücke im Enterprise Engineering schließen',
-      breadcrumb: 'https://subhrodip.com › engineering › insights',
+      breadcrumb: 'https://subhrodip.com › insights',
       snippet: 'Eine strategische Analyse der modernen Engineering-Lernkurve. Über die akademische Syntax hinausgehen, um die Komplexität industrieller verteilter Architekturen zu meistern.'
     },
     projects: {
       label: 'GitHub',
       patterns: {
-        title: 'Enterprise Java Design Patterns - Architektur',
+        title: 'Enterprise Java Design Patterns Architecture',
         breadcrumb: 'https://github.com › ohbus › java-design-patterns',
         snippet: 'Strategische Implementierung von Erzeugungs-, Struktur- und Verhaltensmustern. Optimiert für <strong>systemische Skalierbarkeit</strong> und langfristige Wartbarkeit.'
       },
@@ -204,12 +204,12 @@ export const DE_CONTENT: AppContent = {
       }
     },
     related: {
-      title: 'Verwandte Suchanfragen (Inspirationen)',
+      title: 'Inspirationen',
       items: ['Dennis Ritchie', 'Linus Torvalds', 'Alan Turing']
     },
     knowledgePanel: {
       quote: '"Wenn Debugging der Prozess des Entfernens von Bugs ist..."',
-      snippet: 'Das folgende Repository bietet einen zentralen Index technischer Implementierungen und zeigt das Engagement für kollaboratives Open-Source-Engineering.',
+      snippet: 'Zentraler Index technischer Implementierungen und Engagement für kollaboratives Open-Source-Engineering.',
       githubBtn: 'Engineering-Quellcode prüfen'
     }
   },
@@ -217,19 +217,19 @@ export const DE_CONTENT: AppContent = {
     metrics: 'Ungefähr 4 Ergebnisse (0,31 Sekunden)',
     definition: {
       label: 'Wörterbuch',
-      title: 'DevOps & Cloud Computing - Definition',
+      title: 'DevOps & Cloud Computing Definition',
       breadcrumb: 'https://dictionary.com › devops',
-      snippet: 'DevOps ist eine Reihe von Praktiken, die Softwareentwicklung und IT-Betrieb kombinieren. Cloud Computing ist die bedarfsgerechte Verfügbarkeit von Computersystemressourcen ohne direkte aktive Verwaltung durch den Benutzer.'
+      snippet: 'DevOps ist eine Reihe von Praktiken, die Softwareentwicklung und IT-Betrieb kombinieren. Cloud Computing ist die bedarfsgerechte Verfügbarkeit von Systemressourcen.'
     },
     projects: {
       label: 'GitHub',
       aws: {
-        title: 'Spring Cloud AWS - Enterprise-Integration',
+        title: 'Spring Cloud AWS Enterprise Integration',
         breadcrumb: 'https://github.com › ohbus › spring-cloud-aws',
-        snippet: 'Offizieller Beitrag zum Spring Cloud-Ökosystem. Nahtlose Integration des Spring Frameworks mit Amazon Web Services für Cloud-native Java-Anwendungen.'
+        snippet: 'Offizieller Beitrag zum Spring Cloud-Ökosystem. Nahtlose Integration des Spring Frameworks mit AWS für Cloud-native Java-Anwendungen.'
       },
       sclr: {
-        title: 'sclr.ac - Verteilte URL-Infrastruktur',
+        title: 'sclr.ac Verteilte URL-Infrastruktur',
         breadcrumb: 'https://github.com › ohbus › sclr.ac-backend',
         snippet: 'Hochleistungs-Redirection-Service, entwickelt für Latenzen im Sub-Millisekunden-Bereich und horizontale Durchsatzskalierung.'
       },
@@ -240,33 +240,33 @@ export const DE_CONTENT: AppContent = {
       }
     },
     related: {
-      title: 'Verwandte Suchanfragen (Personen zum Folgen)',
+      title: 'Personen zum Folgen',
       items: ['Werner Vogels', 'Steve Herrod', 'Marc Benioff']
     },
     knowledgePanel: {
       role: 'Cloud-Infrastruktur-Berater',
       snippet: 'Strategischer Berater für <strong>Cloud-Native-Transformation</strong> und Infrastruktur-Resilienz. Entwicklung automatisierter, sicherer und selbstheilender Umgebungen.',
       contactBtn: 'Beratung anfordern',
-      quote: 'Einfach gesagt: Die Dinge mussten immer in einem produktionsreifen Zustand sein.'
+      quote: 'Die Dinge mussten immer in einem produktionsreifen Zustand sein.'
     }
   },
   education: {
-    metrics: 'Ungefähr 3 Ergebnisse für Bildung (16 Jahre)',
+    metrics: 'Ungefähr 3 Ergebnisse (16 Jahre)',
     items: {
       btech: {
-        title: 'Bachelor of Technology von der UEM, Kolkata',
+        title: 'Bachelor of Technology von der UEM Kolkata',
         institution: 'University of Engineering & Management',
         breadcrumb: 'https://uem.edu.in › uem-kolkata',
         snippet: 'Abschluss meines Studiums der Informatik und des Ingenieurwesens (Computer Science and Engineering). <br> <strong>CGPA:</strong> 8,75 | <strong>Note:</strong> 80% <br> <span class="text-outline">2016 - 2020</span>'
       },
       isc: {
-        title: 'ISC (CISCE) von der AGCS, Park Street',
+        title: 'ISC (CISCE) von der AGCS Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'http://agcschools.edu.in › park-street',
         snippet: 'Abschluss der High School mit den Schwerpunkten Physik, Chemie, Mathematik und Computeranwendungen. <br> <strong>Note:</strong> 69,17% <br> <span class="text-outline">2016</span>'
       },
       icse: {
-        title: 'ICSE (CISCE) von der AGCS, Park Street',
+        title: 'ICSE (CISCE) von der AGCS Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'http://agcschools.edu.in › park-street',
         snippet: 'Abschluss von 10 Schuljahren und Teilnahme an meiner ersten öffentlichen Prüfung. <br> <strong>Note:</strong> 74,67% <br> <span class="text-outline">2014</span>'
@@ -285,12 +285,12 @@ export const DE_CONTENT: AppContent = {
     core: {
       label: 'Entwickler-Kernkompetenzen',
       title: 'Programmiersprachen - Subhrodip Mohanta',
-      breadcrumb: 'https://subhrodip.com › skills › programming-languages'
+      breadcrumb: 'https://subhrodip.com › skills › programming'
     },
     frameworks: {
       label: 'Entwickler-Frameworks',
       title: 'Technologien und Methoden',
-      breadcrumb: 'https://subhrodip.com › skills › technologies-methodologies'
+      breadcrumb: 'https://subhrodip.com › skills › technologies'
     },
     knowledgePanel: {
       title: 'Fähigkeiten im Überblick',
@@ -299,7 +299,7 @@ export const DE_CONTENT: AppContent = {
   },
   contact: {
     metrics: 'Ungefähr 1 Ergebnis (0,12 Sekunden)',
-    title: 'Kontaktieren Sie Subhrodip - Melden Sie sich gerne!',
+    title: 'Kontaktieren Sie Subhrodip',
     breadcrumb: 'https://subhrodip.com › contact',
     form: {
       name: 'Name',
