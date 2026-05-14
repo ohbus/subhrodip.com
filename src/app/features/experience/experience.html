@@ -2,59 +2,29 @@
 <div class="flex-grow flex w-full md:px-0 py-4 gap-16 font-body-snippet min-h-[80vh]">
   <!-- Left Column: Search Results -->
   <main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
-    <div class="text-outline text-body-snippet mb-6">
-      {{c().experience.metrics}}
-    </div>
+    <app-search-metrics [metrics]="c().experience.metrics" />
 
     <!-- Experience Items -->
     @for (item of c().experience.items; track item.company) {
-      <div class="mb-7 group">
-        <div class="flex items-center gap-3 mb-1">
-          <div class="relative w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
-            <span class="material-symbols-outlined text-on-surface-variant text-base">business_center</span>
-            @if (item.logoUrl && item.logoUrl !== '#') {
-              <img [src]="item.logoUrl" 
-                   class="absolute inset-0 w-full h-full object-contain p-0.5 bg-surface-container-low" 
-                   loading="lazy" 
-                   [alt]="item.company"
-                   (error)="$any($event.target).remove()">
-            }
-          </div>
-          <div class="flex flex-col">
-            <span class="text-body-snippet text-on-surface leading-tight">{{item.company}} • {{item.location}}</span>
-            <div class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight">
-              <span>{{item.breadcrumb}}</span>
-              <a routerLink="/search" class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</a>
-            </div>
-          </div>
-        </div>
-        <a class="inline-block group mb-1" [href]="item.companyUrl" target="_blank" rel="noopener noreferrer">
-          <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{item.role}} | {{item.company}}</h3>
-        </a>
-        <div class="text-body-snippet text-on-surface-variant leading-relaxed max-w-xl mb-3">
-          <p class="font-medium text-on-surface mb-2">{{item.duration}}</p>
-          <ul class="list-disc pl-5 space-y-1">
-            @for (highlight of item.highlights; track highlight) {
-              <li>{{highlight}}</li>
-            }
-          </ul>
-        </div>
-      </div>
+      <app-search-result-item 
+        icon="business_center"
+        [logoUrl]="item.logoUrl"
+        [label]="item.company + ' • ' + item.location"
+        [breadcrumb]="item.breadcrumb"
+        [url]="item.companyUrl"
+        [title]="item.role + ' | ' + item.company">
+        <p class="font-medium text-on-surface mb-2">{{item.duration}}</p>
+        <ul class="list-disc pl-5 space-y-1">
+          @for (highlight of item.highlights; track highlight) {
+            <li>{{highlight}}</li>
+          }
+        </ul>
+      </app-search-result-item>
     }
 
-    <!-- Related Searches -->
-    <div class="mb-7">
-      <div class="flex items-center gap-2 mb-3">
-        <h2 class="text-xl text-on-surface font-normal">{{c().experience.related.title}}</h2>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        @for (item of c().experience.related.items; track item) {
-          <a routerLink="/search" class="flex items-center gap-2 px-4 py-2 bg-surface-container-low hover:bg-surface-container rounded-full text-body-snippet text-on-surface transition-colors border border-transparent">
-            <span class="material-symbols-outlined text-base text-outline">search</span> {{item}}
-          </a>
-        }
-      </div>
-    </div>
+    <app-related-searches 
+      [title]="c().experience.related.title" 
+      [items]="c().experience.related.items" />
   </main>
 
   <!-- Right Column: Knowledge Panel -->

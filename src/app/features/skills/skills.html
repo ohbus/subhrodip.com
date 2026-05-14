@@ -2,113 +2,77 @@
 <div class="flex-grow flex w-full md:px-0 py-4 gap-16 font-body-snippet min-h-[80vh]">
   <!-- Left Column: Search Results -->
   <main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
-    <div class="text-outline text-body-snippet mb-6">
-      {{c().skills.metrics}}
-    </div>
+    <app-search-metrics [metrics]="c().skills.metrics" />
 
-    <!-- Result 1 - Programming Languages -->
-    <div class="mb-7 group">
-      <div class="flex items-center gap-3 mb-1">
-        <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
-          <span class="material-symbols-outlined text-on-surface-variant text-base">terminal</span>
+    <!-- Core Languages -->
+    <app-search-result-item 
+      icon="code" 
+      [label]="c().skills.core.label"
+      [breadcrumb]="c().skills.core.breadcrumb"
+      [title]="c().skills.core.title">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+        <!-- Java -->
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between text-xs font-medium">
+            <span class="text-on-surface">Java</span>
+            <span class="text-outline">95%</span>
+          </div>
+          <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+            <div class="h-full bg-brand-java" style="width: 95%"></div>
+          </div>
         </div>
-        <div class="flex flex-col">
-          <span class="text-body-snippet text-on-surface leading-tight">{{c().skills.core.label}}</span>
-          <a class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight hover:underline" routerLink="/skills">
-            <span>{{c().skills.core.breadcrumb}}</span>
-          </a>
+        <!-- Python -->
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between text-xs font-medium">
+            <span class="text-on-surface">Python</span>
+            <span class="text-outline">90%</span>
+          </div>
+          <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+            <div class="h-full bg-skill-orange" style="width: 90%"></div>
+          </div>
+        </div>
+        <!-- TypeScript -->
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between text-xs font-medium">
+            <span class="text-on-surface">TypeScript</span>
+            <span class="text-outline">85%</span>
+          </div>
+          <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+            <div class="h-full bg-brand-typescript" style="width: 85%"></div>
+          </div>
+        </div>
+        <!-- SQL -->
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between text-xs font-medium">
+            <span class="text-on-surface">SQL</span>
+            <span class="text-outline">85%</span>
+          </div>
+          <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+            <div class="h-full bg-primary" style="width: 85%"></div>
+          </div>
         </div>
       </div>
-      <a class="inline-block group mb-1" href="https://linkedin.com/in/ohbusm" target="_blank">
-        <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{c().skills.core.title}}</h3>
-      </a>
-      
-      <!-- Custom Skill Bars -->
-      <div class="mt-4 space-y-4 max-w-xl">
-        <div>
-          <div class="flex justify-between text-sm text-on-surface mb-1"><span>Java</span><span>90%</span></div>
-          <div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden"><div class="bg-skill-orange h-2 rounded-full" style="width: 90%"></div></div>
-        </div>
-        <div>
-          <div class="flex justify-between text-sm text-on-surface mb-1"><span>Python</span><span>80%</span></div>
-          <div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden"><div class="bg-skill-blue h-2 rounded-full" style="width: 80%"></div></div>
-        </div>
-        <div>
-          <div class="flex justify-between text-sm text-on-surface mb-1"><span>BASH</span><span>80%</span></div>
-          <div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden"><div class="bg-skill-purple h-2 rounded-full" style="width: 80%"></div></div>
-        </div>
-        <div>
-          <div class="flex justify-between text-sm text-on-surface mb-1"><span>SQL</span><span>70%</span></div>
-          <div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden"><div class="bg-skill-dark h-2 rounded-full" style="width: 70%"></div></div>
-        </div>
-        <div>
-          <div class="flex justify-between text-sm text-on-surface mb-1"><span>JavaScript</span><span>60%</span></div>
-          <div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden"><div class="bg-skill-yellow h-2 rounded-full" style="width: 60%"></div></div>
-        </div>
-      </div>
-    </div>
+    </app-search-result-item>
 
-    <!-- Result 2 - Tech & Methodologies -->
-    <div class="mb-7 group">
-      <div class="flex items-center gap-3 mb-1">
-        <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
-          <span class="material-symbols-outlined text-on-surface-variant text-base">integration_instructions</span>
-        </div>
-        <div class="flex flex-col">
-          <span class="text-body-snippet text-on-surface leading-tight">{{c().skills.frameworks.label}}</span>
-          <a class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight hover:underline" routerLink="/skills">
-            <span>{{c().skills.frameworks.breadcrumb}}</span>
-          </a>
-        </div>
+    <!-- Frameworks & Tools -->
+    <app-search-result-item 
+      icon="architecture" 
+      [label]="c().skills.frameworks.label"
+      [breadcrumb]="c().skills.frameworks.breadcrumb"
+      [title]="c().skills.frameworks.title">
+      <div class="flex flex-wrap gap-2 mt-4">
+        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Spring Cloud</span>
+        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">AWS</span>
+        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Kafka</span>
+        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Docker</span>
+        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Kubernetes</span>
+        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Angular</span>
+        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Microservices</span>
+        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Distributed Systems</span>
       </div>
-      <a class="inline-block group mb-1" routerLink="/skills">
-        <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{c().skills.frameworks.title}}</h3>
-      </a>
-      
-      <div class="mt-4 space-y-4 max-w-xl">
-        <div>
-          <div class="flex justify-between text-sm text-on-surface mb-1"><span>J2EE</span><span>80%</span></div>
-          <div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden"><div class="bg-skill-orange h-2 rounded-full" style="width: 80%"></div></div>
-        </div>
-        <div>
-          <div class="flex justify-between text-sm text-on-surface mb-1"><span>Spring</span><span>70%</span></div>
-          <div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden"><div class="bg-skill-purple h-2 rounded-full" style="width: 70%"></div></div>
-        </div>
-        <div>
-          <div class="flex justify-between text-sm text-on-surface mb-1"><span>Node JS</span><span>70%</span></div>
-          <div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden"><div class="bg-skill-grey h-2 rounded-full" style="width: 70%"></div></div>
-        </div>
-        <div>
-          <div class="flex justify-between text-sm text-on-surface mb-1"><span>Microservices</span><span>50%</span></div>
-          <div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden"><div class="bg-skill-dark h-2 rounded-full" style="width: 50%"></div></div>
-        </div>
-        <div>
-          <div class="flex justify-between text-sm text-on-surface mb-1"><span>Hibernate</span><span>50%</span></div>
-          <div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden"><div class="bg-skill-blue h-2 rounded-full" style="width: 50%"></div></div>
-        </div>
-      </div>
-    </div>
+    </app-search-result-item>
   </main>
 
   <!-- Right Column: Knowledge Panel -->
-  <aside class="hidden xl:block w-sidebar-width flex-shrink-0 pr-8">
-    <div class="border border-surface-variant rounded-2xl overflow-hidden bg-white mb-8">
-      <div class="flex h-40 overflow-hidden bg-surface-bright border-b border-surface-variant">
-        <div class="w-full h-full bg-secondary-container/20 flex items-center justify-center">
-          <span class="material-symbols-outlined text-secondary text-7xl">psychology</span>
-        </div>
-      </div>
-      <div class="p-4">
-        <h2 class="text-3xl font-normal leading-tight text-on-surface mb-1 font-result-title">{{c().skills.knowledgePanel.title}}</h2>
-        <p class="text-base text-on-surface-variant">{{c().skills.knowledgePanel.subtitle}}</p>
-      </div>
-      <div class="px-4 py-4 border-t border-surface-variant">
-        <div class="flex flex-wrap gap-2">
-          @for (role of c().common.roles; track role) {
-            <span class="px-3 py-1 bg-surface-container-low text-on-surface text-sm rounded-full">{{role}}</span>
-          }
-        </div>
-      </div>
-    </div>
-  </aside>
+  <app-knowledge-panel [config]="knowledgePanelConfig" />
 </div>

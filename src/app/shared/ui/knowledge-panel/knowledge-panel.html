@@ -71,6 +71,33 @@
             </div>
           }
         </div>
+      } @else if (config().footer!.type === 'info_list') {
+        <div class="space-y-2">
+          @for (info of config().footer!.infoList; track info.label) {
+            <div class="text-body-snippet text-on-surface-variant"><span class="font-bold text-on-surface">{{info.label}}:</span> {{info.value}}</div>
+          }
+        </div>
+      } @else if (config().footer!.type === 'link_list') {
+        <div class="space-y-3">
+          @for (link of config().footer!.linkList; track link.text) {
+            @if (link.url?.startsWith('http') || link.url?.startsWith('mailto')) {
+              <a [href]="link.url" target="_blank" class="flex items-center gap-3 text-body-snippet text-primary-container hover:underline">
+                <span class="material-symbols-outlined text-outline text-xl">{{link.icon}}</span>
+                {{link.text}}
+              </a>
+            } @else if (link.url) {
+              <a [routerLink]="link.url" class="flex items-center gap-3 text-body-snippet text-primary-container hover:underline">
+                <span class="material-symbols-outlined text-outline text-xl">{{link.icon}}</span>
+                {{link.text}}
+              </a>
+            } @else {
+              <div class="flex items-center gap-3 text-body-snippet text-on-surface-variant">
+                <span class="material-symbols-outlined text-outline text-xl">{{link.icon}}</span>
+                {{link.text}}
+              </div>
+            }
+          }
+        </div>
       } @else if (config().footer!.type === 'profiles') {
          <h3 class="text-sm font-bold uppercase tracking-wider text-on-surface mb-4">Professional Profiles</h3>
          <div class="flex space-x-5">

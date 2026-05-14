@@ -2,136 +2,67 @@
 <div class="flex-grow flex w-full md:px-0 py-4 gap-16 font-body-snippet min-h-[80vh]">
   <!-- Left Column: Search Results -->
   <main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
-    <div class="text-outline text-body-snippet mb-6">
-      {{c().sde.metrics}}
-    </div>
+    <app-search-metrics [metrics]="c().sde.metrics" />
 
     <!-- Result 1 - Philosophy -->
-    <div class="mb-7 group">
-      <div class="flex items-center gap-3 mb-1">
-        <div class="relative w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
-          <span class="material-symbols-outlined text-on-surface-variant text-base">school</span>
-          <img src="https://www.google.com/s2/favicons?sz=128&domain=github.com" 
-               class="absolute inset-0 w-full h-full object-contain p-1 bg-surface-container-low" 
-               loading="lazy" 
-               alt="Philosophy"
-               (error)="$any($event.target).remove()">
-        </div>
-        <div class="flex flex-col">
-          <span class="text-body-snippet text-on-surface leading-tight">{{c().sde.blog.label}}</span>
-          <a class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight hover:underline" routerLink="/">
-            <span>{{c().sde.blog.breadcrumb}}</span>
-          </a>
-        </div>
-      </div>
-      <a class="inline-block group mb-1" href="https://linkedin.com/in/ohbusm" target="_blank">
-        <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{c().sde.blog.title}}</h3>
-      </a>
-      <p class="text-body-snippet text-on-surface-variant leading-relaxed max-w-xl mb-3">
-        {{c().sde.blog.snippet}}
-      </p>
-    </div>
+    <app-search-result-item 
+      icon="school" 
+      logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
+      [label]="c().sde.blog.label"
+      [breadcrumb]="c().sde.blog.breadcrumb"
+      url="https://linkedin.com/in/ohbusm"
+      [title]="c().sde.blog.title">
+      {{c().sde.blog.snippet}}
+    </app-search-result-item>
 
     <!-- Result 2 - Project 1 -->
-    <div class="mb-7 group">
-      <div class="flex items-center gap-3 mb-1">
-        <div class="relative w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
-          <span class="material-symbols-outlined text-on-surface-variant text-base">code</span>
-          <img src="https://www.google.com/s2/favicons?sz=128&domain=github.com" 
-               class="absolute inset-0 w-full h-full object-contain p-1 bg-surface-container-low" 
-               loading="lazy" 
-               alt="GitHub"
-               (error)="$any($event.target).remove()">
-        </div>
-        <div class="flex flex-col">
-          <span class="text-body-snippet text-on-surface leading-tight">{{c().sde.projects.label}}</span>
-          <div class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight">
-            <span>{{c().sde.projects.patterns.breadcrumb}}</span>
-            <a routerLink="/search" class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</a>
-          </div>
-        </div>
-      </div>
-      <a class="inline-block group mb-1" href="https://github.com/ohbus/java-design-patterns" target="_blank">
-        <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{c().sde.projects.patterns.title}}</h3>
-      </a>
-      <p class="text-body-snippet text-on-surface-variant leading-relaxed max-w-xl mb-3" [innerHTML]="c().sde.projects.patterns.snippet"></p>
-      <div class="flex items-center gap-4 text-sm text-outline">
+    <app-search-result-item 
+      icon="code" 
+      logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
+      [label]="c().sde.projects.label"
+      [breadcrumb]="c().sde.projects.patterns.breadcrumb"
+      url="https://github.com/ohbus/java-design-patterns"
+      [title]="c().sde.projects.patterns.title">
+      <div [innerHTML]="c().sde.projects.patterns.snippet"></div>
+      <div footer class="flex items-center gap-4 text-sm text-outline mt-3">
         <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-brand-java"></div> Java</div>
         <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm leading-none">star</span> Pinned</div>
       </div>
-    </div>
+    </app-search-result-item>
 
     <!-- Result 3 - Project 2 -->
-    <div class="mb-7 group">
-      <div class="flex items-center gap-3 mb-1">
-        <div class="relative w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
-          <span class="material-symbols-outlined text-on-surface-variant text-base">account_balance</span>
-          <img src="https://www.google.com/s2/favicons?sz=128&domain=github.com" 
-               class="absolute inset-0 w-full h-full object-contain p-1 bg-surface-container-low" 
-               loading="lazy" 
-               alt="GitHub"
-               (error)="$any($event.target).remove()">
-        </div>
-        <div class="flex flex-col">
-          <span class="text-body-snippet text-on-surface leading-tight">{{c().sde.projects.label}}</span>
-          <div class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight">
-            <span>{{c().sde.projects.banking.breadcrumb}}</span>
-            <a routerLink="/search" class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</a>
-          </div>
-        </div>
-      </div>
-      <a class="inline-block group mb-1" href="https://github.com/ohbus/retail-banking" target="_blank">
-        <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{c().sde.projects.banking.title}}</h3>
-      </a>
-      <p class="text-body-snippet text-on-surface-variant leading-relaxed max-w-xl mb-3" [innerHTML]="c().sde.projects.banking.snippet"></p>
-      <div class="flex items-center gap-4 text-sm text-outline">
+    <app-search-result-item 
+      icon="account_balance" 
+      logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
+      [label]="c().sde.projects.label"
+      [breadcrumb]="c().sde.projects.banking.breadcrumb"
+      url="https://github.com/ohbus/retail-banking"
+      [title]="c().sde.projects.banking.title">
+      <div [innerHTML]="c().sde.projects.banking.snippet"></div>
+      <div footer class="flex items-center gap-4 text-sm text-outline mt-3">
         <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-brand-java"></div> Java</div>
         <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm leading-none">star</span> Pinned</div>
       </div>
-    </div>
+    </app-search-result-item>
 
     <!-- Result 4 - Project 3 -->
-    <div class="mb-7 group">
-      <div class="flex items-center gap-3 mb-1">
-        <div class="relative w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
-          <span class="material-symbols-outlined text-on-surface-variant text-base">forum</span>
-          <img src="https://www.google.com/s2/favicons?sz=128&domain=github.com" 
-               class="absolute inset-0 w-full h-full object-contain p-1 bg-surface-container-low" 
-               loading="lazy" 
-               alt="GitHub"
-               (error)="$any($event.target).remove()">
-        </div>
-        <div class="flex flex-col">
-          <span class="text-body-snippet text-on-surface leading-tight">{{c().sde.projects.label}}</span>
-          <div class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight">
-            <span>{{c().sde.projects.twitter.breadcrumb}}</span>
-            <a routerLink="/search" class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</a>
-          </div>
-        </div>
-      </div>
-      <a class="inline-block group mb-1" href="https://github.com/ohbus/twitter-backend-java" target="_blank">
-        <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{c().sde.projects.twitter.title}}</h3>
-      </a>
-      <p class="text-body-snippet text-on-surface-variant leading-relaxed max-w-xl mb-3" [innerHTML]="c().sde.projects.twitter.snippet"></p>
-      <div class="flex items-center gap-4 text-sm text-outline">
+    <app-search-result-item 
+      icon="forum" 
+      logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
+      [label]="c().sde.projects.label"
+      [breadcrumb]="c().sde.projects.twitter.breadcrumb"
+      url="https://github.com/ohbus/twitter-backend-java"
+      [title]="c().sde.projects.twitter.title">
+      <div [innerHTML]="c().sde.projects.twitter.snippet"></div>
+      <div footer class="flex items-center gap-4 text-sm text-outline mt-3">
         <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-brand-java"></div> Java</div>
         <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm leading-none">star</span> Pinned</div>
       </div>
-    </div>
+    </app-search-result-item>
 
-    <!-- Related Searches -->
-    <div class="mb-7">
-      <div class="flex items-center gap-2 mb-3">
-        <h2 class="text-xl text-on-surface font-normal">{{c().sde.related.title}}</h2>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        @for (item of c().sde.related.items; track item) {
-          <a routerLink="/search" class="flex items-center gap-2 px-4 py-2 bg-surface-container-low hover:bg-surface-container rounded-full text-body-snippet text-on-surface transition-colors border border-transparent">
-            <span class="material-symbols-outlined text-base text-outline">search</span> {{item}}
-          </a>
-        }
-      </div>
-    </div>
+    <app-related-searches 
+      [title]="c().sde.related.title" 
+      [items]="c().sde.related.items" />
   </main>
 
   <!-- Right Column: Knowledge Panel -->

@@ -1,0 +1,33 @@
+<div class="flex items-center gap-3 mb-1">
+  <div class="relative w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
+    <span class="material-symbols-outlined text-on-surface-variant text-base">{{icon()}}</span>
+    @if (logoUrl() && logoUrl() !== '#') {
+      <img [src]="logoUrl()" 
+           class="absolute inset-0 w-full h-full object-contain p-0.5 bg-surface-container-low" 
+           loading="lazy" 
+           [alt]="label()"
+           (error)="$any($event.target).remove()">
+    }
+  </div>
+  <div class="flex flex-col">
+    <span class="text-body-snippet text-on-surface leading-tight">{{label()}}</span>
+    <div class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight">
+      <span>{{breadcrumb()}}</span>
+      <ng-content select="[breadcrumb-action]"></ng-content>
+    </div>
+  </div>
+</div>
+
+@if (url()) {
+  <a class="inline-block group mb-1" [href]="url()" target="_blank" rel="noopener noreferrer">
+    <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{title()}}</h3>
+  </a>
+} @else {
+  <h3 class="text-xl text-primary-container font-normal leading-snug font-result-title mb-1">{{title()}}</h3>
+}
+
+<div class="text-body-snippet text-on-surface-variant leading-relaxed max-w-xl">
+  <ng-content></ng-content>
+</div>
+
+<ng-content select="[footer]"></ng-content>

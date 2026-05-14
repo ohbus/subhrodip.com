@@ -1,0 +1,10 @@
+<div class="flex items-center gap-2 mb-3">
+  <h2 class="text-xl text-on-surface font-normal">{{title()}}</h2>
+</div>
+<div class="flex flex-wrap gap-3">
+  @for (item of items(); track item) {
+    <a routerLink="/search" class="flex items-center gap-2 px-4 py-2 bg-surface-container-low hover:bg-surface-container rounded-full text-body-snippet text-on-surface transition-colors border border-transparent">
+      <span class="material-symbols-outlined text-base text-outline">search</span> {{item}}
+    </a>
+  }
+</div>

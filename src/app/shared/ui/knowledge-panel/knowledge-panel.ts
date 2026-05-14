@@ -17,8 +17,10 @@ export interface KnowledgePanelConfig {
     primary?: boolean;
   }[];
   footer?: {
-    type: 'roles' | 'profiles' | 'verified_roles';
+    type: 'roles' | 'profiles' | 'verified_roles' | 'info_list' | 'link_list';
     items?: string[];
+    infoList?: { label: string; value: string }[];
+    linkList?: { icon: string; text: string; url?: string }[];
   };
 }
 
