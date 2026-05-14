@@ -78,6 +78,7 @@ export interface AppContent {
       role: string;
       company: string;
       companyUrl: string;
+      logoUrl?: string;
       location: string;
       duration: string;
       highlights: string[];

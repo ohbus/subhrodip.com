@@ -11,7 +11,16 @@
       <div class="mb-7 group">
         <div class="flex items-center gap-3 mb-1">
           <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
-            <span class="material-symbols-outlined text-on-surface-variant text-base">business_center</span>
+            @if (item.logoUrl && item.logoUrl !== '#') {
+              <img [src]="item.logoUrl" 
+                   class="w-full h-full object-contain p-0.5" 
+                   loading="lazy" 
+                   [alt]="item.company"
+                   (error)="$any($event.target).style.display='none'; $any($event.target).nextElementSibling.style.display='block'">
+              <span class="material-symbols-outlined text-on-surface-variant text-base hidden">business_center</span>
+            } @else {
+              <span class="material-symbols-outlined text-on-surface-variant text-base">business_center</span>
+            }
           </div>
           <div class="flex flex-col">
             <span class="text-body-snippet text-on-surface leading-tight">{{item.company}} • {{item.location}}</span>

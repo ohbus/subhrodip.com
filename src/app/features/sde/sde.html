@@ -30,8 +30,13 @@
     <!-- Result 2 - Project 1 -->
     <div class="mb-7 group">
       <div class="flex items-center gap-3 mb-1">
-        <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant">
-          <span class="material-symbols-outlined text-on-surface-variant text-base">code</span>
+        <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
+          <img src="https://logo.clearbit.com/github.com" 
+               class="w-full h-full object-contain p-1" 
+               loading="lazy" 
+               alt="GitHub"
+               (error)="$any($event.target).style.display='none'; $any($event.target).nextElementSibling.style.display='block'">
+          <span class="material-symbols-outlined text-on-surface-variant text-base hidden">code</span>
         </div>
         <div class="flex flex-col">
           <span class="text-body-snippet text-on-surface leading-tight">{{c().sde.projects.label}}</span>
