@@ -53,7 +53,17 @@ module.exports = {
         "inverse-on-surface": "#edf1f7",
         "inverse-surface": "#2c3135",
         "primary": "#0b0076",
-        "on-surface-variant": "#464554"
+        "on-surface-variant": "#464554",
+        "brand-java": "#b07219",
+        "brand-typescript": "#3178c6",
+        "brand-linkedin": "#0a66c2",
+        "brand-github": "#24292f",
+        "skill-orange": "#d35400",
+        "skill-blue": "#2980b9",
+        "skill-purple": "#46465e",
+        "skill-dark": "#2c3e50",
+        "skill-yellow": "#ffca28",
+        "skill-grey": "#333333"
       },
       borderRadius: {
         "DEFAULT": "0.25rem",

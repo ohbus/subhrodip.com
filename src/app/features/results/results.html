@@ -1,146 +1,84 @@
 <!-- Main Layout -->
 <div class="flex-grow flex w-full md:px-0 py-4 gap-16 font-body-snippet min-h-[80vh]">
-  <!-- Left Column: Search Results (Constrained Width) -->
+  <!-- Left Column: Search Results -->
   <main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
     <div class="text-outline text-body-snippet mb-6">
       {{c().results.metrics.about}} {{c().results.metrics.count}} {{c().results.metrics.results}} ({{c().results.metrics.time}} {{c().results.metrics.seconds}})
     </div>
-    <!-- Result 1 -->
+
+    <!-- Result 1 - Portfolio Site -->
     <div class="mb-7 group">
       <div class="flex items-center gap-3 mb-1">
         <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
-          <span class="material-symbols-outlined text-on-surface-variant text-base">person</span>
+          <img src="icon.png" class="w-full h-full object-cover" alt="Portfolio Icon">
         </div>
         <div class="flex flex-col">
-          <span class="text-body-snippet text-on-surface leading-tight">{{c().common.name}}</span>
-          <a class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight hover:underline" routerLink="/">
+          <span class="text-body-snippet text-on-surface leading-tight">{{c().results.main.title}}</span>
+          <div class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight">
             <span>{{c().results.main.breadcrumb}}</span>
-            <span class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</span>
-          </a>
+            <a routerLink="/search" class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</a>
+          </div>
         </div>
       </div>
-      <a class="inline-block group mb-1" routerLink="/experience">
+      <a class="inline-block group mb-1" routerLink="/">
         <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{c().results.main.title}}</h3>
       </a>
-      <p class="text-body-snippet text-on-surface-variant leading-relaxed max-w-xl" [innerHTML]="c().results.main.snippet"></p>
+      <p class="text-body-snippet text-on-surface-variant leading-relaxed max-w-xl mb-3">
+        {{c().results.main.snippet}}
+      </p>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <a routerLink="/experience" class="text-primary-container hover:underline">{{c().navigation.experience}}</a>
+        <a routerLink="/sde" class="text-primary-container hover:underline">{{c().navigation.sde}}</a>
+        <a routerLink="/skills" class="text-primary-container hover:underline">{{c().navigation.skills}}</a>
+        <a routerLink="/contact" class="text-primary-container hover:underline">{{c().navigation.contact}}</a>
+      </div>
     </div>
-    <!-- Result 2 - Projects -->
+
+    <!-- People Also Ask -->
+    <div class="mb-7 border-t border-surface-variant pt-5">
+      <h2 class="text-xl text-on-surface font-normal mb-3">{{c().results.peopleAlsoAsk.title}}</h2>
+      <div class="divide-y divide-surface-variant">
+        <div class="py-3 flex justify-between items-center cursor-pointer group">
+          <span class="text-on-surface text-body-snippet group-hover:underline">{{c().results.peopleAlsoAsk.study}}</span>
+          <span class="material-symbols-outlined text-outline">expand_more</span>
+        </div>
+        <div class="py-3 flex justify-between items-center cursor-pointer group">
+          <span class="text-on-surface text-body-snippet group-hover:underline">{{c().results.peopleAlsoAsk.tech}}</span>
+          <span class="material-symbols-outlined text-outline">expand_more</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result 2 - GitHub -->
     <div class="mb-7 group">
       <div class="flex items-center gap-3 mb-1">
-        <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant">
-          <span class="material-symbols-outlined text-on-surface-variant text-base">code</span>
+        <div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center border border-surface-variant overflow-hidden">
+          <span class="material-symbols-outlined text-brand-github text-base">code</span>
         </div>
         <div class="flex flex-col">
           <span class="text-body-snippet text-on-surface leading-tight">{{c().results.github.label}}</span>
-          <a class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight hover:underline" routerLink="/">
+          <div class="flex items-center gap-1 text-xs text-on-surface-variant leading-tight">
             <span>{{c().results.github.breadcrumb}}</span>
-            <span class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</span>
-          </a>
+            <a routerLink="/search" class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</a>
+          </div>
         </div>
       </div>
       <a class="inline-block group mb-1" href="https://github.com/ohbus" target="_blank">
         <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{c().results.github.title}}</h3>
       </a>
-      <p class="text-body-snippet text-on-surface-variant leading-relaxed max-w-xl mb-3" [innerHTML]="c().results.github.snippet"></p>
-      <div class="grid grid-cols-2 gap-x-8 gap-y-2 ml-4">
-        <div>
-          <a class="text-body-snippet text-primary-container hover:underline" href="https://github.com/ohbus" target="_blank">{{c().results.github.links.viewProject}}</a>
-          <p class="text-sm text-on-surface-variant">{{c().results.github.links.viewDesc}}</p>
-        </div>
-        <div>
-          <a class="text-body-snippet text-primary-container hover:underline" href="https://github.com/ohbus?tab=repositories" target="_blank">{{c().results.github.links.repositories}}</a>
-          <p class="text-sm text-on-surface-variant">{{c().results.github.links.repoDesc}}</p>
-        </div>
-      </div>
-    </div>
-    <!-- People also ask -->
-    <div class="mb-7">
-      <div class="flex items-center gap-2 mb-3">
-        <h2 class="text-xl text-on-surface font-normal">{{c().results.peopleAlsoAsk.title}}</h2>
-        <span class="material-symbols-outlined text-outline text-xl cursor-pointer">{{c().common.more_vert}}</span>
-      </div>
-      <div class="border-t border-surface-variant">
-        <a routerLink="/education" class="py-3 border-b border-surface-variant flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors">
-          <span class="text-on-surface text-base">{{c().results.peopleAlsoAsk.study}}</span>
-          <span class="material-symbols-outlined text-outline">{{c().common.expand_more}}</span>
-        </a>
-        <a routerLink="/skills" class="py-3 border-b border-surface-variant flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors">
-          <span class="text-on-surface text-base">{{c().results.peopleAlsoAsk.tech}}</span>
-          <span class="material-symbols-outlined text-outline">{{c().common.expand_more}}</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Pagination -->
-    <div class="flex justify-center mt-10 mb-12 ml-[-80px]">
-      <div class="flex items-end gap-1">
-        <!-- Letter S (No number) -->
-        <div class="flex flex-col items-center">
-          <div class="h-[44px] flex items-end">
-            <span class="brand-s font-medium text-[40px] leading-[0.8]">{{c().common.brand[0]}}</span>
+      <p class="text-body-snippet text-on-surface-variant leading-relaxed max-w-xl mb-3">
+        {{c().results.github.snippet}}
+      </p>
+      <div class="flex flex-col gap-3 max-w-xl">
+        <div class="flex gap-4">
+          <div class="flex-grow">
+            <a href="https://github.com/ohbus?tab=repositories" target="_blank" class="text-primary-container hover:underline block text-sm mb-0.5">{{c().results.github.links.repositories}}</a>
+            <p class="text-on-surface-variant text-xs">{{c().results.github.links.repoDesc}}</p>
           </div>
-          <div class="h-5"></div>
-        </div>
-        <!-- Letter u (Number 1) -->
-        <div class="flex flex-col items-center">
-          <div class="h-[44px] flex items-end">
-            <span class="brand-u font-medium text-[40px] leading-[0.8]">{{c().common.brand[1]}}</span>
+          <div class="flex-grow border-l border-surface-variant pl-4">
+            <a href="https://github.com/ohbus" target="_blank" class="text-primary-container hover:underline block text-sm mb-0.5">{{c().results.github.links.viewProject}}</a>
+            <p class="text-on-surface-variant text-xs">{{c().results.github.links.viewDesc}}</p>
           </div>
-          <span class="text-sm text-on-surface h-5 leading-5">1</span>
-        </div>
-        <!-- Letter b (Number 2) -->
-        <div class="flex flex-col items-center cursor-pointer hover:underline group">
-          <div class="h-[44px] flex items-end">
-            <span class="brand-b font-medium text-[40px] leading-[0.8]">{{c().common.brand[2]}}</span>
-          </div>
-          <span class="text-sm text-primary-container h-5 leading-5 group-hover:underline">2</span>
-        </div>
-        <!-- Letter h (Number 3) -->
-        <div class="flex flex-col items-center cursor-pointer hover:underline group">
-          <div class="h-[44px] flex items-end">
-            <span class="brand-h font-medium text-[40px] leading-[0.8]">{{c().common.brand[3]}}</span>
-          </div>
-          <span class="text-sm text-primary-container h-5 leading-5 group-hover:underline">3</span>
-        </div>
-        <!-- Letter r (Number 4) -->
-        <div class="flex flex-col items-center cursor-pointer hover:underline group">
-          <div class="h-[44px] flex items-end">
-            <span class="brand-r font-medium text-[40px] leading-[0.8]">{{c().common.brand[4]}}</span>
-          </div>
-          <span class="text-sm text-primary-container h-5 leading-5 group-hover:underline">4</span>
-        </div>
-        <!-- Letter o (Number 5) -->
-        <div class="flex flex-col items-center cursor-pointer hover:underline group">
-          <div class="h-[44px] flex items-end">
-            <span class="brand-o font-medium text-[40px] leading-[0.8]">{{c().common.brand[5]}}</span>
-          </div>
-          <span class="text-sm text-primary-container h-5 leading-5 group-hover:underline">5</span>
-        </div>
-        <!-- Letter d (Number 6) -->
-        <div class="flex flex-col items-center cursor-pointer hover:underline group">
-          <div class="h-[44px] flex items-end">
-            <span class="brand-d font-medium text-[40px] leading-[0.8]">{{c().common.brand[6]}}</span>
-          </div>
-          <span class="text-sm text-primary-container h-5 leading-5 group-hover:underline">6</span>
-        </div>
-        <!-- Letter i (Number 7) -->
-        <div class="flex flex-col items-center cursor-pointer hover:underline group">
-          <div class="h-[44px] flex items-end">
-            <span class="brand-i font-medium text-[40px] leading-[0.8]">{{c().common.brand[7]}}</span>
-          </div>
-          <span class="text-sm text-primary-container h-5 leading-5 group-hover:underline">7</span>
-        </div>
-        <!-- Letter p (Number 8) -->
-        <div class="flex flex-col items-center cursor-pointer hover:underline group">
-          <div class="h-[44px] flex items-end">
-            <span class="brand-p font-medium text-[40px] leading-[0.8]">{{c().common.brand[8]}}</span>
-          </div>
-          <span class="text-sm text-primary-container h-5 leading-5 group-hover:underline">8</span>
-        </div>
-        
-        <div class="flex flex-col items-center cursor-pointer ml-4">
-          <div class="h-[44px] flex items-end"></div>
-          <span class="text-primary-container font-medium text-body-snippet flex items-center hover:underline h-5 leading-5">{{c().common.next}} <span class="material-symbols-outlined text-xl ml-1">{{c().common.chevron_right}}</span></span>
         </div>
       </div>
     </div>
@@ -150,51 +88,36 @@
   <aside class="hidden xl:block w-sidebar-width flex-shrink-0 pr-8">
     <div class="border border-surface-variant rounded-2xl overflow-hidden bg-white mb-8">
       <div class="flex h-40 overflow-hidden bg-surface-bright border-b border-surface-variant">
-        <div class="w-1/2 h-full bg-primary-container/20 flex items-center justify-center">
-          <span class="material-symbols-outlined text-primary text-[64px]">person</span>
-        </div>
-        <div class="w-1/2 h-full bg-secondary-container/20 flex items-center justify-center">
-          <span class="material-symbols-outlined text-secondary text-[64px]">code</span>
-        </div>
+        <img src="social-icons.png" class="w-full h-full object-cover" alt="Banner">
       </div>
       <div class="p-4">
-        <div class="flex justify-between items-start">
-          <div>
-            <h2 class="text-3xl font-normal leading-tight text-on-surface mb-1 font-result-title">{{c().common.name}}</h2>
-            <p class="text-base text-on-surface-variant">{{c().results.knowledgePanel.role}}</p>
-          </div>
-          <span class="material-symbols-outlined text-outline cursor-pointer">{{c().common.more_vert}}</span>
-        </div>
+        <h2 class="text-3xl font-normal leading-tight text-on-surface mb-1 font-result-title">{{c().common.name}}</h2>
+        <p class="text-base text-on-surface-variant">{{c().common.roles[0]}}</p>
       </div>
-      <div class="px-4 pb-4">
+      <div class="px-4 pb-4 flex flex-col gap-3 border-b border-surface-variant">
         <a href="https://drive.google.com/file/d/16lFVFcwwck9VQW58WUM78qn39xZohyJR/view" target="_blank" class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary hover:brightness-90 text-white py-2 px-4 rounded-full font-medium text-body-snippet transition-colors shadow-sm">
-          <span class="material-symbols-outlined text-lg">download</span> {{c().results.knowledgePanel.resume}}
+          <span class="material-symbols-outlined text-lg">description</span> {{c().results.knowledgePanel.resume}}
         </a>
       </div>
-      <div class="px-4 py-4 border-t border-surface-variant">
+      <div class="p-4 border-b border-surface-variant">
         <p class="text-on-surface text-body-snippet leading-relaxed mb-1">
           {{c().results.knowledgePanel.snippet}}
         </p>
-        <div class="mt-4 space-y-2">
-          <div class="text-body-snippet text-on-surface-variant"><span class="font-bold text-on-surface">{{c().education.knowledgePanel.title}}:</span> <a class="text-primary-container hover:underline" href="https://uem.edu.in/uem-kolkata/" target="_blank">UEM Kolkata</a></div>
-          <div class="text-body-snippet text-on-surface-variant"><span class="font-bold text-on-surface">Roles:</span> {{c().common.roles.join(', ')}}</div>
-          <div class="text-body-snippet text-on-surface-variant"><span class="font-bold text-on-surface">Tech Skills:</span> Java, Python, DevOps, Cloud</div>
-        </div>
       </div>
-      <div class="px-4 py-4 border-t border-surface-variant">
-        <h3 class="text-on-surface text-lg mb-4">{{c().results.knowledgePanel.profiles}}</h3>
-        <div class="flex gap-4">
-          <a class="flex flex-col items-center gap-2 group" href="https://www.linkedin.com/in/ohbusm/" target="_blank">
-            <div class="w-12 h-12 rounded-full border border-surface-variant flex items-center justify-center hover:bg-surface-bright transition-colors">
-              <span class="material-symbols-outlined text-[#0a66c2]">work</span>
+      <div class="p-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-on-surface mb-4">{{c().results.knowledgePanel.profiles}}</h3>
+        <div class="flex space-x-5">
+          <a href="https://linkedin.com/in/ohbusm" target="_blank" class="group flex flex-col items-center gap-2">
+            <div class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center group-hover:bg-surface-container transition-colors">
+              <span class="material-symbols-outlined text-brand-linkedin text-2xl">work</span>
             </div>
-            <span class="text-body-snippet text-primary-container group-hover:underline">LinkedIn</span>
+            <span class="text-xs text-on-surface group-hover:underline">LinkedIn</span>
           </a>
-          <a class="flex flex-col items-center gap-2 group" href="https://github.com/ohbus" target="_blank">
-            <div class="w-12 h-12 rounded-full border border-surface-variant flex items-center justify-center hover:bg-surface-bright transition-colors">
-              <span class="material-symbols-outlined text-[#24292f]">code</span>
+          <a href="https://github.com/ohbus" target="_blank" class="group flex flex-col items-center gap-2">
+            <div class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center group-hover:bg-surface-container transition-colors">
+              <span class="material-symbols-outlined text-brand-github text-2xl">code</span>
             </div>
-            <span class="text-body-snippet text-primary-container group-hover:underline">GitHub</span>
+            <span class="text-xs text-on-surface group-hover:underline">GitHub</span>
           </a>
         </div>
       </div>
