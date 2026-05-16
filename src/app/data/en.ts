@@ -98,7 +98,7 @@ export const EN_CONTENT: AppContent = {
       {
         role: 'Software Engineer',
         company: 'Denuvo',
-        companyUrl: 'https://irdeto.com/denuvo/',
+        companyUrl: 'https://irdeto.com/video-games/',
         logoUrl: 'https://www.google.com/s2/favicons?sz=128&domain=irdeto.com',
         location: 'Salzburg, Austria',
         duration: 'Sep 2023 – Aug 2024',
@@ -262,13 +262,13 @@ export const EN_CONTENT: AppContent = {
       isc: {
         title: 'ISC (CISCE) from AGCS Park Street',
         institution: 'The Assembly of God Church School',
-        breadcrumb: 'http://agcschools.edu.in › park-street',
+        breadcrumb: 'https://agcschools.edu.in › park-street',
         snippet: 'Completed High School with Physics, Chemistry, Maths and Computer Applications. <br> <strong>Marks:</strong> 69.17% <br> <span class="text-outline">2016</span>'
       },
       icse: {
         title: 'ICSE (CISCE) from AGCS Park Street',
         institution: 'The Assembly of God Church School',
-        breadcrumb: 'http://agcschools.edu.in › park-street',
+        breadcrumb: 'https://agcschools.edu.in › park-street',
         snippet: 'Completed 10 years of schooling and appeared for first public examination. <br> <strong>Marks:</strong> 74.67% <br> <span class="text-outline">2014</span>'
       }
     },

@@ -98,7 +98,7 @@ export const BN_CONTENT: AppContent = {
       {
         role: 'সফটওয়্যার ইঞ্জিনিয়ার',
         company: 'Denuvo',
-        companyUrl: 'https://irdeto.com/denuvo/',
+        companyUrl: 'https://irdeto.com/video-games/',
         logoUrl: 'https://www.google.com/s2/favicons?sz=128&domain=irdeto.com',
         location: 'সালজবার্গ, অস্ট্রিয়া',
         duration: 'সেপ্টেম্বর ২০২৩ – আগস্ট ২০২৪',
@@ -262,13 +262,13 @@ export const BN_CONTENT: AppContent = {
       isc: {
         title: 'ISC (CISCE) from AGCS Park Street',
         institution: 'দি অ্যাসেম্বলি অফ গড চার্চ স্কুল',
-        breadcrumb: 'http://agcschools.edu.in › park-street',
+        breadcrumb: 'https://agcschools.edu.in › park-street',
         snippet: 'আমি পদার্থবিদ্যা, রসায়ন, গণিত এবং কম্পিউটার অ্যাপ্লিকেশন সহ আমার হাই স্কুল সম্পন্ন করেছি। <br> <strong>নম্বর:</strong> ৬৯.১৭% <br> <span class="text-outline">২০১৬</span>'
       },
       icse: {
         title: 'ICSE (CISCE) from AGCS Park Street',
         institution: 'দি অ্যাসেম্বলি অফ গড চার্চ স্কুল',
-        breadcrumb: 'http://agcschools.edu.in › park-street',
+        breadcrumb: 'https://agcschools.edu.in › park-street',
         snippet: 'আমি আমার ১০ বছরের স্কুলিং সম্পন্ন করেছি এবং আমার প্রথম পাবলিক পরীক্ষায় অংশ নিয়েছি। <br> <strong>নম্বর:</strong> ৭৪.৬৭% <br> <span class="text-outline">২০১৪</span>'
       }
     },
