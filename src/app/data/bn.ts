@@ -183,7 +183,7 @@ export const BN_CONTENT: AppContent = {
       label: 'গিটহাব',
       patterns: {
         title: 'এন্টারপ্রাইজ জাভা ডিজাইন প্যাটার্ন আর্কিটেকচার',
-        breadcrumb: 'https://github.com › ohbus › java-design-patterns',
+        breadcrumb: 'https://github.com › iluwatar › java-design-patterns',
         snippet: 'ক্রিয়েশনাল, স্ট্রাকচারাল এবং বিহেভিয়ারাল প্যাটার্নের কৌশলগত বাস্তবায়ন। <strong>সিস্টেমিক স্কেলেবিলিটি</strong> এবং দীর্ঘমেয়াদী রক্ষণাবেক্ষণের জন্য অপ্টিমাইজ করা।'
       },
       banking: {
@@ -193,7 +193,7 @@ export const BN_CONTENT: AppContent = {
       },
       twitter: {
         title: 'ডিস্ট্রিবিউটেড সোশ্যাল গ্রাফ এবং ফ্যান-আউট সার্ভিস',
-        breadcrumb: 'https://github.com › ohbus › twitter-backend-java',
+        breadcrumb: 'https://github.com › scaleracademy › twitter-backend-java',
         snippet: 'রিয়েল-টাইম ডেটা ডিস্ট্রিবিউশন এবং লো-লেটেন্সি ফিড অ্যাগ্রিগেশনের জন্য ডিজাইন করা স্কেলেবল সোশ্যাল নেটওয়ার্কিং ব্যাকএন্ড।'
       }
     },
@@ -213,12 +213,12 @@ export const BN_CONTENT: AppContent = {
       label: 'গিটহাব',
       aws: {
         title: 'স্প্রিং ক্লাউড এডাব্লুএস এন্টারপ্রাইজ ইন্টিগ্রেশন',
-        breadcrumb: 'https://github.com › ohbus › spring-cloud-aws',
+        breadcrumb: 'https://github.com › awspring › spring-cloud-aws',
         snippet: 'স্প্রিং ক্লাউড ইকোসিস্টেমে অফিসিয়াল অবদান। ক্লাউড-নেটিভ জাভা অ্যাপ্লিকেশনের জন্য অ্যামাজন ওয়েব সার্ভিসের সাথে স্প্রিং ফ্রেমওয়ার্কের নিরবচ্ছিন্ন ইন্টিগ্রেশন।'
       },
       sclr: {
         title: 'sclr.ac ডিস্ট্রিবিউটেড ইউআরএল ইনফ্রাস্ট্রাকচার',
-        breadcrumb: 'https://github.com › ohbus › sclr.ac-backend',
+        breadcrumb: 'https://github.com › scaleracademy › sclr.ac-backend',
         snippet: 'সাব-মিলিসেকেন্ড লেটেন্সি এবং হরাইজন্টাল থ্রুপুট স্কেলিংয়ের জন্য ডিজাইন করা উচ্চ-ক্ষমতাসম্পন্ন রিডাইরেকশন পরিষেবা।'
       },
       lunch: {

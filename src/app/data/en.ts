@@ -183,7 +183,7 @@ export const EN_CONTENT: AppContent = {
       label: 'GitHub',
       patterns: {
         title: 'Enterprise Java Design Patterns Architecture',
-        breadcrumb: 'https://github.com › ohbus › java-design-patterns',
+        breadcrumb: 'https://github.com › iluwatar › java-design-patterns',
         snippet: 'Strategic implementation of creational, structural, and behavioral patterns. Optimized for <strong>systemic scalability</strong> and long-term maintainability.'
       },
       banking: {
@@ -193,7 +193,7 @@ export const EN_CONTENT: AppContent = {
       },
       twitter: {
         title: 'Distributed Social Graph & Fan-out Service',
-        breadcrumb: 'https://github.com › ohbus › twitter-backend-java',
+        breadcrumb: 'https://github.com › scaleracademy › twitter-backend-java',
         snippet: 'Scalable social networking backend engineered for real-time data distribution and low-latency feed aggregation.'
       }
     },
@@ -213,12 +213,12 @@ export const EN_CONTENT: AppContent = {
       label: 'GitHub',
       aws: {
         title: 'Spring Cloud AWS Enterprise Integration',
-        breadcrumb: 'https://github.com › ohbus › spring-cloud-aws',
+        breadcrumb: 'https://github.com › awspring › spring-cloud-aws',
         snippet: 'Official contribution to the Spring Cloud ecosystem. Seamless integration of the Spring Framework with AWS for cloud-native Java applications.'
       },
       sclr: {
         title: 'sclr.ac Distributed URL Infrastructure',
-        breadcrumb: 'https://github.com › ohbus › sclr.ac-backend',
+        breadcrumb: 'https://github.com › scaleracademy › sclr.ac-backend',
         snippet: 'High-performance redirection service engineered for sub-millisecond latency and horizontal throughput scaling.'
       },
       lunch: {
