@@ -281,7 +281,7 @@ export const EN_CONTENT: AppContent = {
       title: 'People to follow',
       items: [
         { label: 'Werner Vogels', url: 'https://www.allthingsdistributed.com/' },
-        { label: 'Kelsey Hightower', url: 'https://www.linkedin.com/in/kelseyhightower/' },
+        { label: 'Adrian Cockcroft', url: 'https://www.linkedin.com/in/adriancockcroft' },
         { label: 'Marc Benioff', url: 'https://www.linkedin.com/in/marcbenioff/' }
       ]
     },
