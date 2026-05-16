@@ -3,7 +3,7 @@ import { AppContent } from '../models/content.model';
 export const BN_CONTENT: AppContent = {
   common: {
     name: 'শুভ্রদীপ মহান্ত',
-    brand: 'শুভ্রদীপ',
+    brand: 'Subhrodip',
     roles: [
       'সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার',
       'ক্লাউড আর্কিটেকচার কনসালটেন্ট',
@@ -280,7 +280,7 @@ export const BN_CONTENT: AppContent = {
     related: {
       title: 'যাদের অনুসরণ করা যেতে পারে',
       items: [
-        { label: 'Werner Vogels', url: 'https://www.linkedin.com/in/wernervogels/' },
+        { label: 'Werner Vogels', url: 'https://www.allthingsdistributed.com/' },
         { label: 'Kelsey Hightower', url: 'https://www.linkedin.com/in/kelseyhightower/' },
         { label: 'Marc Benioff', url: 'https://www.linkedin.com/in/marcbenioff/' }
       ]
