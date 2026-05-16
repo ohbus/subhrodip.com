@@ -259,19 +259,19 @@ export const DE_CONTENT: AppContent = {
         title: 'Bachelor of Technology von der UEM Kolkata',
         institution: 'University of Engineering & Management',
         breadcrumb: 'https://uem.edu.in › uem-kolkata',
-        snippet: 'Abschluss in Informatik und Ingenieurwesen für das Grundstudium. <br> <strong>CGPA:</strong> 8.75 | <strong>Note:</strong> 80% <br> <span class="text-outline">2016 - 2020</span>'
+        snippet: 'Abschluss in Informatik und Ingenieurwesen für das Grundstudium. <br> <span class="text-outline">2016 - 2020</span>'
       },
       isc: {
         title: 'ISC (CISCE) von der AGCS Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'https://agcschools.edu.in › park-street',
-        snippet: 'Gymnasiale Oberstufe mit Physik, Chemie, Mathe und Informatik abgeschlossen. <br> <strong>Note:</strong> 69.17% <br> <span class="text-outline">2016</span>'
+        snippet: 'Gymnasiale Oberstufe mit Physik, Chemie, Mathe und Informatik abgeschlossen. <br> <span class="text-outline">2016</span>'
       },
       icse: {
         title: 'ICSE (CISCE) von der AGCS Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'https://agcschools.edu.in › park-street',
-        snippet: '10 Jahre Schulzeit abgeschlossen und an der ersten öffentlichen Prüfung teilgenommen. <br> <strong>Note:</strong> 74.67% <br> <span class="text-outline">2014</span>'
+        snippet: '10 Jahre Schulzeit abgeschlossen und an der ersten öffentlichen Prüfung teilgenommen. <br> <span class="text-outline">2014</span>'
       }
     },
     knowledgePanel: {
@@ -292,7 +292,17 @@ export const DE_CONTENT: AppContent = {
     frameworks: {
       label: 'Developer Frameworks',
       title: 'Technologien und Methodiken',
-      breadcrumb: 'https://subhrodip.com › skills › technologies'
+      breadcrumb: 'https://subhrodip.com › skills › technologies',
+      items: [
+        { label: 'Spring Cloud', url: 'https://spring.io/projects/spring-cloud' },
+        { label: 'AWS', url: 'https://aws.amazon.com/' },
+        { label: 'Kafka', url: 'https://kafka.apache.org/' },
+        { label: 'Docker', url: 'https://www.docker.com/' },
+        { label: 'Kubernetes', url: 'https://kubernetes.io/' },
+        { label: 'Angular', url: 'https://angular.dev/' },
+        { label: 'Microservices', url: 'https://microservices.io/' },
+        { label: 'Distributed Systems', url: 'https://en.wikipedia.org/wiki/Distributed_computing' }
+      ]
     },
     knowledgePanel: {
       title: 'Skills Übersicht',

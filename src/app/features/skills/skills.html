@@ -59,14 +59,14 @@
     [breadcrumb]="c().skills.frameworks.breadcrumb"
     [title]="c().skills.frameworks.title">
     <div class="flex flex-wrap gap-2 mt-4">
-      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Spring Cloud</span>
-      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">AWS</span>
-      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Kafka</span>
-      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Docker</span>
-      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Kubernetes</span>
-      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Angular</span>
-      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Microservices</span>
-      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Distributed Systems</span>
+      @for (item of c().skills.frameworks.items; track item.label) {
+        <a [href]="item.url" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant hover:bg-surface-container transition-colors cursor-pointer">
+          {{item.label}}
+        </a>
+      }
     </div>
   </app-search-result-item>
 

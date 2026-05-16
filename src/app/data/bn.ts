@@ -259,19 +259,19 @@ export const BN_CONTENT: AppContent = {
         title: 'Bachelor of Technology from UEM Kolkata',
         institution: 'University of Engineering & Management',
         breadcrumb: 'https://uem.edu.in › uem-kolkata',
-        snippet: 'স্নাতক স্তরের পড়াশোনার জন্য কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং ডিগ্রি সম্পন্ন করেছি। <br> <strong>সিজিপিএ:</strong> ৮.৭৫ | <strong>নম্বর:</strong> ৮০% <br> <span class="text-outline">২০১৬ - ২০২০</span>'
+        snippet: 'স্নাতক স্তরের পড়াশোনার জন্য কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং ডিগ্রি সম্পন্ন করেছি। <br> <span class="text-outline">২০১৬ - ২০২০</span>'
       },
       isc: {
         title: 'ISC (CISCE) from AGCS Park Street',
         institution: 'দি অ্যাসেম্বলি অফ গড চার্চ স্কুল',
         breadcrumb: 'https://agcschools.edu.in › park-street',
-        snippet: 'আমি পদার্থবিদ্যা, রসায়ন, গণিত এবং কম্পিউটার অ্যাপ্লিকেশন সহ আমার হাই স্কুল সম্পন্ন করেছি। <br> <strong>নম্বর:</strong> ৬৯.১৭% <br> <span class="text-outline">২০১৬</span>'
+        snippet: 'আমি পদার্থবিদ্যা, রসায়ন, গণিত এবং কম্পিউটার অ্যাপ্লিকেশন সহ আমার হাই স্কুল সম্পন্ন করেছি। <br> <span class="text-outline">২০১৬</span>'
       },
       icse: {
         title: 'ICSE (CISCE) from AGCS Park Street',
         institution: 'দি অ্যাসেম্বলি অফ গড চার্চ স্কুল',
         breadcrumb: 'https://agcschools.edu.in › park-street',
-        snippet: 'আমি আমার ১০ বছরের স্কুলিং সম্পন্ন করেছি এবং আমার প্রথম পাবলিক পরীক্ষায় অংশ নিয়েছি। <br> <strong>নম্বর:</strong> ৭৪.৬৭% <br> <span class="text-outline">২০১৪</span>'
+        snippet: 'আমি আমার ১০ বছরের স্কুলিং সম্পন্ন করেছি এবং আমার প্রথম পাবলিক পরীক্ষায় অংশ নিয়েছি। <br> <span class="text-outline">২০১৪</span>'
       }
     },
     knowledgePanel: {
@@ -292,7 +292,17 @@ export const BN_CONTENT: AppContent = {
     frameworks: {
       label: 'ডেভেলপার ফ্রেমওয়ার্ক',
       title: 'প্রযুক্তি এবং পদ্ধতি',
-      breadcrumb: 'https://subhrodip.com › skills › technologies'
+      breadcrumb: 'https://subhrodip.com › skills › technologies',
+      items: [
+        { label: 'Spring Cloud', url: 'https://spring.io/projects/spring-cloud' },
+        { label: 'AWS', url: 'https://aws.amazon.com/' },
+        { label: 'Kafka', url: 'https://kafka.apache.org/' },
+        { label: 'Docker', url: 'https://www.docker.com/' },
+        { label: 'Kubernetes', url: 'https://kubernetes.io/' },
+        { label: 'Angular', url: 'https://angular.dev/' },
+        { label: 'Microservices', url: 'https://microservices.io/' },
+        { label: 'Distributed Systems', url: 'https://en.wikipedia.org/wiki/Distributed_computing' }
+      ]
     },
     knowledgePanel: {
       title: 'দক্ষতার সংক্ষিপ্ত বিবরণ',

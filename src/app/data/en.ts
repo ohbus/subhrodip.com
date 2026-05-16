@@ -259,19 +259,19 @@ export const EN_CONTENT: AppContent = {
         title: 'Bachelor of Technology from UEM Kolkata',
         institution: 'University of Engineering & Management',
         breadcrumb: 'https://uem.edu.in › uem-kolkata',
-        snippet: 'Completed Computer Science and Engineering degree for undergraduate studies. <br> <strong>CGPA:</strong> 8.75 | <strong>Marks:</strong> 80% <br> <span class="text-outline">2016 - 2020</span>'
+        snippet: 'Completed Computer Science and Engineering degree for undergraduate studies. <br> <span class="text-outline">2016 - 2020</span>'
       },
       isc: {
         title: 'ISC (CISCE) from AGCS Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'https://agcschools.edu.in › park-street',
-        snippet: 'Completed High School with Physics, Chemistry, Maths and Computer Applications. <br> <strong>Marks:</strong> 69.17% <br> <span class="text-outline">2016</span>'
+        snippet: 'Completed High School with Physics, Chemistry, Maths and Computer Applications. <br> <span class="text-outline">2016</span>'
       },
       icse: {
         title: 'ICSE (CISCE) from AGCS Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'https://agcschools.edu.in › park-street',
-        snippet: 'Completed 10 years of schooling and appeared for first public examination. <br> <strong>Marks:</strong> 74.67% <br> <span class="text-outline">2014</span>'
+        snippet: 'Completed 10 years of schooling and appeared for first public examination. <br> <span class="text-outline">2014</span>'
       }
     },
     knowledgePanel: {
@@ -292,7 +292,17 @@ export const EN_CONTENT: AppContent = {
     frameworks: {
       label: 'Developer Frameworks',
       title: 'Technologies and Methodologies',
-      breadcrumb: 'https://subhrodip.com › skills › technologies'
+      breadcrumb: 'https://subhrodip.com › skills › technologies',
+      items: [
+        { label: 'Spring Cloud', url: 'https://spring.io/projects/spring-cloud' },
+        { label: 'AWS', url: 'https://aws.amazon.com/' },
+        { label: 'Kafka', url: 'https://kafka.apache.org/' },
+        { label: 'Docker', url: 'https://www.docker.com/' },
+        { label: 'Kubernetes', url: 'https://kubernetes.io/' },
+        { label: 'Angular', url: 'https://angular.dev/' },
+        { label: 'Microservices', url: 'https://microservices.io/' },
+        { label: 'Distributed Systems', url: 'https://en.wikipedia.org/wiki/Distributed_computing' }
+      ]
     },
     knowledgePanel: {
       title: 'Skills Overview',

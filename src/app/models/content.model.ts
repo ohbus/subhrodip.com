@@ -149,7 +149,12 @@ export interface AppContent {
   skills: {
     metrics: string;
     core: { label: string; title: string; breadcrumb: string };
-    frameworks: { label: string; title: string; breadcrumb: string };
+    frameworks: { 
+      label: string; 
+      title: string; 
+      breadcrumb: string;
+      items: { label: string; url: string }[];
+    };
     knowledgePanel: {
       title: string;
       subtitle: string;
