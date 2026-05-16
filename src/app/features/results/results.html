@@ -25,14 +25,14 @@
     <div class="mb-7 border-t border-surface-variant pt-5">
       <h2 class="text-xl text-on-surface font-normal mb-3">{{c().results.peopleAlsoAsk.title}}</h2>
       <div class="divide-y divide-surface-variant">
-        <div class="py-3 flex justify-between items-center cursor-pointer group">
+        <a routerLink="/education" class="py-3 flex justify-between items-center cursor-pointer group block">
           <span class="text-on-surface text-body-snippet group-hover:underline">{{c().results.peopleAlsoAsk.study}}</span>
           <span class="material-symbols-outlined text-outline">expand_more</span>
-        </div>
-        <div class="py-3 flex justify-between items-center cursor-pointer group">
+        </a>
+        <a routerLink="/skills" class="py-3 flex justify-between items-center cursor-pointer group block">
           <span class="text-on-surface text-body-snippet group-hover:underline">{{c().results.peopleAlsoAsk.tech}}</span>
           <span class="material-symbols-outlined text-outline">expand_more</span>
-        </div>
+        </a>
       </div>
     </div>
 
