@@ -13,6 +13,6 @@
 export const REDIRECT_MAP: Record<string, string> = {
   'gh': 'https://github.com/ohbus',
   'li': 'https://www.linkedin.com/in/ohbusm/',
-  'resume': 'https://drive.google.com/file/d/16lFVFcwwck9VQW58WUM78qn39xZohyJR/view',
+  'resume': 'https://drive.google.com/file/d/1QPEeY9U_8WaRlHN7F1zF0EDSVqO028DY/view?usp=sharing',
   'blog': 'https://subhrodip.com'
 };

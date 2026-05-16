@@ -34,7 +34,7 @@ export class ExperienceComponent {
         {
           label: this.c().experience.knowledgePanel.downloadBtn,
           icon: 'download',
-          url: 'https://drive.google.com/file/d/16lFVFcwwck9VQW58WUM78qn39xZohyJR/view',
+          url: 'https://drive.google.com/file/d/1QPEeY9U_8WaRlHN7F1zF0EDSVqO028DY/view?usp=sharing',
           primary: true
         },
         {
