@@ -13,5 +13,5 @@ import { RouterModule } from '@angular/router';
 })
 export class RelatedSearchesComponent {
   title = input.required<string>();
-  items = input.required<{ label: string, url?: string }[]>();
+  items = input.required<{ label: string, url?: string, routerLink?: string }[]>();
 }

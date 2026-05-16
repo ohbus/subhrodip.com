@@ -1,40 +1,35 @@
-<!-- Main Layout -->
-<div class="flex-grow flex w-full md:px-0 py-4 gap-16 font-body-snippet min-h-[80vh]">
-  <!-- Left Column: Search Results -->
-  <main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
-    <app-search-metrics [metrics]="c().education.metrics" />
+<app-feature-layout 
+  [metrics]="c().education.metrics"
+  [knowledgePanelConfig]="knowledgePanelConfig">
 
-    <!-- Result 1 - BTech -->
-    <app-search-result-item 
-      icon="school" 
-      [label]="c().education.items.btech.institution"
-      [breadcrumb]="c().education.items.btech.breadcrumb"
-      url="https://uem.edu.in/uem-kolkata/"
-      [title]="c().education.items.btech.title"
-      [snippet]="c().education.items.btech.snippet">
-    </app-search-result-item>
+  <!-- Result 1 - BTech -->
+  <app-search-result-item 
+    icon="school" 
+    [label]="c().education.items.btech.institution"
+    [breadcrumb]="c().education.items.btech.breadcrumb"
+    url="https://uem.edu.in/uem-kolkata/"
+    [title]="c().education.items.btech.title"
+    [snippet]="c().education.items.btech.snippet">
+  </app-search-result-item>
 
-    <!-- Result 2 - ISC -->
-    <app-search-result-item 
-      icon="account_balance" 
-      [label]="c().education.items.isc.institution"
-      [breadcrumb]="c().education.items.isc.breadcrumb"
-      url="https://agcschools.edu.in/"
-      [title]="c().education.items.isc.title"
-      [snippet]="c().education.items.isc.snippet">
-    </app-search-result-item>
+  <!-- Result 2 - ISC -->
+  <app-search-result-item 
+    icon="account_balance" 
+    [label]="c().education.items.isc.institution"
+    [breadcrumb]="c().education.items.isc.breadcrumb"
+    url="https://agcschools.edu.in/"
+    [title]="c().education.items.isc.title"
+    [snippet]="c().education.items.isc.snippet">
+  </app-search-result-item>
 
-    <!-- Result 3 - ICSE -->
-    <app-search-result-item 
-      icon="account_balance" 
-      [label]="c().education.items.icse.institution"
-      [breadcrumb]="c().education.items.icse.breadcrumb"
-      url="https://agcschools.edu.in/"
-      [title]="c().education.items.icse.title"
-      [snippet]="c().education.items.icse.snippet">
-    </app-search-result-item>
-  </main>
+  <!-- Result 3 - ICSE -->
+  <app-search-result-item 
+    icon="account_balance" 
+    [label]="c().education.items.icse.institution"
+    [breadcrumb]="c().education.items.icse.breadcrumb"
+    url="https://agcschools.edu.in/"
+    [title]="c().education.items.icse.title"
+    [snippet]="c().education.items.icse.snippet">
+  </app-search-result-item>
 
-  <!-- Right Column: Knowledge Panel -->
-  <app-knowledge-panel [config]="knowledgePanelConfig" />
-</div>
+</app-feature-layout>

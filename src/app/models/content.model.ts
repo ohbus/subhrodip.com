@@ -62,8 +62,7 @@ export interface AppContent {
     };
     peopleAlsoAsk: {
       title: string;
-      study: string;
-      tech: string;
+      items: { label: string; routerLink: string }[];
     };
     knowledgePanel: {
       role: string;
@@ -92,7 +91,7 @@ export interface AppContent {
     };
     related: {
       title: string;
-      items: { label: string; url?: string }[];
+      items: { label: string; url?: string; routerLink?: string }[];
     };
   };
   sde: {
@@ -105,7 +104,7 @@ export interface AppContent {
     };
     related: {
       title: string;
-      items: { label: string; url?: string }[];
+      items: { label: string; url?: string; routerLink?: string }[];
     };
     knowledgePanel: {
       quote: string;
@@ -123,7 +122,7 @@ export interface AppContent {
     };
     related: {
       title: string;
-      items: { label: string; url?: string }[];
+      items: { label: string; url?: string; routerLink?: string }[];
     };
     knowledgePanel: {
       role: string;

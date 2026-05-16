@@ -22,6 +22,10 @@
   <a class="inline-block group mb-1" [href]="url()" target="_blank" rel="noopener noreferrer">
     <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{title()}}</h3>
   </a>
+} @else if (routerLink()) {
+  <a class="inline-block group mb-1" [routerLink]="routerLink()">
+    <h3 class="text-xl text-primary-container group-hover:underline font-normal leading-snug font-result-title">{{title()}}</h3>
+  </a>
 } @else {
   <h3 class="text-xl text-primary-container font-normal leading-snug font-result-title mb-1">{{title()}}</h3>
 }

@@ -1,0 +1,18 @@
+<!-- Left Column: Search Results -->
+<main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
+  @if (metrics()) {
+    <app-search-metrics [metrics]="metrics()!" />
+  }
+
+  <!-- Page Content -->
+  <ng-content></ng-content>
+
+  @if (relatedSearches()) {
+    <app-related-searches 
+      [title]="relatedSearches()!.title" 
+      [items]="relatedSearches()!.items" />
+  }
+</main>
+
+<!-- Right Column: Knowledge Panel -->
+<app-knowledge-panel [config]="knowledgePanelConfig()" />

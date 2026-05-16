@@ -1,45 +1,40 @@
-<!-- Main Layout -->
-<div class="flex-grow flex w-full md:px-0 py-4 gap-16 font-body-snippet min-h-[80vh]">
-  <!-- Left Column: Search Results -->
-  <main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
-    <app-search-metrics [metrics]="c().contact.metrics" />
+<app-feature-layout 
+  [metrics]="c().contact.metrics"
+  [knowledgePanelConfig]="knowledgePanelConfig">
 
-    <!-- Result 1 - Contact Form -->
-    <app-search-result-item 
-      icon="contact_mail" 
-      [label]="c().common.name"
-      [breadcrumb]="c().contact.breadcrumb"
-      [title]="c().contact.title">
-      
-      <!-- Contact Form -->
-      <div class="mt-4 max-w-xl border border-surface-variant rounded-lg p-4 bg-surface-bright">
-        <form action="https://formspree.io/f/mojbarkg" method="POST" target="_blank" class="flex flex-col gap-4">
-          <div class="flex flex-col">
-            <label for="name" class="text-sm text-on-surface font-medium mb-1">{{c().contact.form.name}} <span class="text-error">*</span></label>
-            <input type="text" id="name" name="name" required minlength="2" pattern="[a-zA-Z\s]+" placeholder="e.g. John Doe" class="h-[36px] px-3 rounded border border-surface-variant focus:outline-none focus:border-primary text-body-snippet">
-          </div>
-          <div class="flex flex-col">
-            <label for="email" class="text-sm text-on-surface font-medium mb-1">{{c().contact.form.email}} <span class="text-error">*</span></label>
-            <input type="email" id="email" name="email" required placeholder="john.doe@example.com" class="h-[36px] px-3 rounded border border-surface-variant focus:outline-none focus:border-primary text-body-snippet">
-          </div>
-          <div class="flex flex-col">
-            <label for="phone" class="text-sm text-on-surface font-medium mb-1">{{c().contact.form.phone}}</label>
-            <input type="tel" id="phone" name="phone" pattern="[+]?[0-9\s-]{7,15}" title="Please enter a valid phone number (7-15 digits)" placeholder="e.g. +1 234 567 890" class="h-[36px] px-3 rounded border border-surface-variant focus:outline-none focus:border-primary text-body-snippet">
-          </div>
-          <div class="flex flex-col">
-            <label for="message" class="text-sm text-on-surface font-medium mb-1">{{c().contact.form.message}} <span class="text-error">*</span></label>
-            <textarea id="message" name="message" required minlength="10" maxlength="1000" placeholder="How can I help you?" rows="4" class="p-3 rounded border border-surface-variant focus:outline-none focus:border-primary text-body-snippet resize-y"></textarea>
-          </div>
-          <div class="mt-2">
-            <button type="submit" class="bg-primary hover:bg-primary hover:brightness-90 text-white px-6 py-2 rounded text-body-snippet font-medium transition-colors shadow-sm w-auto inline-block">
-              {{c().contact.form.submit}}
-            </button>
-          </div>
-        </form>
-      </div>
-    </app-search-result-item>
-  </main>
+  <!-- Result 1 - Contact Form -->
+  <app-search-result-item 
+    icon="contact_mail" 
+    [label]="c().common.name"
+    [breadcrumb]="c().contact.breadcrumb"
+    [title]="c().contact.title">
+    
+    <!-- Contact Form -->
+    <div class="mt-4 max-w-xl border border-surface-variant rounded-lg p-4 bg-surface-bright">
+      <form action="https://formspree.io/f/mojbarkg" method="POST" target="_blank" class="flex flex-col gap-4">
+        <div class="flex flex-col">
+          <label for="name" class="text-sm text-on-surface font-medium mb-1">{{c().contact.form.name}} <span class="text-error">*</span></label>
+          <input type="text" id="name" name="name" required minlength="2" pattern="[a-zA-Z\s]+" placeholder="e.g. John Doe" class="h-[36px] px-3 rounded border border-surface-variant focus:outline-none focus:border-primary text-body-snippet">
+        </div>
+        <div class="flex flex-col">
+          <label for="email" class="text-sm text-on-surface font-medium mb-1">{{c().contact.form.email}} <span class="text-error">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="john.doe@example.com" class="h-[36px] px-3 rounded border border-surface-variant focus:outline-none focus:border-primary text-body-snippet">
+        </div>
+        <div class="flex flex-col">
+          <label for="phone" class="text-sm text-on-surface font-medium mb-1">{{c().contact.form.phone}}</label>
+          <input type="tel" id="phone" name="phone" pattern="[+]?[0-9\s-]{7,15}" title="Please enter a valid phone number (7-15 digits)" placeholder="e.g. +1 234 567 890" class="h-[36px] px-3 rounded border border-surface-variant focus:outline-none focus:border-primary text-body-snippet">
+        </div>
+        <div class="flex flex-col">
+          <label for="message" class="text-sm text-on-surface font-medium mb-1">{{c().contact.form.message}} <span class="text-error">*</span></label>
+          <textarea id="message" name="message" required minlength="10" maxlength="1000" placeholder="How can I help you?" rows="4" class="p-3 rounded border border-surface-variant focus:outline-none focus:border-primary text-body-snippet resize-y"></textarea>
+        </div>
+        <div class="mt-2">
+          <button type="submit" class="bg-primary hover:bg-primary hover:brightness-90 text-white px-6 py-2 rounded text-body-snippet font-medium transition-colors shadow-sm w-auto inline-block">
+            {{c().contact.form.submit}}
+          </button>
+        </div>
+      </form>
+    </div>
+  </app-search-result-item>
 
-  <!-- Right Column: Knowledge Panel -->
-  <app-knowledge-panel [config]="knowledgePanelConfig" />
-</div>
+</app-feature-layout>

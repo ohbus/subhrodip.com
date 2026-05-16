@@ -1,78 +1,73 @@
-<!-- Main Layout -->
-<div class="flex-grow flex w-full md:px-0 py-4 gap-16 font-body-snippet min-h-[80vh]">
-  <!-- Left Column: Search Results -->
-  <main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
-    <app-search-metrics [metrics]="c().skills.metrics" />
+<app-feature-layout 
+  [metrics]="c().skills.metrics"
+  [knowledgePanelConfig]="knowledgePanelConfig">
 
-    <!-- Core Languages -->
-    <app-search-result-item 
-      icon="code" 
-      [label]="c().skills.core.label"
-      [breadcrumb]="c().skills.core.breadcrumb"
-      [title]="c().skills.core.title">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-        <!-- Java -->
-        <div class="flex flex-col gap-1">
-          <div class="flex justify-between text-xs font-medium">
-            <span class="text-on-surface">Java</span>
-            <span class="text-outline">95%</span>
-          </div>
-          <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
-            <div class="h-full bg-brand-java" style="width: 95%"></div>
-          </div>
+  <!-- Core Languages -->
+  <app-search-result-item 
+    icon="code" 
+    [label]="c().skills.core.label"
+    [breadcrumb]="c().skills.core.breadcrumb"
+    [title]="c().skills.core.title">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+      <!-- Java -->
+      <div class="flex flex-col gap-1">
+        <div class="flex justify-between text-xs font-medium">
+          <span class="text-on-surface">Java</span>
+          <span class="text-outline">95%</span>
         </div>
-        <!-- Python -->
-        <div class="flex flex-col gap-1">
-          <div class="flex justify-between text-xs font-medium">
-            <span class="text-on-surface">Python</span>
-            <span class="text-outline">90%</span>
-          </div>
-          <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
-            <div class="h-full bg-skill-orange" style="width: 90%"></div>
-          </div>
-        </div>
-        <!-- TypeScript -->
-        <div class="flex flex-col gap-1">
-          <div class="flex justify-between text-xs font-medium">
-            <span class="text-on-surface">TypeScript</span>
-            <span class="text-outline">85%</span>
-          </div>
-          <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
-            <div class="h-full bg-brand-typescript" style="width: 85%"></div>
-          </div>
-        </div>
-        <!-- SQL -->
-        <div class="flex flex-col gap-1">
-          <div class="flex justify-between text-xs font-medium">
-            <span class="text-on-surface">SQL</span>
-            <span class="text-outline">85%</span>
-          </div>
-          <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
-            <div class="h-full bg-primary" style="width: 85%"></div>
-          </div>
+        <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+          <div class="h-full bg-brand-java" style="width: 95%"></div>
         </div>
       </div>
-    </app-search-result-item>
-
-    <!-- Frameworks & Tools -->
-    <app-search-result-item 
-      icon="architecture" 
-      [label]="c().skills.frameworks.label"
-      [breadcrumb]="c().skills.frameworks.breadcrumb"
-      [title]="c().skills.frameworks.title">
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Spring Cloud</span>
-        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">AWS</span>
-        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Kafka</span>
-        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Docker</span>
-        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Kubernetes</span>
-        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Angular</span>
-        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Microservices</span>
-        <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Distributed Systems</span>
+      <!-- Python -->
+      <div class="flex flex-col gap-1">
+        <div class="flex justify-between text-xs font-medium">
+          <span class="text-on-surface">Python</span>
+          <span class="text-outline">90%</span>
+        </div>
+        <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+          <div class="h-full bg-skill-orange" style="width: 90%"></div>
+        </div>
       </div>
-    </app-search-result-item>
-  </main>
+      <!-- TypeScript -->
+      <div class="flex flex-col gap-1">
+        <div class="flex justify-between text-xs font-medium">
+          <span class="text-on-surface">TypeScript</span>
+          <span class="text-outline">85%</span>
+        </div>
+        <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+          <div class="h-full bg-brand-typescript" style="width: 85%"></div>
+        </div>
+      </div>
+      <!-- SQL -->
+      <div class="flex flex-col gap-1">
+        <div class="flex justify-between text-xs font-medium">
+          <span class="text-on-surface">SQL</span>
+          <span class="text-outline">85%</span>
+        </div>
+        <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+          <div class="h-full bg-primary" style="width: 85%"></div>
+        </div>
+      </div>
+    </div>
+  </app-search-result-item>
 
-  <!-- Right Column: Knowledge Panel -->
-  <app-knowledge-panel [config]="knowledgePanelConfig" />
-</div>
+  <!-- Frameworks & Tools -->
+  <app-search-result-item 
+    icon="architecture" 
+    [label]="c().skills.frameworks.label"
+    [breadcrumb]="c().skills.frameworks.breadcrumb"
+    [title]="c().skills.frameworks.title">
+    <div class="flex flex-wrap gap-2 mt-4">
+      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Spring Cloud</span>
+      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">AWS</span>
+      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Kafka</span>
+      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Docker</span>
+      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Kubernetes</span>
+      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Angular</span>
+      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Microservices</span>
+      <span class="px-3 py-1 bg-surface-container-low text-on-surface rounded-full text-sm border border-surface-variant">Distributed Systems</span>
+    </div>
+  </app-search-result-item>
+
+</app-feature-layout>

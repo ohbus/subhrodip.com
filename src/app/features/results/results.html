@@ -1,66 +1,60 @@
-<!-- Main Layout -->
-<div class="flex-grow flex w-full md:px-0 py-4 gap-16 font-body-snippet min-h-[80vh]">
-  <!-- Left Column: Search Results -->
-  <main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
-    <app-search-metrics [metrics]="resultsMetrics" />
+<app-feature-layout 
+  [metrics]="resultsMetrics"
+  [knowledgePanelConfig]="knowledgePanelConfig">
 
-    <!-- Result 1 - Portfolio Site -->
-    <app-search-result-item 
-      icon="account_circle"
-      logoUrl="favicon.png"
-      [label]="c().results.main.title"
-      [breadcrumb]="c().results.main.breadcrumb"
-      [title]="c().results.main.title"
-      [snippet]="c().results.main.snippet">
-      <div footer class="flex flex-wrap gap-x-6 gap-y-2 text-sm mt-3">
-        <a routerLink="/experience" class="text-primary-container hover:underline">{{c().navigation.experience}}</a>
-        <a routerLink="/sde" class="text-primary-container hover:underline">{{c().navigation.sde}}</a>
-        <a routerLink="/skills" class="text-primary-container hover:underline">{{c().navigation.skills}}</a>
-        <a routerLink="/contact" class="text-primary-container hover:underline">{{c().navigation.contact}}</a>
-      </div>
-      <a breadcrumb-action routerLink="/search" class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</a>
-    </app-search-result-item>
-
-    <!-- People Also Ask -->
-    <div class="mb-7 border-t border-surface-variant pt-5">
-      <h2 class="text-xl text-on-surface font-normal mb-3">{{c().results.peopleAlsoAsk.title}}</h2>
-      <div class="divide-y divide-surface-variant">
-        <a routerLink="/education" class="py-3 flex justify-between items-center cursor-pointer group block">
-          <span class="text-on-surface text-body-snippet group-hover:underline">{{c().results.peopleAlsoAsk.study}}</span>
-          <span class="material-symbols-outlined text-outline">expand_more</span>
-        </a>
-        <a routerLink="/skills" class="py-3 flex justify-between items-center cursor-pointer group block">
-          <span class="text-on-surface text-body-snippet group-hover:underline">{{c().results.peopleAlsoAsk.tech}}</span>
-          <span class="material-symbols-outlined text-outline">expand_more</span>
-        </a>
-      </div>
+  <!-- Result 1 - Portfolio Site -->
+  <app-search-result-item 
+    icon="account_circle"
+    logoUrl="favicon.png"
+    [label]="c().results.main.title"
+    [breadcrumb]="c().results.main.breadcrumb"
+    routerLink="/"
+    [title]="c().results.main.title"
+    [snippet]="c().results.main.snippet">
+    <div footer class="flex flex-wrap gap-x-6 gap-y-2 text-sm mt-3">
+      <a routerLink="/experience" class="text-primary-container hover:underline">{{c().navigation.experience}}</a>
+      <a routerLink="/sde" class="text-primary-container hover:underline">{{c().navigation.sde}}</a>
+      <a routerLink="/skills" class="text-primary-container hover:underline">{{c().navigation.skills}}</a>
+      <a routerLink="/contact" class="text-primary-container hover:underline">{{c().navigation.contact}}</a>
     </div>
+    <a breadcrumb-action routerLink="/search" class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</a>
+  </app-search-result-item>
 
-    <!-- Result 2 - GitHub -->
-    <app-search-result-item 
-      icon="code"
-      logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
-      [label]="c().results.github.label"
-      [breadcrumb]="c().results.github.breadcrumb"
-      url="https://github.com/ohbus"
-      [title]="c().results.github.title"
-      [snippet]="c().results.github.snippet">
-      <div footer class="flex flex-col gap-3 max-w-xl mt-3">
-        <div class="flex gap-4">
-          <div class="flex-grow">
-            <a href="https://github.com/ohbus?tab=repositories" target="_blank" class="text-primary-container hover:underline block text-sm mb-0.5">{{c().results.github.links.repositories}}</a>
-            <p class="text-on-surface-variant text-xs">{{c().results.github.links.repoDesc}}</p>
-          </div>
-          <div class="flex-grow border-l border-surface-variant pl-4">
-            <a href="https://github.com/ohbus" target="_blank" class="text-primary-container hover:underline block text-sm mb-0.5">{{c().results.github.links.viewProject}}</a>
-            <p class="text-on-surface-variant text-xs">{{c().results.github.links.viewDesc}}</p>
-          </div>
+  <!-- People Also Ask -->
+  <div class="mb-7 border-t border-surface-variant pt-5">
+    <h2 class="text-xl text-on-surface font-normal mb-3">{{c().results.peopleAlsoAsk.title}}</h2>
+    <div class="divide-y divide-surface-variant">
+      @for (item of c().results.peopleAlsoAsk.items; track item.label) {
+        <a [routerLink]="item.routerLink" class="py-3 flex justify-between items-center cursor-pointer group block">
+          <span class="text-on-surface text-body-snippet group-hover:underline">{{item.label}}</span>
+          <span class="material-symbols-outlined text-outline">expand_more</span>
+        </a>
+      }
+    </div>
+  </div>
+
+  <!-- Result 2 - GitHub -->
+  <app-search-result-item 
+    icon="code"
+    logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
+    [label]="c().results.github.label"
+    [breadcrumb]="c().results.github.breadcrumb"
+    url="https://github.com/ohbus"
+    [title]="c().results.github.title"
+    [snippet]="c().results.github.snippet">
+    <div footer class="flex flex-col gap-3 max-w-xl mt-3">
+      <div class="flex gap-4">
+        <div class="flex-grow">
+          <a href="https://github.com/ohbus?tab=repositories" target="_blank" class="text-primary-container hover:underline block text-sm mb-0.5">{{c().results.github.links.repositories}}</a>
+          <p class="text-on-surface-variant text-xs">{{c().results.github.links.repoDesc}}</p>
+        </div>
+        <div class="flex-grow border-l border-surface-variant pl-4">
+          <a href="https://github.com/ohbus" target="_blank" class="text-primary-container hover:underline block text-sm mb-0.5">{{c().results.github.links.viewProject}}</a>
+          <p class="text-on-surface-variant text-xs">{{c().results.github.links.viewDesc}}</p>
         </div>
       </div>
-      <a breadcrumb-action routerLink="/search" class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</a>
-    </app-search-result-item>
-  </main>
+    </div>
+    <a breadcrumb-action routerLink="/search" class="material-symbols-outlined text-outline text-base cursor-pointer ml-1">{{c().common.more_vert}}</a>
+  </app-search-result-item>
 
-  <!-- Right Column: Knowledge Panel -->
-  <app-knowledge-panel [config]="knowledgePanelConfig" />
-</div>
+</app-feature-layout>

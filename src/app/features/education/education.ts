@@ -1,16 +1,15 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { ContentService } from '../../services/content.service';
 import { SearchResultItemComponent } from '../../shared/ui/search-result-item/search-result-item';
-import { KnowledgePanelComponent, KnowledgePanelConfig } from '../../shared/ui/knowledge-panel/knowledge-panel';
-import { SearchMetricsComponent } from '../../shared/ui/search-metrics/search-metrics';
+import { KnowledgePanelConfig } from '../../shared/ui/knowledge-panel/knowledge-panel';
+import { FeatureLayoutComponent } from '../../shared/ui/feature-layout/feature-layout';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-education',
   standalone: true,
-  imports: [CommonModule, RouterModule, SearchResultItemComponent, KnowledgePanelComponent, SearchMetricsComponent],
+  imports: [CommonModule, SearchResultItemComponent, FeatureLayoutComponent],
   templateUrl: './education.html',
   host: {
     'class': 'flex flex-col flex-grow w-full'

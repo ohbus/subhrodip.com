@@ -68,8 +68,10 @@ export const EN_CONTENT: AppContent = {
     },
     peopleAlsoAsk: {
       title: 'People also ask',
-      study: 'Where did Subhrodip Mohanta study?',
-      tech: 'What technologies does Subhrodip Mohanta use?'
+      items: [
+        { label: 'Where did Subhrodip Mohanta study?', routerLink: '/education' },
+        { label: 'What technologies does Subhrodip Mohanta use?', routerLink: '/skills' }
+      ]
     },
     knowledgePanel: {
       role: 'Senior Software Engineer',

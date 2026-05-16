@@ -68,8 +68,10 @@ export const BN_CONTENT: AppContent = {
     },
     peopleAlsoAsk: {
       title: 'মানুষ আরও জানতে চায়',
-      study: 'শুভ্রদীপ মহান্ত কোথায় পড়াশোনা করেছেন?',
-      tech: 'শুভ্রদীপ মহান্ত কোন কোন প্রযুক্তি ব্যবহার করেন?'
+      items: [
+        { label: 'শুভ্রদীপ মহান্ত কোথায় পড়াশোনা করেছেন?', routerLink: '/education' },
+        { label: 'শুভ্রদীপ মহান্ত কোন কোন প্রযুক্তি ব্যবহার করেন?', routerLink: '/skills' }
+      ]
     },
     knowledgePanel: {
       role: 'সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার',

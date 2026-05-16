@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContentService } from '../../services/content.service';
 import { SearchResultItemComponent } from '../../shared/ui/search-result-item/search-result-item';
-import { KnowledgePanelComponent, KnowledgePanelConfig } from '../../shared/ui/knowledge-panel/knowledge-panel';
-import { SearchMetricsComponent } from '../../shared/ui/search-metrics/search-metrics';
-import { RelatedSearchesComponent } from '../../shared/ui/related-searches/related-searches';
+import { KnowledgePanelConfig } from '../../shared/ui/knowledge-panel/knowledge-panel';
+import { FeatureLayoutComponent } from '../../shared/ui/feature-layout/feature-layout';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,9 +14,7 @@ import { RelatedSearchesComponent } from '../../shared/ui/related-searches/relat
     CommonModule, 
     RouterModule, 
     SearchResultItemComponent, 
-    KnowledgePanelComponent, 
-    SearchMetricsComponent,
-    RelatedSearchesComponent
+    FeatureLayoutComponent
   ],
   templateUrl: './experience.html',
   host: {

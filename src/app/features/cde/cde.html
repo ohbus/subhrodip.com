@@ -1,59 +1,39 @@
-<!-- Main Layout -->
-<div class="flex-grow flex w-full md:px-0 py-4 gap-16 font-body-snippet min-h-[80vh]">
-  <!-- Left Column: Search Results -->
-  <main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
-    <app-search-metrics [metrics]="c().cde.metrics" />
+<app-feature-layout 
+  [metrics]="c().cde.metrics"
+  [knowledgePanelConfig]="knowledgePanelConfig"
+  [relatedSearches]="c().cde.related">
 
-    <!-- Result 2 - AWS Case Study -->
-    <app-search-result-item 
-      icon="architecture" 
-      logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
-      [label]="c().cde.projects.label"
-      [breadcrumb]="c().cde.projects.aws.breadcrumb"
-      url="https://github.com/awspring/spring-cloud-aws"
-      [title]="c().cde.projects.aws.title"
-      [snippet]="c().cde.projects.aws.snippet">
-      <div footer class="flex items-center gap-4 text-sm text-outline mt-3">
-        <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-brand-java"></div> Java</div>
-        <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm leading-none">star</span> Featured</div>
-      </div>
-    </app-search-result-item>
+  <!-- Result 1 - Spring Cloud AWS -->
+  <app-search-result-item 
+    icon="code" 
+    logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
+    [label]="c().cde.projects.label"
+    [breadcrumb]="c().cde.projects.aws.breadcrumb"
+    url="https://github.com/awspring/spring-cloud-aws"
+    [title]="c().cde.projects.aws.title"
+    [snippet]="c().cde.projects.aws.snippet">
+  </app-search-result-item>
 
-    <!-- Result 3 - Scalar Case Study -->
-    <app-search-result-item 
-      icon="memory" 
-      logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
-      [label]="c().cde.projects.label"
-      [breadcrumb]="c().cde.projects.sclr.breadcrumb"
-      url="https://github.com/scaleracademy/sclr.ac-backend"
-      [title]="c().cde.projects.sclr.title"
-      [snippet]="c().cde.projects.sclr.snippet">
-      <div footer class="flex items-center gap-4 text-sm text-outline mt-3">
-        <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-brand-typescript"></div> TypeScript</div>
-        <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm leading-none">star</span> Case Study</div>
-      </div>
-    </app-search-result-item>
+  <!-- Result 2 - sclr.ac Backend -->
+  <app-search-result-item 
+    icon="code" 
+    logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
+    [label]="c().cde.projects.label"
+    [breadcrumb]="c().cde.projects.sclr.breadcrumb"
+    url="https://github.com/scaleracademy/sclr.ac-backend"
+    [title]="c().cde.projects.sclr.title"
+    [snippet]="c().cde.projects.sclr.snippet">
+  </app-search-result-item>
 
-    <!-- Result 4 - Lunch & Learn -->
-    <app-search-result-item 
-      icon="presentation_chart_line" 
-      logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
-      [label]="c().cde.projects.label"
-      [breadcrumb]="c().cde.projects.lunch.breadcrumb"
-      url="https://github.com/ohbus/lunch-booking-backend"
-      [title]="c().cde.projects.lunch.title"
-      [snippet]="c().cde.projects.lunch.snippet">
-      <div footer class="flex items-center gap-4 text-sm text-outline mt-3">
-        <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-brand-java"></div> Java</div>
-        <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm leading-none">star</span> Public</div>
-      </div>
-    </app-search-result-item>
+  <!-- Result 3 - Lunch Booking -->
+  <app-search-result-item 
+    icon="code" 
+    logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
+    [label]="c().cde.projects.label"
+    [breadcrumb]="c().cde.projects.lunch.breadcrumb"
+    url="https://github.com/ohbus/lunch-booking-backend"
+    [title]="c().cde.projects.lunch.title"
+    [snippet]="c().cde.projects.lunch.snippet">
+  </app-search-result-item>
 
-    <app-related-searches 
-      [title]="c().cde.related.title" 
-      [items]="c().cde.related.items" />
-  </main>
-
-  <!-- Right Column: Knowledge Panel -->
-  <app-knowledge-panel [config]="knowledgePanelConfig" />
-</div>
+</app-feature-layout>
