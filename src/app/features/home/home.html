@@ -3,7 +3,9 @@
 <main class="flex-grow flex flex-col items-center justify-center px-4 pb-32 pt-8 min-h-[70vh]">
   <!-- Logo -->
   <div class="mb-8 font-result-title text-6xl sm:text-7xl md:text-[5.5rem] tracking-tighter select-none font-medium text-center leading-none">
-    <span class="brand-s">{{c().common.brand[0]}}</span><span class="brand-u">{{c().common.brand[1]}}</span><span class="brand-b">{{c().common.brand[2]}}</span><span class="brand-h">{{c().common.brand[3]}}</span><span class="brand-r">{{c().common.brand[4]}}</span><span class="brand-o">{{c().common.brand[5]}}</span><span class="brand-d">{{c().common.brand[6]}}</span><span class="brand-i">{{c().common.brand[7]}}</span><span class="brand-p">{{c().common.brand[8]}}</span>
+    @for (char of c().common.brand; track $index) {
+      <span [class]="'brand-color-' + ($index % 6)">{{char}}</span>
+    }
   </div>
   <!-- Search Bar -->
   <div class="w-full max-w-[584px] relative group" (click)="onSearch()">

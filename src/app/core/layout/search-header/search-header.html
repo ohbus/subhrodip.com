@@ -5,10 +5,12 @@
       <div class="flex items-center gap-4 md:gap-8 flex-grow max-w-[850px]">
         <!-- Brand Logo -->
         <a class="hidden sm:block text-2xl font-medium tracking-tight whitespace-nowrap font-result-title pl-2 md:pl-4 cursor-pointer" (click)="onHome()" fetchpriority="high">
-          <span class="brand-s">{{c().common.brand[0]}}</span><span class="brand-u">{{c().common.brand[1]}}</span><span class="brand-b">{{c().common.brand[2]}}</span><span class="brand-h">{{c().common.brand[3]}}</span><span class="brand-r">{{c().common.brand[4]}}</span><span class="brand-o">{{c().common.brand[5]}}</span><span class="brand-d">{{c().common.brand[6]}}</span><span class="brand-i">{{c().common.brand[7]}}</span><span class="brand-p">{{c().common.brand[8]}}</span>
+          @for (char of c().common.brand; track $index) {
+            <span [class]="'brand-color-' + ($index % 6)">{{char}}</span>
+          }
         </a>
         <a class="sm:hidden text-2xl font-medium font-result-title pl-2 cursor-pointer" (click)="onHome()">
-          <span class="brand-s">{{c().common.brand[0]}}</span>
+          <span class="brand-color-0">{{c().common.brand[0]}}</span>
         </a>
         <!-- Search Bar -->
         <div class="flex-grow max-w-[692px] relative group">
