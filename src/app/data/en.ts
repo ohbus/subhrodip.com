@@ -57,7 +57,7 @@ export const EN_CONTENT: AppContent = {
     github: {
       label: 'GitHub',
       title: 'Engineering Portfolio and Open Source Contributions',
-      breadcrumb: 'https://github.com › subhrodip',
+      breadcrumb: 'https://github.com › ohbus',
       snippet: 'Advanced implementations spanning Java, Python, and TypeScript. Focus on <strong>enterprise design patterns</strong>, distributed concurrency, and automated infrastructure.',
       links: {
         viewProject: 'Featured Projects',

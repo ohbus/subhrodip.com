@@ -57,7 +57,7 @@ export const BN_CONTENT: AppContent = {
     github: {
       label: 'গিটহাব',
       title: 'ইঞ্জিনিয়ারিং পোর্টফোলিও and ওপেন সোর্স অবদান',
-      breadcrumb: 'https://github.com › subhrodip',
+      breadcrumb: 'https://github.com › ohbus',
       snippet: 'জাভা, পাইথন এবং টাইপস্ক্রিপ্ট জুড়ে উন্নত বাস্তবায়ন। <strong>এন্টারপ্রাইজ ডিজাইন প্যাটার্ন</strong>, ডিস্ট্রিবিউটেড কনকারেন্সি এবং অটোমেটেড ইনফ্রাস্ট্রাকচারের ওপর বিশেষ গুরুত্ব।',
       links: {
         viewProject: 'ফিচারড প্রজেক্ট দেখুন',
