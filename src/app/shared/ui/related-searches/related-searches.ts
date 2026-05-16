@@ -8,10 +8,10 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
   templateUrl: './related-searches.html',
   host: {
-    'class': 'block mb-7'
+    'class': 'block mb-7 mt-8'
   }
 })
 export class RelatedSearchesComponent {
   title = input.required<string>();
-  items = input.required<string[]>();
+  items = input.required<{ label: string, url?: string }[]>();
 }

@@ -56,7 +56,7 @@ export const BN_CONTENT: AppContent = {
     },
     github: {
       label: 'গিটহাব',
-      title: 'ইঞ্জিনিয়ারিং পোর্টফোলিও এবং ওপেন সোর্স অবদান',
+      title: 'ইঞ্জিনিয়ারিং পোর্টফোলিও and ওপেন সোর্স অবদান',
       breadcrumb: 'https://github.com › subhrodip',
       snippet: 'জাভা, পাইথন এবং টাইপস্ক্রিপ্ট জুড়ে উন্নত বাস্তবায়ন। <strong>এন্টারপ্রাইজ ডিজাইন প্যাটার্ন</strong>, ডিস্ট্রিবিউটেড কনকারেন্সি এবং অটোমেটেড ইনফ্রাস্ট্রাকচারের ওপর বিশেষ গুরুত্ব।',
       links: {
@@ -102,7 +102,7 @@ export const BN_CONTENT: AppContent = {
         logoUrl: 'https://www.google.com/s2/favicons?sz=128&domain=irdeto.com',
         location: 'সালজবার্গ, অস্ট্রিয়া',
         duration: 'সেপ্টেম্বর ২০২৩ – আগস্ট ২০২৪',
-        breadcrumb: 'https://denuvo.com › engineering',
+        breadcrumb: 'https://irdeto.com/video-games/ › engineering',
         highlights: [
           'প্রতি সেকেন্ডে ২ লাখ রিকোয়েস্ট (200K rps) পরিচালনা করার জন্য ডিস্ট্রিবিউটেড সার্ভিসের উপর সিকিউআরএস (CQRS) ভিত্তিক আর্কিটেকচার বাস্তবায়ন করা।',
           'কাফকা-ভিত্তিক ইভেন্ট স্ট্রিমিং সহ এডাব্লুএস ইসিএস (AWS ECS)-এ গ্রিনফিল্ড ক্লাউড-নেটিভ ইনফ্রাস্ট্রাকচার তৈরি করা।',
@@ -174,7 +174,11 @@ export const BN_CONTENT: AppContent = {
     },
     related: {
       title: 'সম্পর্কিত অনুসন্ধান',
-      items: ['ব্যাকএন্ড আর্কিটেকচার', 'ক্লাউড মাইগ্রেশন', 'মাইক্রোসার্ভিসেস স্কেলিং']
+      items: [
+        { label: 'ব্যাকএন্ড আর্কিটেকচার', url: 'https://en.wikipedia.org/wiki/Software_architecture' },
+        { label: 'ক্লাউড মাইগ্রেশন', url: 'https://aws.amazon.com/cloud-migration/' },
+        { label: 'মাইক্রোসার্ভিসেস স্কেলিং', url: 'https://microservices.io/patterns/scalability/scale-cube.html' }
+      ]
     }
   },
   sde: {
@@ -199,7 +203,11 @@ export const BN_CONTENT: AppContent = {
     },
     related: {
       title: 'অনুপ্রেরণা',
-      items: ['ডেনিস রিচি', 'লিনাস টরভাল্ডস', 'অ্যালান টিউরিং']
+      items: [
+        { label: 'ডেনিস রিচি', url: 'https://en.wikipedia.org/wiki/Dennis_Ritchie' },
+        { label: 'লিনাস টরভাল্ডস', url: 'https://en.wikipedia.org/wiki/Linus_Torvalds' },
+        { label: 'অ্যালান টিউরিং', url: 'https://en.wikipedia.org/wiki/Alan_Turing' }
+      ]
     },
     knowledgePanel: {
       quote: '"যদি ডিবাগিং হলো বাগ দূর করার প্রক্রিয়া..."',
@@ -229,11 +237,15 @@ export const BN_CONTENT: AppContent = {
     },
     related: {
       title: 'যাদের অনুসরণ করা যেতে পারে',
-      items: ['ওয়ার্নার ভোগেলস', 'স্টিভ হেরড', 'মার্ক বেনিওফ']
+      items: [
+        { label: 'ওয়ার্নার ভোগেলস', url: 'https://twitter.com/werner' },
+        { label: 'স্টিভ হেরড', url: 'https://www.linkedin.com/in/herrod/' },
+        { label: 'মার্ক বেনিওফ', url: 'https://twitter.com/Benioff' }
+      ]
     },
     knowledgePanel: {
       role: 'ক্লাউড ইনফ্রাস্ট্রাকচার কনসালটেন্ট',
-      snippet: '<strong>ক্লাউড-নেটিভ ট্রান্সফরমেশন</strong> এবং ইনফ্রাস্ট্রাকচার রেজিলিয়েন্সের জন্য কৌশলগত উপদেষ্টা। অটোমেটেড, নিরাপদ এবং সেলফ-হিলিং এনভায়রনমেন্ট তৈরি করা।',
+      snippet: '<strong>ক্লাউড-নেティブ ট্রান্সফরমেশন</strong> এবং ইনফ্রাস্ট্রাকচার রেজিলিয়েন্সের জন্য কৌশলগত উপদেষ্টা। অটোমেটেড, নিরাপদ এবং সেলফ-হিলিং এনভায়রনমেন্ট তৈরি করা।',
       contactBtn: 'পরামর্শের জন্য অনুরোধ করুন',
       quote: 'জিনিসগুলিকে সর্বদা প্রোডাকশন-রেডি অবস্থায় থাকতে হয়।'
     }

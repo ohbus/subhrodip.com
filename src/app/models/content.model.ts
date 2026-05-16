@@ -92,7 +92,7 @@ export interface AppContent {
     };
     related: {
       title: string;
-      items: string[];
+      items: { label: string; url?: string }[];
     };
   };
   sde: {
@@ -105,7 +105,7 @@ export interface AppContent {
     };
     related: {
       title: string;
-      items: string[];
+      items: { label: string; url?: string }[];
     };
     knowledgePanel: {
       quote: string;
@@ -123,7 +123,7 @@ export interface AppContent {
     };
     related: {
       title: string;
-      items: string[];
+      items: { label: string; url?: string }[];
     };
     knowledgePanel: {
       role: string;

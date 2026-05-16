@@ -6,8 +6,8 @@ export const DE_CONTENT: AppContent = {
     brand: 'Subhrodip',
     roles: [
       'Senior Software Engineer',
-      'Cloud-Architektur-Berater',
-      'Spezialist für verteilte Systeme'
+      'Cloud Architecture Consultant',
+      'Distributed Systems Specialist'
     ],
     search: 'Suche',
     mic: 'mic',
@@ -21,8 +21,8 @@ export const DE_CONTENT: AppContent = {
   },
   home: {
     placeholder: 'Anfrage: Erfahrung, Engineering, Architektur...',
-    searchBtn: 'Qualifikationen prüfen',
-    curiousBtn: 'Berufserfahrung ansehen',
+    searchBtn: 'Referenzen prüfen',
+    curiousBtn: 'Auf gut Glück',
     footerText: 'Talk is cheap,',
     footerLink: 'show me the code!'
   },
@@ -58,12 +58,12 @@ export const DE_CONTENT: AppContent = {
       label: 'GitHub',
       title: 'Engineering-Portfolio und Open-Source-Beiträge',
       breadcrumb: 'https://github.com › subhrodip',
-      snippet: 'Fortgeschrittene Implementierungen in Java, Python und TypeScript. Fokus auf <strong>Enterprise-Design-Patterns</strong>, verteilte Nebenläufigkeit und automatisierte Infrastruktur.',
+      snippet: 'Fortgeschrittene Implementierungen in Java, Python und TypeScript. Fokus auf <strong>Enterprise Design Patterns</strong>, verteilte Nebenläufigkeit und automatisierte Infrastruktur.',
       links: {
-        viewProject: 'Featured Projekte',
-        viewDesc: 'Technische Tiefenanalysen und Build-Berichte.',
-        repositories: 'GitHub-Repositories',
-        repoDesc: 'Öffentlicher Quellcode und Architektur-Dokumentation.'
+        viewProject: 'Vorgestellte Projekte',
+        viewDesc: 'Technische Deep-Dives und Build-Analysen.',
+        repositories: 'GitHub Repositories',
+        repoDesc: 'Öffentlicher Quellcode und Architekturdokumentation.'
       }
     },
     peopleAlsoAsk: {
@@ -74,12 +74,12 @@ export const DE_CONTENT: AppContent = {
     knowledgePanel: {
       role: 'Senior Software Engineer',
       resume: 'Portfolio-PDF herunterladen',
-      snippet: 'Ingenieur mit Fokus auf High-Integrity-Software und robustes Systemdesign. Spezialisiert auf den Aufbau sicherer, verteilter Backend-Infrastrukturen.',
+      snippet: 'Ingenieur mit Fokus auf Integrität in der Softwareentwicklung und robustes Systemdesign. Spezialisiert auf den Aufbau sicherer, verteilter Backend-Infrastrukturen.',
       profiles: 'Berufliche Profile'
     }
   },
   experience: {
-    metrics: 'Ungefähr 6 Hauptrollen (6+ Jahre)',
+    metrics: 'Etwa 6 Hauptrollen (6+ Jahre)',
     items: [
       {
         role: 'Senior Software Engineer',
@@ -90,9 +90,9 @@ export const DE_CONTENT: AppContent = {
         duration: 'Dez 2024 – Heute',
         breadcrumb: 'https://chargepoint.com › engineering',
         highlights: [
-          'Verantwortung und Skalierung der Station-to-Cloud-Kommunikationsplattform mit OCPP-basierten verteilten Diensten für 1,3 Mio.+ EV-Ladeanschlüsse.',
-          'Leitung der Re-Architektur der Fehlerverwaltungsdomäne mittels CQRS und Einführung von Service-Level-Metriken.',
-          'Optimierung der Infrastrukturkosten mit einer Reduzierung der AWS RDS-Ausgaben um 85.000 $/Jahr.'
+          'Verantwortung für und Skalierung der Station-to-Cloud Kommunikationsplattform unter Verwendung von OCPP-basierten verteilten Diensten für 1,3M+ EV-Ladepunkte.',
+          'Leitung der Re-Architektur des Fault-Management-Bereichs mittels CQRS und Einführung von Metriken auf Service-Ebene.',
+          'Optimierung der Infrastrukturkosten durch Reduzierung der AWS RDS-Ausgaben um 85.000 $/Jahr.'
         ]
       },
       {
@@ -102,11 +102,11 @@ export const DE_CONTENT: AppContent = {
         logoUrl: 'https://www.google.com/s2/favicons?sz=128&domain=irdeto.com',
         location: 'Salzburg, Österreich',
         duration: 'Sep 2023 – Aug 2024',
-        breadcrumb: 'https://denuvo.com › engineering',
+        breadcrumb: 'https://irdeto.com/video-games/ › engineering',
         highlights: [
-          'Implementierung einer CQRS-basierten Architektur über verteilte Dienste zur Bewältigung von hochdurchsatzstarkem mobilem Client-Traffic (200K rps).',
-          'Aufbau einer Greenfield Cloud-Native-Infrastruktur durch Bereitstellung von Diensten auf AWS ECS mit Kafka-basiertem Event-Streaming.',
-          'Reduzierung der Infrastrukturkosten von 20.000 $/Monat auf 4.800 $/Monat durch Tuning von AWS ECS-Workloads.'
+          'Implementierung einer CQRS-basierten Architektur in verteilten Diensten für ein hohes mobiles Client-Verkehrsaufkommen von 200.000 rps.',
+          'Aufbau einer Cloud-Native-Infrastruktur mit Bereitstellung von Diensten auf AWS ECS und Kafka-basiertem Event-Streaming.',
+          'Reduzierung der Infrastrukturkosten von 20.000 $/Monat auf 4.800 $/Monat durch Optimierung von AWS ECS-Workloads.'
         ]
       },
       {
@@ -118,9 +118,9 @@ export const DE_CONTENT: AppContent = {
         duration: 'Jul 2021 – Aug 2023',
         breadcrumb: 'https://irdeto.com › engineering',
         highlights: [
-          'Reduzierung der Systemlast um 73 % durch Entwicklung asynchroner Microservices für die Dateiverarbeitung.',
-          'Beschleunigung der UI-Plattform-Bereitstellung um 39 % durch Entwicklung wiederverwendbarer Angular-basierter Anwendungs-Frameworks.',
-          'Leitung von End-to-End-Design und -Entwicklung von Trending Day-Funktionen auf der Irdeto-Middleware.'
+          'Reduzierung der Systemlast um 73% durch Entwicklung asynchroner Microservices zur Dateiverarbeitung.',
+          'Beschleunigung der UI-Bereitstellung um 39% durch Entwicklung wiederverwendbarer Angular-Frameworks.',
+          'Leitung des End-to-End Designs und der Entwicklung von Trending Day Features auf der Irdeto Middleware.'
         ]
       },
       {
@@ -132,9 +132,9 @@ export const DE_CONTENT: AppContent = {
         duration: 'Sep 2020 – Jul 2021',
         breadcrumb: 'https://wipro.com › engineering',
         highlights: [
-          'Verringerung der Integrations-P99-Latenz um 45 % durch Leitung der API-Orchestrierung mit Apache Camel und JBoss Fuse.',
-          'Verbesserung der Antwortzeit um 23 % durch Implementierung von ESB-basierter Middleware.',
-          'Nutzung von Apache CXF zur Integration von SOAP- und REST-Diensten für hochvolumige Telco-Workloads.'
+          'Senkung der P99-Integrationslatenz um 45% durch Leitung der API-Orchestrierung mit Apache Camel und JBoss Fuse.',
+          'Verbesserung der Antwortzeit um 23% durch Implementierung einer ESB-basierten Middleware.',
+          'Nutzung von Apache CXF zur Integration von SOAP- und REST-Diensten für hohe Telco-Arbeitslasten.'
         ]
       },
       {
@@ -146,9 +146,9 @@ export const DE_CONTENT: AppContent = {
         duration: 'Aug 2019 – Sep 2020',
         breadcrumb: 'https://greenfieldsoft.com › engineering',
         highlights: [
-          'Reduzierung der Infrastrukturkosten durch Containerisierung von Anwendungen mit Docker zur Verbesserung der Skalierbarkeit.',
-          'Steigerung der Sprint-Geschwindigkeit um 43 % durch Leitung von Agile-Praktiken als Scrum Master.',
-          'Verringerung der P90-Abfragelatenz von 10,8 s auf 16 ms durch Optimierung von SQL-Abfragen und Indexierung.'
+          'Reduzierung der Infrastrukturkosten durch Containerisierung mit Docker, Verbesserung der Skalierbarkeit und Ressourcennutzung.',
+          'Steigerung der Sprint-Geschwindigkeit um 43% durch Einführung agiler Praktiken als Scrum Master.',
+          'Senkung der P90-Abfragelatenz von 10,8s auf 16ms durch SQL-Optimierung und Indexierung.'
         ]
       },
       {
@@ -160,104 +160,116 @@ export const DE_CONTENT: AppContent = {
         duration: 'Aug 2019 – Dez 2019',
         breadcrumb: 'https://greenfieldsoft.com › engineering',
         highlights: [
-          'Formalisierung der Multi-Tenant-DCIM-Bereitstellung, wodurch die Skalierbarkeit um 38 % verbessert wurde.',
-          'Optimierung von SQL-Abfragen mit einer Reduzierung der durchschnittlichen Abrufzeit von 10 s auf 0,00001 s.',
-          'Migration aller bestehenden Projekte von SVN zu Git unter Verwendung eines On-Premises-Servers.'
+          'Formalisierung des Multi-Tenant DCIM-Deployments, Steigerung der Skalierbarkeit um 38%.',
+          'Optimierung von SQL-Abfragen, Reduzierung der durchschnittlichen Ladezeit von 10s auf 0,00001s.',
+          'Migration aller bestehenden Projekte von SVN zu Git mittels On-Premises-Server.'
         ]
       }
     ],
     knowledgePanel: {
       title: 'Berufserfahrung',
-      subtitle: 'Karriereverlauf & Wirkung',
-      downloadBtn: 'Vollständigen Lebenslauf herunterladen',
+      subtitle: 'Karriereverlauf & Impact',
+      downloadBtn: 'Vollständigen Lebenslauf laden',
       linkedinBtn: 'Auf LinkedIn ansehen'
     },
     related: {
-      title: 'Verwandte Suchanfragen',
-      items: ['Backend-Architektur', 'Cloud-Migration', 'Skalierung von Microservices']
+      title: 'Ähnliche Suchanfragen',
+      items: [
+        { label: 'Backend-Architektur', url: 'https://de.wikipedia.org/wiki/Softwarearchitektur' },
+        { label: 'Cloud-Migration', url: 'https://aws.amazon.com/de/cloud-migration/' },
+        { label: 'Microservices Skalierung', url: 'https://microservices.io/patterns/scalability/scale-cube.html' }
+      ]
     }
   },
   sde: {
-    metrics: 'Ungefähr 5 Ergebnisse (0,24 Sekunden)',
+    metrics: 'Etwa 5 Ergebnisse (0,24 Sekunden)',
     projects: {
       label: 'GitHub',
       patterns: {
         title: 'Enterprise Java Design Patterns Architecture',
         breadcrumb: 'https://github.com › iluwatar › java-design-patterns',
-        snippet: 'Strategische Implementierung von Erzeugungs-, Struktur- und Verhaltensmustern. Optimiert für <strong>systemische Skalierbarkeit</strong> und langfristige Wartbarkeit.'
+        snippet: 'Strategische Implementierung von Creational, Structural und Behavioral Patterns. Optimiert für <strong>systemische Skalierbarkeit</strong>.'
       },
       banking: {
-        title: 'Hochdurchsatz-Infrastruktur für Consumer Banking',
+        title: 'High-Throughput Consumer Banking Infrastructure',
         breadcrumb: 'https://github.com › ohbus › retail-banking',
-        snippet: 'Umfassendes Backend-Engineering für den Privatkunden-Bankbetrieb. Abwicklung hochkonkurrierender Transaktionen mit ACID-Compliance und robustem Auditing.'
+        snippet: 'Umfassendes Backend-Engineering für Retail-Banking-Operationen. Handhabung von High-Concurrency Transaktionen mit ACID-Compliance.'
       },
       twitter: {
-        title: 'Verteilter Social Graph & Fan-out Service',
+        title: 'Distributed Social Graph & Fan-out Service',
         breadcrumb: 'https://github.com › scaleracademy › twitter-backend-java',
-        snippet: 'Skalierbares Social-Networking-Backend, entwickelt für Echtzeit-Datenverteilung und Feed-Aggregation mit geringer Latenz.'
+        snippet: 'Skalierbares Social-Networking-Backend für Echtzeit-Datenverteilung und Low-Latency Feed-Aggregation.'
       }
     },
     related: {
       title: 'Inspirationen',
-      items: ['Dennis Ritchie', 'Linus Torvalds', 'Alan Turing']
+      items: [
+        { label: 'Dennis Ritchie', url: 'https://de.wikipedia.org/wiki/Dennis_Ritchie' },
+        { label: 'Linus Torvalds', url: 'https://de.wikipedia.org/wiki/Linus_Torvalds' },
+        { label: 'Alan Turing', url: 'https://de.wikipedia.org/wiki/Alan_Turing' }
+      ]
     },
     knowledgePanel: {
-      quote: '"Wenn Debugging der Prozess des Entfernens von Bugs ist..."',
-      snippet: 'Zentraler Index technischer Implementierungen und Engagement für kollaboratives Open-Source-Engineering.',
-      githubBtn: 'Engineering-Quellcode prüfen'
+      quote: '"Wenn Debugging der Prozess ist, Bugs zu entfernen..."',
+      snippet: 'Zentraler Index technischer Implementierungen, der das Engagement für kollaboratives Open-Source-Engineering zeigt.',
+      githubBtn: 'Engineering Source prüfen'
     }
   },
   cde: {
-    metrics: 'Ungefähr 4 Ergebnisse (0,31 Sekunden)',
+    metrics: 'Etwa 4 Ergebnisse (0,31 Sekunden)',
     projects: {
       label: 'GitHub',
       aws: {
         title: 'Spring Cloud AWS Enterprise Integration',
         breadcrumb: 'https://github.com › awspring › spring-cloud-aws',
-        snippet: 'Offizieller Beitrag zum Spring Cloud-Ökosystem. Nahtlose Integration des Spring Frameworks mit AWS für Cloud-native Java-Anwendungen.'
+        snippet: 'Offizieller Beitrag zum Spring Cloud Ökosystem. Nahtlose Integration des Spring Frameworks mit AWS für cloudnative Java-Anwendungen.'
       },
       sclr: {
-        title: 'sclr.ac Verteilte URL-Infrastruktur',
+        title: 'sclr.ac Distributed URL Infrastructure',
         breadcrumb: 'https://github.com › scaleracademy › sclr.ac-backend',
-        snippet: 'Hochleistungs-Redirection-Service, entwickelt für Latenzen im Sub-Millisekunden-Bereich und horizontale Durchsatzskalierung.'
+        snippet: 'Hochleistungs-Redirection-Service, entwickelt für Latenzen im Sub-Millisekundenbereich und horizontalen Durchsatz.'
       },
       lunch: {
-        title: 'Enterprise Reservierungs- & Ressourcenmanagement',
+        title: 'Enterprise Reservation & Resource Management',
         breadcrumb: 'https://github.com › ohbus › lunch-booking-backend',
-        snippet: 'Full-Stack-Ressourcenbuchungs-Engine mit Echtzeit-Admin-Dashboards und automatisierten Benachrichtigungspipelines.'
+        snippet: 'Full-Stack-Ressourcenbuchungs-Engine mit Echtzeit-Admin-Dashboards und automatisierten Benachrichtigungs-Pipelines.'
       }
     },
     related: {
-      title: 'Personen zum Folgen',
-      items: ['Werner Vogels', 'Steve Herrod', 'Marc Benioff']
+      title: 'Personen, denen man folgen sollte',
+      items: [
+        { label: 'Werner Vogels', url: 'https://twitter.com/werner' },
+        { label: 'Steve Herrod', url: 'https://www.linkedin.com/in/herrod/' },
+        { label: 'Marc Benioff', url: 'https://twitter.com/Benioff' }
+      ]
     },
     knowledgePanel: {
-      role: 'Cloud-Infrastruktur-Berater',
-      snippet: 'Strategischer Berater für <strong>Cloud-Native-Transformation</strong> und Infrastruktur-Resilienz. Entwicklung automatisierter, sicherer und selbstheilender Umgebungen.',
-      contactBtn: 'Beratung anfordern',
-      quote: 'Die Dinge mussten immer in einem produktionsreifen Zustand sein.'
+      role: 'Cloud Infrastructure Consultant',
+      snippet: 'Strategischer Berater für <strong>Cloud-Native-Transformation</strong> und Resilienz. Entwicklung automatisierter, sicherer Umgebungen.',
+      contactBtn: 'Beratung anfragen',
+      quote: 'Dinge mussten immer in einem produktionsreifen Zustand sein.'
     }
   },
   education: {
-    metrics: 'Ungefähr 3 Ergebnisse (16 Jahre)',
+    metrics: 'Etwa 3 Ergebnisse (16 Jahre)',
     items: {
       btech: {
         title: 'Bachelor of Technology von der UEM Kolkata',
         institution: 'University of Engineering & Management',
         breadcrumb: 'https://uem.edu.in › uem-kolkata',
-        snippet: 'Abschluss meines Studiums der Informatik und des Ingenieurwesens (Computer Science and Engineering). <br> <strong>CGPA:</strong> 8,75 | <strong>Note:</strong> 80% <br> <span class="text-outline">2016 - 2020</span>'
+        snippet: 'Abschluss in Informatik und Ingenieurwesen für das Grundstudium. <br> <strong>CGPA:</strong> 8.75 | <strong>Note:</strong> 80% <br> <span class="text-outline">2016 - 2020</span>'
       },
       isc: {
         title: 'ISC (CISCE) von der AGCS Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'https://agcschools.edu.in › park-street',
-        snippet: 'Abschluss der High School mit den Schwerpunkten Physik, Chemie, Mathematik und Computeranwendungen. <br> <strong>Note:</strong> 69,17% <br> <span class="text-outline">2016</span>'
+        snippet: 'Gymnasiale Oberstufe mit Physik, Chemie, Mathe und Informatik abgeschlossen. <br> <strong>Note:</strong> 69.17% <br> <span class="text-outline">2016</span>'
       },
       icse: {
         title: 'ICSE (CISCE) von der AGCS Park Street',
         institution: 'The Assembly of God Church School',
         breadcrumb: 'https://agcschools.edu.in › park-street',
-        snippet: 'Abschluss von 10 Schuljahren und Teilnahme an meiner ersten öffentlichen Prüfung. <br> <strong>Note:</strong> 74,67% <br> <span class="text-outline">2014</span>'
+        snippet: '10 Jahre Schulzeit abgeschlossen und an der ersten öffentlichen Prüfung teilgenommen. <br> <strong>Note:</strong> 74.67% <br> <span class="text-outline">2014</span>'
       }
     },
     knowledgePanel: {
@@ -269,24 +281,24 @@ export const DE_CONTENT: AppContent = {
     }
   },
   skills: {
-    metrics: 'Ungefähr 2 gebündelte Fähigkeiten (6 Jahre)',
+    metrics: 'Etwa 2 gebündelte Skills (6 Jahre)',
     core: {
-      label: 'Entwickler-Kernkompetenzen',
+      label: 'Developer Core',
       title: 'Programmiersprachen - Subhrodip Mohanta',
       breadcrumb: 'https://subhrodip.com › skills › programming'
     },
     frameworks: {
-      label: 'Entwickler-Frameworks',
-      title: 'Technologien und Methoden',
+      label: 'Developer Frameworks',
+      title: 'Technologien und Methodiken',
       breadcrumb: 'https://subhrodip.com › skills › technologies'
     },
     knowledgePanel: {
-      title: 'Fähigkeiten im Überblick',
+      title: 'Skills Übersicht',
       subtitle: 'Technische Expertise & Kompetenzen'
     }
   },
   contact: {
-    metrics: 'Ungefähr 1 Ergebnis (0,12 Sekunden)',
+    metrics: 'Etwa 1 Ergebnis (0,12 Sekunden)',
     title: 'Kontaktieren Sie Subhrodip',
     breadcrumb: 'https://subhrodip.com › contact',
     form: {

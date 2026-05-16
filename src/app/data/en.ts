@@ -102,7 +102,7 @@ export const EN_CONTENT: AppContent = {
         logoUrl: 'https://www.google.com/s2/favicons?sz=128&domain=irdeto.com',
         location: 'Salzburg, Austria',
         duration: 'Sep 2023 – Aug 2024',
-        breadcrumb: 'https://denuvo.com › engineering',
+        breadcrumb: 'https://irdeto.com/video-games/ › engineering',
         highlights: [
           'Implemented a CQRS-based architecture across distributed services, handling high-throughput mobile client traffic of 200K rps.',
           'Built greenfield cloud-native infrastructure deploying services on AWS ECS with Kafka-based event streaming.',
@@ -174,7 +174,11 @@ export const EN_CONTENT: AppContent = {
     },
     related: {
       title: 'Related Searches',
-      items: ['Backend Architecture', 'Cloud Migration', 'Microservices Scaling']
+      items: [
+        { label: 'Backend Architecture', url: 'https://en.wikipedia.org/wiki/Software_architecture' },
+        { label: 'Cloud Migration', url: 'https://aws.amazon.com/cloud-migration/' },
+        { label: 'Microservices Scaling', url: 'https://microservices.io/patterns/scalability/scale-cube.html' }
+      ]
     }
   },
   sde: {
@@ -199,7 +203,11 @@ export const EN_CONTENT: AppContent = {
     },
     related: {
       title: 'Inspirations',
-      items: ['Dennis Ritchie', 'Linus Torvalds', 'Alan Turing']
+      items: [
+        { label: 'Dennis Ritchie', url: 'https://en.wikipedia.org/wiki/Dennis_Ritchie' },
+        { label: 'Linus Torvalds', url: 'https://en.wikipedia.org/wiki/Linus_Torvalds' },
+        { label: 'Alan Turing', url: 'https://en.wikipedia.org/wiki/Alan_Turing' }
+      ]
     },
     knowledgePanel: {
       quote: '"If debugging is process of removing bugs..."',
@@ -229,7 +237,11 @@ export const EN_CONTENT: AppContent = {
     },
     related: {
       title: 'People to follow',
-      items: ['Werner Vogels', 'Steve Herrod', 'Marc Benioff']
+      items: [
+        { label: 'Werner Vogels', url: 'https://twitter.com/werner' },
+        { label: 'Steve Herrod', url: 'https://www.linkedin.com/in/herrod/' },
+        { label: 'Marc Benioff', url: 'https://twitter.com/Benioff' }
+      ]
     },
     knowledgePanel: {
       role: 'Cloud Infrastructure Consultant',
