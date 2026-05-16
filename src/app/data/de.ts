@@ -73,6 +73,18 @@ export const DE_CONTENT: AppContent = {
         { label: 'Welche Technologien nutzt Subhrodip Mohanta?', routerLink: '/skills' }
       ]
     },
+    recommendations: {
+      title: 'Empfehlungen',
+      items: [
+        {
+          name: '[Colleague Name]',
+          role: '[Colleague Role]',
+          text: '[Recommendation Text]',
+          avatarUrl: 'https://www.google.com/s2/favicons?sz=128&domain=linkedin.com',
+          linkedinUrl: 'https://www.linkedin.com/in/ohbusm'
+        }
+      ]
+    },
     knowledgePanel: {
       role: 'Senior Software Engineer',
       resume: 'Portfolio-PDF herunterladen',

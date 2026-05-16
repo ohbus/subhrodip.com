@@ -73,6 +73,18 @@ export const BN_CONTENT: AppContent = {
         { label: 'শুভ্রদীপ মহান্ত কোন কোন প্রযুক্তি ব্যবহার করেন?', routerLink: '/skills' }
       ]
     },
+    recommendations: {
+      title: 'সুপারিশসমূহ',
+      items: [
+        {
+          name: '[Colleague Name]',
+          role: '[Colleague Role]',
+          text: '[Recommendation Text]',
+          avatarUrl: 'https://www.google.com/s2/favicons?sz=128&domain=linkedin.com',
+          linkedinUrl: 'https://www.linkedin.com/in/ohbusm'
+        }
+      ]
+    },
     knowledgePanel: {
       role: 'সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার',
       resume: 'পোর্টফোলিও পিডিএফ ডাউনলোড করুন',

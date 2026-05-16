@@ -64,6 +64,16 @@ export interface AppContent {
       title: string;
       items: { label: string; routerLink: string }[];
     };
+    recommendations: {
+      title: string;
+      items: {
+        name: string;
+        role: string;
+        text: string;
+        avatarUrl: string;
+        linkedinUrl: string;
+      }[];
+    };
     knowledgePanel: {
       role: string;
       resume: string;

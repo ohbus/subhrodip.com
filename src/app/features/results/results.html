@@ -33,6 +33,30 @@
     </div>
   </div>
 
+  <!-- Recommendations -->
+  <div class="mb-7 border-t border-surface-variant pt-5">
+    <h2 class="text-xl text-on-surface font-normal mb-4">{{c().results.recommendations.title}}</h2>
+    <div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 -mx-4 px-4 md:mx-0 md:px-0">
+      @for (rec of c().results.recommendations.items; track rec.name) {
+        <div class="flex-shrink-0 w-[280px] sm:w-[320px] bg-surface-bright border border-surface-variant rounded-xl p-4 flex flex-col gap-3 hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3">
+            <img [src]="rec.avatarUrl" [alt]="rec.name" class="w-10 h-10 rounded-full object-cover border border-surface-variant bg-surface-container-low" (error)="$any($event.target).src = 'favicon.png'">
+            <div class="flex flex-col min-w-0">
+              <span class="text-sm font-medium text-on-surface truncate">{{rec.name}}</span>
+              <span class="text-xs text-on-surface-variant truncate">{{rec.role}}</span>
+            </div>
+            <a [href]="rec.linkedinUrl" target="_blank" rel="noopener noreferrer" class="ml-auto text-primary hover:opacity-80">
+              <span class="material-symbols-outlined text-lg">open_in_new</span>
+            </a>
+          </div>
+          <p class="text-sm text-on-surface leading-relaxed line-clamp-4 italic">
+            "{{rec.text}}"
+          </p>
+        </div>
+      }
+    </div>
+  </div>
+
   <!-- Result 2 - GitHub -->
   <app-search-result-item 
     icon="code"
