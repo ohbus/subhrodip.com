@@ -280,9 +280,9 @@ export const DE_CONTENT: AppContent = {
     related: {
       title: 'Personen, denen man folgen sollte',
       items: [
-        { label: 'Werner Vogels', url: 'https://twitter.com/werner' },
-        { label: 'Steve Herrod', url: 'https://www.linkedin.com/in/herrod/' },
-        { label: 'Marc Benioff', url: 'https://twitter.com/Benioff' }
+        { label: 'Werner Vogels', url: 'https://www.linkedin.com/in/wernervogels/' },
+        { label: 'Kelsey Hightower', url: 'https://www.linkedin.com/in/kelseyhightower/' },
+        { label: 'Marc Benioff', url: 'https://www.linkedin.com/in/marcbenioff/' }
       ]
     },
     knowledgePanel: {

@@ -280,9 +280,9 @@ export const BN_CONTENT: AppContent = {
     related: {
       title: 'যাদের অনুসরণ করা যেতে পারে',
       items: [
-        { label: 'ওয়ার্নার ভোগেলস', url: 'https://twitter.com/werner' },
-        { label: 'স্টিভ হেরড', url: 'https://www.linkedin.com/in/herrod/' },
-        { label: 'মার্ক বেনিওফ', url: 'https://twitter.com/Benioff' }
+        { label: 'Werner Vogels', url: 'https://www.linkedin.com/in/wernervogels/' },
+        { label: 'Kelsey Hightower', url: 'https://www.linkedin.com/in/kelseyhightower/' },
+        { label: 'Marc Benioff', url: 'https://www.linkedin.com/in/marcbenioff/' }
       ]
     },
     knowledgePanel: {
