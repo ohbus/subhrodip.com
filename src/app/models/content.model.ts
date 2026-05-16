@@ -97,12 +97,6 @@ export interface AppContent {
   };
   sde: {
     metrics: string;
-    blog: {
-      label: string;
-      title: string;
-      breadcrumb: string;
-      snippet: string;
-    };
     projects: {
       label: string;
       patterns: { title: string; snippet: string; breadcrumb: string };
@@ -121,12 +115,6 @@ export interface AppContent {
   };
   cde: {
     metrics: string;
-    definition: {
-      label: string;
-      title: string;
-      breadcrumb: string;
-      snippet: string;
-    };
     projects: {
       label: string;
       aws: { title: string; snippet: string; breadcrumb: string };

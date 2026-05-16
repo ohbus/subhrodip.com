@@ -4,16 +4,6 @@
   <main class="w-full md:w-content-width md:ml-container-left-margin flex flex-col px-4 md:px-0">
     <app-search-metrics [metrics]="c().cde.metrics" />
 
-    <!-- Result 1 - Definition -->
-    <app-search-result-item 
-      icon="cloud" 
-      logoUrl="https://www.google.com/s2/favicons?sz=128&domain=github.com"
-      [label]="c().cde.definition.label"
-      [breadcrumb]="c().cde.definition.breadcrumb"
-      [title]="c().cde.definition.title"
-      [snippet]="c().cde.definition.snippet">
-    </app-search-result-item>
-
     <!-- Result 2 - AWS Case Study -->
     <app-search-result-item 
       icon="architecture" 

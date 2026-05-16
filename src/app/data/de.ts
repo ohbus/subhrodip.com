@@ -179,12 +179,6 @@ export const DE_CONTENT: AppContent = {
   },
   sde: {
     metrics: 'Ungefähr 5 Ergebnisse (0,24 Sekunden)',
-    blog: {
-      label: "Subhrodips Blog",
-      title: 'Jenseits der Wissenschaft: Die theoretische Lücke im Enterprise Engineering schließen',
-      breadcrumb: 'https://subhrodip.com › insights',
-      snippet: 'Eine strategische Analyse der modernen Engineering-Lernkurve. Über die akademische Syntax hinausgehen, um die Komplexität industrieller verteilter Architekturen zu meistern.'
-    },
     projects: {
       label: 'GitHub',
       patterns: {
@@ -215,12 +209,6 @@ export const DE_CONTENT: AppContent = {
   },
   cde: {
     metrics: 'Ungefähr 4 Ergebnisse (0,31 Sekunden)',
-    definition: {
-      label: 'Wörterbuch',
-      title: 'DevOps & Cloud Computing Definition',
-      breadcrumb: 'https://dictionary.com › devops',
-      snippet: 'DevOps ist eine Reihe von Praktiken, die Softwareentwicklung und IT-Betrieb kombinieren. Cloud Computing ist die bedarfsgerechte Verfügbarkeit von Systemressourcen.'
-    },
     projects: {
       label: 'GitHub',
       aws: {

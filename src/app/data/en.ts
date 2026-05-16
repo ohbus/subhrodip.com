@@ -179,12 +179,6 @@ export const EN_CONTENT: AppContent = {
   },
   sde: {
     metrics: 'About 5 results (0.24 seconds)',
-    blog: {
-      label: "Subhrodip's Blog",
-      title: 'Beyond Academics: Bridging the Theoretical Gap in Enterprise Engineering',
-      breadcrumb: 'https://subhrodip.com › insights',
-      snippet: 'A strategic analysis of the modern engineering learning curve. Moving beyond academic syntax to master the complexities of industrial-grade distributed architectures.'
-    },
     projects: {
       label: 'GitHub',
       patterns: {
@@ -215,12 +209,6 @@ export const EN_CONTENT: AppContent = {
   },
   cde: {
     metrics: 'About 4 results (0.31 seconds)',
-    definition: {
-      label: 'Dictionary',
-      title: 'DevOps & Cloud Computing Definition',
-      breadcrumb: 'https://dictionary.com › devops',
-      snippet: 'DevOps is a set of practices that combines software development and IT operations. Cloud computing is the on-demand availability of system resources.'
-    },
     projects: {
       label: 'GitHub',
       aws: {
