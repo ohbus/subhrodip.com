@@ -80,35 +80,35 @@ export const DE_CONTENT: AppContent = {
           name: 'Christoph Pölzleitner',
           role: 'Staff Software Engineer',
           text: 'I had the honor of working closely with Subhro in a team... he is an elite-level developer. Subhro played a truly crucial role in our most mission-critical area: connecting our charging stations to the Cloud system... He’s a cost-saving, load-optimizing powerhouse and a great teammate. Highly recommended!',
-          avatarUrl: 'christoph.png',
+          avatarUrl: 'christoph-96.jpg',
           linkedinUrl: 'https://www.linkedin.com/in/christoph-p%C3%B6lzleitner-369814b3/'
         },
         {
           name: 'Ilkka Seppälä',
           role: 'Lead Expert @ Technical Project Management',
           text: 'I\'ve had the pleasure to collaborate with Subhrodip Mohanta on open-source projects, including Java Design Patterns. He\'s technically competent with software architectures, Java technologies, and various DevOps tools. I think he\'s an asset for any software project and warmly recommend him.',
-          avatarUrl: 'Ilkka.jpg',
+          avatarUrl: 'Ilkka-96.jpg',
           linkedinUrl: 'https://www.linkedin.com/in/ilkkaseppala/'
         },
         {
           name: 'Gilles Gravier',
           role: 'Corporate Strategy Advisor',
           text: 'Subhrodip is a super dynamic person. He moves, drives, aims to get things done and gets there. You want him working with you on your project. He groks open source and is a great asset in your team. Working with him is always great!',
-          avatarUrl: 'Gilles.jpg',
+          avatarUrl: 'Gilles-96.jpg',
           linkedinUrl: 'https://www.linkedin.com/in/gillesgravier/'
         },
         {
           name: 'Parikshit( Pari ) Bhaduri',
           role: 'IT-Führungskraft (Ehemaliger Manager)',
           text: 'I recruited Subhrodip as an intern and then he graduated into an employee. I noticed his keen enthusiasm and desire to pursue new technologies... he is a problem solver and leaves no stone unturned in troubleshooting. His motivation and ability to grasp new technologies makes him an asset for any team.',
-          avatarUrl: 'Parikshit.jpg',
+          avatarUrl: 'Parikshit-96.jpg',
           linkedinUrl: 'https://www.linkedin.com/in/pbhaduri/'
         },
         {
           name: 'Pavana Bandaru',
           role: 'Data Platform Owner @ PostNL',
           text: 'Subhrodip is always keen on details that help the team to collaborate better and improve the processes. His way of working always gives the opportunity to build and produce quality work which enables the team to work further.',
-          avatarUrl: 'Pavana.jpg',
+          avatarUrl: 'Pavana-96.jpg',
           linkedinUrl: 'https://www.linkedin.com/in/pavanabandaru/'
         }
       ]

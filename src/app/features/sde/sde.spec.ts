@@ -1,18 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
-import { Sde } from './sde';
+import { SdeComponent } from './sde';
 
-describe('Sde', () => {
-  let component: Sde;
-  let fixture: ComponentFixture<Sde>;
+describe('SdeComponent', () => {
+  let component: SdeComponent;
+  let fixture: ComponentFixture<SdeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Sde]
+      imports: [SdeComponent],
+      providers: [provideRouter([])]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Sde);
+    fixture = TestBed.createComponent(SdeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

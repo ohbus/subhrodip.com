@@ -46,7 +46,7 @@ export class ContentService {
   }
 
   private initializeLanguage() {
-    const saved = localStorage.getItem(this.LANG_KEY) as LanguageCode;
+    const saved = this.readStoredLanguage();
     if (saved && this.languages.some(l => l.code === saved)) {
       this.setLanguage(saved);
     } else {
@@ -59,18 +59,45 @@ export class ContentService {
   }
 
   setLanguage(lang: LanguageCode) {
+    const previousLang = this.currentLangCode();
     this.currentLangCode.set(lang);
-    if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem(this.LANG_KEY, lang);
-    }
+    this.persistLanguage(lang);
 
     // Lazy load non-default languages to optimize initial bundle size
     if (lang === 'en') {
       this.currentContent.set(EN_CONTENT);
     } else if (lang === 'bn') {
-      import('../data/bn').then(m => this.currentContent.set(m.BN_CONTENT));
+      import('../data/bn')
+        .then(m => this.currentContent.set(m.BN_CONTENT))
+        .catch(() => this.restoreLanguage(previousLang));
     } else if (lang === 'de') {
-      import('../data/de').then(m => this.currentContent.set(m.DE_CONTENT));
+      import('../data/de')
+        .then(m => this.currentContent.set(m.DE_CONTENT))
+        .catch(() => this.restoreLanguage(previousLang));
     }
+  }
+
+  private readStoredLanguage(): LanguageCode | null {
+    try {
+      const saved = localStorage.getItem(this.LANG_KEY) as LanguageCode | null;
+      return saved && this.languages.some(l => l.code === saved) ? saved : null;
+    } catch {
+      return null;
+    }
+  }
+
+  private persistLanguage(lang: LanguageCode) {
+    if (isPlatformBrowser(this.platformId)) {
+      try {
+        localStorage.setItem(this.LANG_KEY, lang);
+      } catch {
+        // Restricted storage should not prevent the app from rendering.
+      }
+    }
+  }
+
+  private restoreLanguage(lang: LanguageCode) {
+    this.currentLangCode.set(lang);
+    this.persistLanguage(lang);
   }
 }

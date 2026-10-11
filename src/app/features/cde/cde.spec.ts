@@ -1,18 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
-import { Cde } from './cde';
+import { CdeComponent } from './cde';
 
-describe('Cde', () => {
-  let component: Cde;
-  let fixture: ComponentFixture<Cde>;
+describe('CdeComponent', () => {
+  let component: CdeComponent;
+  let fixture: ComponentFixture<CdeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Cde]
+      imports: [CdeComponent],
+      providers: [provideRouter([])]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Cde);
+    fixture = TestBed.createComponent(CdeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

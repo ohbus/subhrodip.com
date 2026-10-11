@@ -29,7 +29,7 @@ export class ResultsComponent {
     return {
       title: this.c().common.name,
       subtitle: this.c().results.knowledgePanel.role,
-      imageUrl: 'social-icons.png',
+      imageUrl: 'social-icons-256.png',
       snippet: this.c().results.knowledgePanel.snippet,
       actions: [
         {
