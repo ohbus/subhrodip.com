@@ -24,7 +24,7 @@ Welcome to the source code of my personal portfolio and professional background.
 
 ## 🛠️ Technology Stack
 
-*   **Framework:** [Angular](https://angular.dev/) (v17+)
+*   **Framework:** [Angular](https://angular.dev/) (v21, standalone components)
 *   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 *   **Icons:** [Google Material Symbols](https://fonts.google.com/icons)
 *   **Fonts:** [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) & Inter
@@ -69,19 +69,15 @@ The project follows a modular, feature-based architecture utilizing Angular's st
 ```text
 src/
 ├── app/
-│   ├── components/
-│   │   ├── cde/             # DevOps & Cloud Computing page
-│   │   ├── contact/         # Serverless Contact Form
-│   │   ├── education/       # Academic Background
-│   │   ├── home/            # Main Landing/Search Page
-│   │   ├── results/         # General 'All' Results Page
-│   │   ├── sde/             # Software Development Projects
-│   │   ├── shared/          # Reusable UI (Header, Footer, SearchHeader)
-│   │   └── skills/          # Technical Proficiencies
+│   ├── core/                # App shell, layout, and SEO services
+│   ├── data/                # Localized content and redirect mappings
+│   ├── features/            # Route-level standalone page components
+│   ├── shared/              # Reusable UI components
+│   ├── models/              # Shared content types
+│   └── services/            # Application services
 │   ├── app.routes.ts        # Lazy-loaded route definitions
 │   └── app.ts               # Root component
-├── assets/
-├── styles.css               # Global Tailwind configuration & custom classes
+├── styles.scss              # Global Tailwind stylesheet
 └── index.html
 ```
 
@@ -99,9 +95,9 @@ This will compile the project into the `dist/subhrodip.com/browser` directory, o
 
 ## 🤖 CI/CD Pipeline
 
-This repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automates the deployment process:
-1.  **Pull Requests:** Verifies the build successfully compiles using `npm ci` and `npm run build`.
-2.  **Master Pushes:** Builds the application and securely deploys the artifact directly to GitHub Pages.
+This repository includes GitHub Actions workflows that automate verification and deployment:
+1.  **Pull Requests:** `.github/workflows/pr-check.yml` runs installation, tests with coverage, the production build, artifact checks, and browser smoke tests.
+2.  **Master Pushes:** `.github/workflows/deploy.yml` repeats those checks and securely deploys the production artifact to GitHub Pages.
 
 ---
 
