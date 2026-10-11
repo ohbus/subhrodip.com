@@ -58,12 +58,14 @@ describe('ContentService', () => {
 
   it('restores the loaded language when the current import fails', async () => {
     const service = TestBed.inject(ContentService);
+    const error = new Error('load failed');
+    const log = spyOn(console, 'error');
     let resolveBengali!: () => void;
     spyOn<any>(service, 'loadLanguage').and.callFake((lang: string) => lang === 'bn'
       ? new Promise(resolve => {
           resolveBengali = () => resolve(service.c());
         })
-      : Promise.reject(new Error('load failed')));
+      : Promise.reject(error));
 
     const pendingBengali = service.setLanguage('bn');
     await service.setLanguage('de');
@@ -71,6 +73,7 @@ describe('ContentService', () => {
     expect(service.currentLang()).toBe('en');
     expect(service.activeLanguage().code).toBe('en');
     expect(localStorage.getItem('pref_lang')).toBe('en');
+    expect(log).toHaveBeenCalledWith('Failed to load language content', error);
 
     resolveBengali();
     await pendingBengali;
@@ -78,6 +81,8 @@ describe('ContentService', () => {
 
   it('does not restore an older language when its import fails late', async () => {
     const service = TestBed.inject(ContentService);
+    const error = new Error('late failure');
+    const log = spyOn(console, 'error');
     await service.setLanguage('bn');
 
     let rejectOldRequest!: (reason?: unknown) => void;
@@ -87,10 +92,11 @@ describe('ContentService', () => {
 
     const oldRequest = service.setLanguage('de');
     const activeRequest = service.setLanguage('en');
-    rejectOldRequest(new Error('late failure'));
+    rejectOldRequest(error);
     await Promise.all([oldRequest, activeRequest]);
 
     expect(service.currentLang()).toBe('en');
     expect(service.c().common.name).toBe('Subhrodip Mohanta');
+    expect(log).toHaveBeenCalledWith('Failed to load language content', error);
   });
 });

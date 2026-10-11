@@ -78,7 +78,8 @@ export class ContentService {
             this.loadedLanguage = lang;
           }
         })
-        .catch(() => {
+        .catch(error => {
+          console.error('Failed to load language content', error);
           if (request === this.languageRequest) {
             this.restoreLanguage(this.loadedLanguage);
           }
