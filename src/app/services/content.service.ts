@@ -27,6 +27,7 @@ export class ContentService {
   // Internal state
   private currentLangCode = signal<LanguageCode>('en');
   private currentContent = signal<AppContent>(EN_CONTENT);
+  private loadedLanguage: LanguageCode = 'en';
   private languageRequest = 0;
 
   // Reactive selector for the current content
@@ -59,25 +60,27 @@ export class ContentService {
     }
   }
 
-  setLanguage(lang: LanguageCode) {
+  setLanguage(lang: LanguageCode): Promise<void> {
     const request = ++this.languageRequest;
-    const previousLang = this.currentLangCode();
     this.currentLangCode.set(lang);
     this.persistLanguage(lang);
 
     // Lazy load non-default languages to optimize initial bundle size
     if (lang === 'en') {
       this.currentContent.set(EN_CONTENT);
+      this.loadedLanguage = 'en';
+      return Promise.resolve();
     } else {
-      this.loadLanguage(lang)
+      return this.loadLanguage(lang)
         .then(content => {
           if (request === this.languageRequest) {
             this.currentContent.set(content);
+            this.loadedLanguage = lang;
           }
         })
         .catch(() => {
           if (request === this.languageRequest) {
-            this.restoreLanguage(previousLang);
+            this.restoreLanguage(this.loadedLanguage);
           }
         });
     }

@@ -104,7 +104,7 @@ try {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const { port } = server.address();
   const checks = [
-    ['/', 'Subhrodip'],
+    ['/', 'Review Credentials'],
     ['/search', 'People also ask'],
     ['/experience', 'Professional Experience'],
     ['/sentry-test', 'Sentry production test']

@@ -53,14 +53,15 @@ describe('HomeComponent', () => {
     state.type();
     expect(state.isDeleting).toBeTrue();
 
+    clearTimeout(state.timeoutId);
     state.isDeleting = true;
     state.charIndex = 1;
     state.type();
     expect(state.isDeleting).toBeFalse();
     expect(state.phraseIndex).toBe(1);
 
-    fixture.destroy();
     tick(500);
+    fixture.destroy();
   }));
 
   it('does not start the browser timer during server rendering', () => {

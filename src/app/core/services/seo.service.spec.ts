@@ -59,14 +59,23 @@ describe('SeoService', () => {
     expect(document.querySelector('link[rel="canonical"]')?.getAttribute('href'))
       .toBe(`${window.location.origin}/contact`);
 
+    title.setTitle.calls.reset();
+    meta.updateTag.calls.reset();
     content.currentLang.set('de');
     TestBed.flushEffects();
     expect(title.setTitle).toHaveBeenCalledWith('Test Name | Contact');
+    expect(meta.updateTag).toHaveBeenCalledWith(jasmine.objectContaining({
+      name: 'description',
+      content: jasmine.stringMatching('Test Name')
+    }));
   });
 
   it('uses localized defaults and fallback route metadata', () => {
     const route = { firstChild: null, outlet: 'primary', data: of({}) };
-    const { router, content, title, meta, service } = configureSeo('/unknown?query=1', route, 'de');
+    const { events, router, content, title, meta, service } = configureSeo('/unknown?query=1', route, 'de');
+
+    service.init();
+    events.next(new NavigationEnd(1, '/unknown?query=1', '/unknown?query=1'));
 
     (service as any).updateMetadata({ title: 'Fallback title' });
     expect(title.setTitle).toHaveBeenCalledWith('Test Name | Fallback title');
@@ -78,8 +87,11 @@ describe('SeoService', () => {
     expect(document.querySelector('link[rel="canonical"]')?.getAttribute('href'))
       .toBe(`${window.location.origin}/`);
 
+    title.setTitle.calls.reset();
+    meta.updateTag.calls.reset();
     content.currentLang.set('en');
     TestBed.flushEffects();
-    expect(title.setTitle).toHaveBeenCalled();
+    expect(title.setTitle).toHaveBeenCalledWith('Test Name | Engineer');
+    expect(meta.updateTag).toHaveBeenCalledWith(jasmine.objectContaining({ name: 'description' }));
   });
 });

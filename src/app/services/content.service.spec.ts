@@ -2,7 +2,11 @@ import { TestBed } from '@angular/core/testing';
 import { ContentService } from './content.service';
 
 describe('ContentService', () => {
-  afterEach(() => TestBed.resetTestingModule());
+  beforeEach(() => localStorage.removeItem('pref_lang'));
+  afterEach(() => {
+    localStorage.removeItem('pref_lang');
+    TestBed.resetTestingModule();
+  });
 
   it('keeps the default language when browser storage is blocked', () => {
     spyOn(Storage.prototype, 'getItem').and.throwError('storage blocked');
@@ -16,8 +20,7 @@ describe('ContentService', () => {
     const service = TestBed.inject(ContentService);
     const setItem = spyOn(Storage.prototype, 'setItem').and.callThrough();
 
-    service.setLanguage('de');
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await service.setLanguage('de');
 
     expect(service.currentLang()).toBe('de');
     expect(service.c().common.name).toBe('Subhrodip Mohanta');
@@ -27,8 +30,7 @@ describe('ContentService', () => {
   it('loads Bengali content', async () => {
     const service = TestBed.inject(ContentService);
 
-    service.setLanguage('bn');
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await service.setLanguage('bn');
 
     expect(service.currentLang()).toBe('bn');
     expect(service.c().common.name).toBeTruthy();
@@ -37,9 +39,9 @@ describe('ContentService', () => {
   it('ignores a language import that finishes after a newer request', async () => {
     const service = TestBed.inject(ContentService);
 
-    service.setLanguage('bn');
-    service.setLanguage('en');
-    await new Promise(resolve => setTimeout(resolve, 0));
+    const staleRequest = service.setLanguage('bn');
+    const activeRequest = service.setLanguage('en');
+    await Promise.all([staleRequest, activeRequest]);
 
     expect(service.currentLang()).toBe('en');
     expect(service.c().common.name).toBe('Subhrodip Mohanta');
@@ -54,31 +56,39 @@ describe('ContentService', () => {
     expect(service.activeLanguage().label).toBe('English');
   });
 
-  it('restores the previous language when the current import fails', async () => {
+  it('restores the loaded language when the current import fails', async () => {
     const service = TestBed.inject(ContentService);
-    spyOn<any>(service, 'loadLanguage').and.returnValue(Promise.reject(new Error('load failed')));
+    let resolveBengali!: () => void;
+    spyOn<any>(service, 'loadLanguage').and.callFake((lang: string) => lang === 'bn'
+      ? new Promise(resolve => {
+          resolveBengali = () => resolve(service.c());
+        })
+      : Promise.reject(new Error('load failed')));
 
-    service.setLanguage('de');
-    await new Promise(resolve => setTimeout(resolve, 0));
+    const pendingBengali = service.setLanguage('bn');
+    await service.setLanguage('de');
 
     expect(service.currentLang()).toBe('en');
     expect(service.activeLanguage().code).toBe('en');
+    expect(localStorage.getItem('pref_lang')).toBe('en');
+
+    resolveBengali();
+    await pendingBengali;
   });
 
   it('does not restore an older language when its import fails late', async () => {
     const service = TestBed.inject(ContentService);
-    service.setLanguage('bn');
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await service.setLanguage('bn');
 
     let rejectOldRequest!: (reason?: unknown) => void;
     spyOn<any>(service, 'loadLanguage').and.returnValue(new Promise((_resolve, reject) => {
       rejectOldRequest = reject;
     }));
 
-    service.setLanguage('de');
-    service.setLanguage('en');
+    const oldRequest = service.setLanguage('de');
+    const activeRequest = service.setLanguage('en');
     rejectOldRequest(new Error('late failure'));
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await Promise.all([oldRequest, activeRequest]);
 
     expect(service.currentLang()).toBe('en');
     expect(service.c().common.name).toBe('Subhrodip Mohanta');
