@@ -83,6 +83,6 @@ export const routes: Routes = [
       robots: 'noindex, nofollow'
     }
   },
-  { path: 'go/:slug', loadComponent: () => import('./features/redirect/redirect').then(m => m.RedirectComponent), data: { title: 'Redirecting... | Subhrodip Mohanta', description: 'Redirecting to a specific resource.' } },
+  { path: 'go/:slug', loadComponent: () => import('./features/redirect/redirect').then(m => m.RedirectComponent), data: { title: 'Redirecting... | Subhrodip Mohanta', description: 'Redirecting to a specific resource.', robots: 'noindex, nofollow' } },
   { path: '**', redirectTo: '' }
 ];

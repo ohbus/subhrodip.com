@@ -35,7 +35,7 @@
     <div class="px-4 pb-4 flex flex-col gap-3" [class.pt-4]="!config().snippet" [class.border-t]="!config().snippet && (config().actions!.length > 0)">
       @for (action of config().actions; track action.label) {
         @if (action.url) {
-          <a [href]="action.url" target="_blank" 
+          <a [href]="action.url" target="_blank" rel="noopener noreferrer"
              [class]="action.primary ? 'bg-primary text-white hover:brightness-90' : 'border border-surface-variant hover:bg-surface-bright text-primary-container'"
              class="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-full font-medium text-body-snippet transition-colors shadow-sm">
             @if (action.icon) { <span class="material-symbols-outlined text-lg">{{action.icon}}</span> }
@@ -81,7 +81,7 @@
         <div class="space-y-3">
           @for (link of config().footer!.linkList; track link.text) {
             @if (link.url?.startsWith('http') || link.url?.startsWith('mailto')) {
-              <a [href]="link.url" target="_blank" class="flex items-center gap-3 text-body-snippet text-primary-container hover:underline">
+              <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-body-snippet text-primary-container hover:underline">
                 <span class="material-symbols-outlined text-outline text-xl">{{link.icon}}</span>
                 {{link.text}}
               </a>
@@ -101,13 +101,13 @@
       } @else if (config().footer!.type === 'profiles') {
          <h3 class="text-sm font-bold uppercase tracking-wider text-on-surface mb-4">Professional Profiles</h3>
          <div class="flex space-x-5">
-           <a href="https://linkedin.com/in/ohbusm" target="_blank" class="group flex flex-col items-center gap-2">
+           <a href="https://linkedin.com/in/ohbusm" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-2">
              <div class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center group-hover:bg-surface-container transition-colors">
                <span class="material-symbols-outlined text-brand-linkedin text-2xl">work</span>
              </div>
              <span class="text-xs text-on-surface group-hover:underline">LinkedIn</span>
            </a>
-           <a href="https://github.com/ohbus" target="_blank" class="group flex flex-col items-center gap-2">
+           <a href="https://github.com/ohbus" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-2">
              <div class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center group-hover:bg-surface-container transition-colors">
                <span class="material-symbols-outlined text-brand-github text-2xl">code</span>
              </div>
