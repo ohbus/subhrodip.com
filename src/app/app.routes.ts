@@ -74,6 +74,15 @@ export const routes: Routes = [
       keywords: 'Contact Subhrodip Mohanta, Hire Software Engineer, Cloud Consultant Contact'
     } 
   },
+  {
+    path: 'sentry-test',
+    loadComponent: () => import('./features/sentry-test/sentry-test').then(m => m.SentryTestComponent),
+    data: {
+      title: 'Sentry Test | Subhrodip Mohanta',
+      description: 'Internal Sentry monitoring test route.',
+      robots: 'noindex, nofollow'
+    }
+  },
   { path: 'go/:slug', loadComponent: () => import('./features/redirect/redirect').then(m => m.RedirectComponent), data: { title: 'Redirecting... | Subhrodip Mohanta', description: 'Redirecting to a specific resource.' } },
   { path: '**', redirectTo: '' }
 ];

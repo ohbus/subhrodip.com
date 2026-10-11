@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '24'
           cache: 'npm'
@@ -27,3 +27,34 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Run tests
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p test-results
+          npm run test:coverage 2>&1 | tee test-results/test-output.txt
+
+      - name: Publish test results
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo '## Test results'
+            echo '```text'
+            if [ -f test-results/test-output.txt ]; then
+              tail -n 60 test-results/test-output.txt
+            else
+              echo 'The test command did not produce output.'
+            fi
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Prepare production artifact
+        run: npm run prepare:production
+
+      - name: Verify production artifact
+        run: npm run verify:production
+
+      - name: Smoke test production artifact
+        run: npm run smoke:production

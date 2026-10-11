@@ -27,6 +27,8 @@ export class ContentService {
   // Internal state
   private currentLangCode = signal<LanguageCode>('en');
   private currentContent = signal<AppContent>(EN_CONTENT);
+  private loadedLanguage: LanguageCode = 'en';
+  private languageRequest = 0;
 
   // Reactive selector for the current content
   readonly c = computed(() => this.currentContent());
@@ -46,7 +48,7 @@ export class ContentService {
   }
 
   private initializeLanguage() {
-    const saved = localStorage.getItem(this.LANG_KEY) as LanguageCode;
+    const saved = this.readStoredLanguage();
     if (saved && this.languages.some(l => l.code === saved)) {
       this.setLanguage(saved);
     } else {
@@ -58,19 +60,61 @@ export class ContentService {
     }
   }
 
-  setLanguage(lang: LanguageCode) {
+  setLanguage(lang: LanguageCode): Promise<void> {
+    const request = ++this.languageRequest;
     this.currentLangCode.set(lang);
-    if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem(this.LANG_KEY, lang);
-    }
+    this.persistLanguage(lang);
 
     // Lazy load non-default languages to optimize initial bundle size
     if (lang === 'en') {
       this.currentContent.set(EN_CONTENT);
-    } else if (lang === 'bn') {
-      import('../data/bn').then(m => this.currentContent.set(m.BN_CONTENT));
-    } else if (lang === 'de') {
-      import('../data/de').then(m => this.currentContent.set(m.DE_CONTENT));
+      this.loadedLanguage = 'en';
+      return Promise.resolve();
+    } else {
+      return this.loadLanguage(lang)
+        .then(content => {
+          if (request === this.languageRequest) {
+            this.currentContent.set(content);
+            this.loadedLanguage = lang;
+          }
+        })
+        .catch(error => {
+          console.error('Failed to load language content', error);
+          if (request === this.languageRequest) {
+            this.restoreLanguage(this.loadedLanguage);
+          }
+        });
     }
+  }
+
+  private loadLanguage(lang: Exclude<LanguageCode, 'en'>): Promise<AppContent> {
+    if (lang === 'bn') {
+      return import('../data/bn').then(m => m.BN_CONTENT);
+    }
+    return import('../data/de').then(m => m.DE_CONTENT);
+  }
+
+  private readStoredLanguage(): LanguageCode | null {
+    try {
+      const saved = localStorage.getItem(this.LANG_KEY) as LanguageCode | null;
+      return saved && this.languages.some(l => l.code === saved) ? saved : null;
+    } catch {
+      return null;
+    }
+  }
+
+  private persistLanguage(lang: LanguageCode) {
+    if (isPlatformBrowser(this.platformId)) {
+      try {
+        localStorage.setItem(this.LANG_KEY, lang);
+      } catch {
+        // Restricted storage should not prevent the app from rendering.
+      }
+    }
+  }
+
+  private restoreLanguage(lang: LanguageCode) {
+    this.currentLangCode.set(lang);
+    this.persistLanguage(lang);
   }
 }

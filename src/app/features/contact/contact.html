@@ -12,9 +12,11 @@
     <!-- Contact Form -->
     <div class="mt-4 max-w-xl border border-surface-variant rounded-lg p-4 bg-surface-bright">
       <form action="https://formspree.io/f/mojbarkg" method="POST" target="_blank" class="flex flex-col gap-4">
+        <label class="sr-only" for="website">Leave this field empty</label>
+        <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden">
         <div class="flex flex-col">
           <label for="name" class="text-sm text-on-surface font-medium mb-1">{{c().contact.form.name}} <span class="text-error">*</span></label>
-          <input type="text" id="name" name="name" required minlength="2" pattern="[a-zA-Z\s]+" placeholder="e.g. John Doe" class="h-[36px] px-3 rounded border border-surface-variant focus:outline-none focus:border-primary text-body-snippet">
+          <input type="text" id="name" name="name" required minlength="2" autocomplete="name" placeholder="e.g. John Doe" class="h-[36px] px-3 rounded border border-surface-variant focus:outline-none focus:border-primary text-body-snippet">
         </div>
         <div class="flex flex-col">
           <label for="email" class="text-sm text-on-surface font-medium mb-1">{{c().contact.form.email}} <span class="text-error">*</span></label>

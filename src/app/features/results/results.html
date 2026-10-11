@@ -5,7 +5,7 @@
   <!-- Result 1 - Portfolio Site -->
   <app-search-result-item 
     icon="account_circle"
-    logoUrl="favicon.png"
+    logoUrl="favicon-32x32.png"
     [label]="c().results.main.title"
     [breadcrumb]="c().results.main.breadcrumb"
     routerLink="/"
@@ -40,7 +40,7 @@
       @for (rec of c().results.recommendations.items; track rec.name) {
         <div class="flex-shrink-0 w-[280px] sm:w-[320px] bg-surface-bright border border-surface-variant rounded-xl p-4 flex flex-col gap-3 hover:shadow-md transition-shadow">
           <div class="flex items-center gap-3">
-            <img [src]="rec.avatarUrl" [alt]="rec.name" class="w-10 h-10 rounded-full object-cover border border-surface-variant bg-surface-container-low" (error)="$any($event.target).src = 'favicon.png'">
+            <img [src]="rec.avatarUrl" [alt]="rec.name" class="w-10 h-10 rounded-full object-cover border border-surface-variant bg-surface-container-low" (error)="$any($event.target).src = 'favicon-32x32.png'">
             <div class="flex flex-col min-w-0">
               <span class="text-sm font-medium text-on-surface truncate">{{rec.name}}</span>
               <span class="text-xs text-on-surface-variant truncate">{{rec.role}}</span>

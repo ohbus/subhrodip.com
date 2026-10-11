@@ -1,4 +1,5 @@
-import { Component, OnInit , ChangeDetectionStrategy } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { REDIRECT_MAP } from '../../data/redirects';
 
@@ -14,10 +15,13 @@ import { REDIRECT_MAP } from '../../data/redirects';
   `,
   styles: []
 })
-export class RedirectComponent implements OnInit {
+export class RedirectComponent implements OnDestroy, OnInit {
+  private redirectTimer: ReturnType<typeof setTimeout> | undefined;
+
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit() {
@@ -25,12 +29,18 @@ export class RedirectComponent implements OnInit {
     
     if (slug && REDIRECT_MAP[slug]) {
       // Small delay to show the "Redirecting" UI for a smoother transition
-      setTimeout(() => {
-        window.location.replace(REDIRECT_MAP[slug]);
+      this.redirectTimer = setTimeout(() => {
+        this.document.location!.replace(REDIRECT_MAP[slug]);
       }, 500);
     } else {
       // Fallback to home if slug not found
       this.router.navigate(['/']);
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.redirectTimer) {
+      clearTimeout(this.redirectTimer);
     }
   }
 }

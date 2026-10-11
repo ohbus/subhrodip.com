@@ -8,16 +8,16 @@
     }
   </div>
   <!-- Search Bar -->
-  <div class="w-full max-w-[584px] relative group" (click)="onSearch()">
+  <button type="button" [attr.aria-label]="c().home.placeholder" class="w-full max-w-[584px] relative group text-left" (click)="onSearch()">
     <div class="flex items-center w-full h-[44px] border border-surface-variant rounded-full px-4 search-bar-shadow bg-surface-container-lowest transition-shadow duration-200 cursor-pointer">
       <span class="material-symbols-outlined text-outline mr-3">search</span>
-      <input class="flex-grow min-w-0 bg-transparent border-none focus:ring-0 font-search-input text-search-input text-on-surface outline-none placeholder-outline cursor-pointer" [placeholder]="c().home.placeholder" type="text" [value]="currentText()" readonly/>
+      <span class="flex-grow min-w-0 font-search-input text-search-input text-on-surface outline-none placeholder-outline">{{currentText() || c().home.placeholder}}</span>
       <div class="flex space-x-3 items-center">
         <span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 icon-fill" data-weight="fill">{{c().common.mic}}</span>
         <span class="material-symbols-outlined text-secondary cursor-pointer hover:opacity-80">{{c().common.lens}}</span>
       </div>
     </div>
-  </div>
+  </button>
   <!-- Action Buttons -->
   <div class="flex flex-wrap justify-center gap-3 mt-8">
     <button (click)="onSearch()" class="bg-surface-container-low text-on-surface font-body-snippet text-sm px-4 py-2 rounded border border-transparent hover:border-surface-variant hover:shadow-sm focus:outline-none focus:ring-1 focus:ring-primary transition-all">

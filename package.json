@@ -5,6 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "test:coverage": "ng test --watch=false --browsers=ChromeHeadless --code-coverage && node tools/check-coverage.mjs",
+    "smoke:production": "node tools/smoke-production.mjs",
+    "verify:production": "node tools/verify-production.mjs",
+    "prepare:production": "node tools/prepare-production.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -25,9 +29,9 @@
     "@angular/common": "^21.2.24",
     "@angular/compiler": "^21.2.24",
     "@angular/core": "^21.2.24",
-    "@angular/forms": "^21.2.24",
     "@angular/platform-browser": "^21.2.24",
     "@angular/router": "^21.2.24",
+    "@sentry/angular": "11.6.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

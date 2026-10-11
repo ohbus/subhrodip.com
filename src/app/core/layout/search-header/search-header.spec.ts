@@ -1,23 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter, Router } from '@angular/router';
+import { SearchHeaderComponent } from './search-header';
 
-import { SearchHeader } from './search-header';
-
-describe('SearchHeader', () => {
-  let component: SearchHeader;
-  let fixture: ComponentFixture<SearchHeader>;
+describe('SearchHeaderComponent', () => {
+  let component: SearchHeaderComponent;
+  let fixture: ComponentFixture<SearchHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SearchHeader]
-    })
-    .compileComponents();
+      imports: [SearchHeaderComponent],
+      providers: [provideRouter([])]
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(SearchHeader);
+    fixture = TestBed.createComponent(SearchHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('returns to the home route', () => {
+    const navigate = spyOn(TestBed.inject(Router), 'navigate');
+
+    component.onHome();
+
+    expect(navigate).toHaveBeenCalledWith(['/']);
   });
 });
