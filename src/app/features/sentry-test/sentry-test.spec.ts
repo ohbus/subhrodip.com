@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import * as Sentry from '@sentry/angular';
 import { SENTRY_CAPTURE_EXCEPTION, SentryTestComponent } from './sentry-test';
 
 describe('SentryTestComponent', () => {
@@ -23,5 +24,13 @@ describe('SentryTestComponent', () => {
     const error = captureException.calls.mostRecent().args[0] as Error;
     expect(error).toEqual(jasmine.any(Error));
     expect(error.message).toBe('Sentry production test');
+  });
+});
+
+describe('Sentry capture provider', () => {
+  beforeEach(() => TestBed.configureTestingModule({}));
+
+  it('binds the default provider to Sentry.captureException', () => {
+    expect(TestBed.inject(SENTRY_CAPTURE_EXCEPTION)).toBe(Sentry.captureException);
   });
 });

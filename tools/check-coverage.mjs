@@ -1,5 +1,7 @@
 import { readFile } from 'node:fs/promises';
 
+console.log('Coverage scope: application code; src/main.ts is validated by the production smoke test.');
+
 const report = await readFile('coverage/subhrodip.com/index.html', 'utf8');
 const thresholds = {
   Statements: 100,
