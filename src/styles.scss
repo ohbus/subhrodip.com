@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
 .brand-s { color: #4285f4; }
 .brand-u { color: #ea4335; }
