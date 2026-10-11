@@ -89,6 +89,9 @@
             ],
             "styles": [
               "src/styles.scss"
+            ],
+            "codeCoverageExclude": [
+              "src/main.ts"
             ]
           }
         }

@@ -27,6 +27,7 @@ export class ContentService {
   // Internal state
   private currentLangCode = signal<LanguageCode>('en');
   private currentContent = signal<AppContent>(EN_CONTENT);
+  private languageRequest = 0;
 
   // Reactive selector for the current content
   readonly c = computed(() => this.currentContent());
@@ -59,6 +60,7 @@ export class ContentService {
   }
 
   setLanguage(lang: LanguageCode) {
+    const request = ++this.languageRequest;
     const previousLang = this.currentLangCode();
     this.currentLangCode.set(lang);
     this.persistLanguage(lang);
@@ -66,15 +68,26 @@ export class ContentService {
     // Lazy load non-default languages to optimize initial bundle size
     if (lang === 'en') {
       this.currentContent.set(EN_CONTENT);
-    } else if (lang === 'bn') {
-      import('../data/bn')
-        .then(m => this.currentContent.set(m.BN_CONTENT))
-        .catch(() => this.restoreLanguage(previousLang));
-    } else if (lang === 'de') {
-      import('../data/de')
-        .then(m => this.currentContent.set(m.DE_CONTENT))
-        .catch(() => this.restoreLanguage(previousLang));
+    } else {
+      this.loadLanguage(lang)
+        .then(content => {
+          if (request === this.languageRequest) {
+            this.currentContent.set(content);
+          }
+        })
+        .catch(() => {
+          if (request === this.languageRequest) {
+            this.restoreLanguage(previousLang);
+          }
+        });
     }
+  }
+
+  private loadLanguage(lang: Exclude<LanguageCode, 'en'>): Promise<AppContent> {
+    if (lang === 'bn') {
+      return import('../data/bn').then(m => m.BN_CONTENT);
+    }
+    return import('../data/de').then(m => m.DE_CONTENT);
   }
 
   private readStoredLanguage(): LanguageCode | null {

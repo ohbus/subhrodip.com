@@ -47,13 +47,16 @@ jobs:
         run: npm run build
 
       - name: Run tests
-        run: npm test -- --watch=false --browsers=ChromeHeadless
+        run: npm run test:coverage
 
       - name: Prepare production artifact
         run: npm run prepare:production
 
       - name: Verify production artifact
         run: npm run verify:production
+
+      - name: Smoke test production artifact
+        run: npm run smoke:production
 
       - name: Attest Pages artifact
         uses: actions/attest@v4

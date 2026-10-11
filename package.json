@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "test:coverage": "ng test --watch=false --browsers=ChromeHeadless --code-coverage && node tools/check-coverage.mjs",
+    "smoke:production": "node tools/smoke-production.mjs",
     "verify:production": "node tools/verify-production.mjs",
     "prepare:production": "node tools/prepare-production.mjs",
     "watch": "ng build --watch --configuration development",
