@@ -4,12 +4,12 @@
     <div class="flex items-center justify-between w-full mb-6 px-4 md:px-0">
       <div class="flex items-center gap-4 md:gap-8 flex-grow max-w-[850px]">
         <!-- Brand Logo -->
-        <a class="hidden sm:block text-2xl font-medium tracking-tight whitespace-nowrap font-result-title pl-2 md:pl-4 cursor-pointer" (click)="onHome()" fetchpriority="high">
+        <a routerLink="/" class="hidden sm:block text-2xl font-medium tracking-tight whitespace-nowrap font-result-title pl-2 md:pl-4 cursor-pointer" fetchpriority="high">
           @for (char of c().common.brand; track $index) {
             <span [class]="'brand-color-' + ($index % 6)">{{char}}</span>
           }
         </a>
-        <a class="sm:hidden text-2xl font-medium font-result-title pl-2 cursor-pointer" (click)="onHome()">
+        <a routerLink="/" class="sm:hidden text-2xl font-medium font-result-title pl-2 cursor-pointer">
           <span class="brand-color-0">{{c().common.brand[0]}}</span>
         </a>
         <!-- Search Bar -->
@@ -21,7 +21,7 @@
             <span class="hidden md:block material-symbols-outlined cursor-pointer hover:text-on-surface text-xl">close</span>
             <div class="hidden md:block w-px h-9 bg-surface-variant"></div>
             <span class="material-symbols-outlined cursor-pointer text-secondary text-xl">{{c().common.mic}}</span>
-            <span class="material-symbols-outlined cursor-pointer text-secondary text-xl" routerLink="/search">search</span>
+            <a class="material-symbols-outlined cursor-pointer text-secondary text-xl" routerLink="/search" aria-label="Search">search</a>
           </div>
         </div>
       </div>

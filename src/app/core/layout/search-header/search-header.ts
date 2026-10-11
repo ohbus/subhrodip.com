@@ -1,5 +1,5 @@
 import { Component, inject , ChangeDetectionStrategy } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { ContentService } from '../../../services/content.service';
 import { LanguagePickerComponent } from '../../../shared/ui/language-picker/language-picker';
 
@@ -12,13 +12,9 @@ import { LanguagePickerComponent } from '../../../shared/ui/language-picker/lang
   styles: []
 })
 export class SearchHeaderComponent {
-  private router = inject(Router);
   private contentService = inject(ContentService);
   
   readonly c = this.contentService.c;
   readonly currentLang = this.contentService.currentLang;
 
-  onHome() {
-    this.router.navigate(['/']);
-  }
 }
