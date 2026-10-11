@@ -77,7 +77,7 @@ src/
 │   └── services/            # Application services
 │   ├── app.routes.ts        # Lazy-loaded route definitions
 │   └── app.ts               # Root component
-├── styles.scss              # Global Tailwind stylesheet
+├── styles.css               # Global Tailwind stylesheet
 └── index.html
 ```
 
