@@ -28,7 +28,7 @@
       <!-- Trailing Actions -->
       <div class="flex items-center gap-4 hidden md:flex pr-2 md:pr-4">
         <app-language-picker #picker placement="down">
-          <span (click)="picker.toggle()" class="material-symbols-outlined cursor-pointer text-outline p-2 hover:bg-gray-100 rounded-full transition-colors duration-200" [title]="currentLang() === 'en' ? 'Settings' : 'সেটিংস'">{{c().common.settings}}</span>
+          <button type="button" (click)="picker.toggle()" class="material-symbols-outlined cursor-pointer text-outline p-2 hover:bg-gray-100 rounded-full transition-colors duration-200" [title]="currentLang() === 'en' ? 'Settings' : 'সেটিংস'">{{c().common.settings}}</button>
         </app-language-picker>
         <span class="material-symbols-outlined cursor-pointer text-outline p-2 hover:bg-gray-100 rounded-full transition-colors duration-200">{{c().common.apps}}</span>
         <div class="w-8 h-8 rounded-full bg-secondary text-white text-center leading-8 font-bold cursor-pointer hover:shadow-md transition-shadow">{{c().common.brand[0]}}</div>

@@ -20,6 +20,11 @@ describe('application routes', () => {
     expect(sentryRoute?.data).toEqual(jasmine.objectContaining({
       robots: 'noindex, nofollow'
     }));
+
+    const redirectRoute = routes.find(route => route.path === 'go/:slug');
+    expect(redirectRoute?.data).toEqual(jasmine.objectContaining({
+      robots: 'noindex, nofollow'
+    }));
   });
 
   it('loads every public page through the router', async () => {
