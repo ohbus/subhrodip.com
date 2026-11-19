@@ -1,5 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import * as Sentry from '@sentry/angular';
+import { captureSentryException } from '../../core/services/sentry.service';
+import {
+  LazySentryErrorHandler,
+  SentryService,
+  initializeSentry
+} from '../../core/services/sentry.service';
 import { SENTRY_CAPTURE_EXCEPTION, SentryTestComponent } from './sentry-test';
 
 describe('SentryTestComponent', () => {
@@ -30,7 +35,29 @@ describe('SentryTestComponent', () => {
 describe('Sentry capture provider', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('binds the default provider to Sentry.captureException', () => {
-    expect(TestBed.inject(SENTRY_CAPTURE_EXCEPTION)).toBe(Sentry.captureException);
+  it('binds the default provider to the shared Sentry loader', () => {
+    expect(TestBed.inject(SENTRY_CAPTURE_EXCEPTION)).toBe(captureSentryException);
+  });
+});
+
+describe('lazy Sentry monitoring', () => {
+  it('initializes the shared loader and captures errors', async () => {
+    spyOn(console, 'error');
+    const service = new SentryService();
+    const captureException = spyOn(service, 'captureException').and.callThrough();
+    const handleError = spyOn(service, 'handleError').and.callThrough();
+    const errorHandler = new LazySentryErrorHandler(service);
+    const serviceError = new Error('service test');
+    const handlerError = new Error('handler test');
+
+    initializeSentry();
+    service.captureException(serviceError);
+    errorHandler.handleError(handlerError);
+    await import('@sentry/angular');
+    await Promise.resolve();
+    await Promise.resolve();
+
+    expect(captureException).toHaveBeenCalledWith(serviceError);
+    expect(handleError).toHaveBeenCalledWith(handlerError);
   });
 });
