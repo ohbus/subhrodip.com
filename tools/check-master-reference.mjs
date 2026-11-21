@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { issueNumbers } from './check-issue-reference.mjs';
 
 export function hasIssueOrPullRequest(message, pulls) {
@@ -17,6 +19,9 @@ async function associatedPulls(repository, sha, token) {
   if (!response.ok) throw new Error(`GitHub commit lookup failed with HTTP ${response.status}.`);
   return response.json();
 }
+
+const isMainModule =
+  process.argv[1] !== undefined && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 
 async function main() {
   if (process.argv.includes('--self-test')) {
@@ -37,7 +42,9 @@ async function main() {
   console.log(`Master coordination passed for ${event.after}.`);
 }
 
-main().catch(error => {
-  console.error(error.message);
-  process.exitCode = 1;
-});
+if (isMainModule) {
+  main().catch(error => {
+    console.error(error.message);
+    process.exitCode = 1;
+  });
+}
