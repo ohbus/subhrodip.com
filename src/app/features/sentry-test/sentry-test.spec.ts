@@ -108,7 +108,11 @@ describe('lazy Sentry monitoring', () => {
     loadSentry.and.returnValues(Promise.reject(firstError), Promise.resolve({
       captureException,
       createErrorHandler,
-      TraceService: class {}
+      TraceService: class {
+        constructor(router: Router) {
+          traceRouter = router;
+        }
+      }
     }));
 
     const service = TestBed.inject(SentryService);
@@ -118,7 +122,21 @@ describe('lazy Sentry monitoring', () => {
     await new Promise(resolve => setTimeout(resolve, 0));
 
     expect(loadSentry).toHaveBeenCalledTimes(2);
+    expect(traceRouter).toBe(router);
     expect(captureException).toHaveBeenCalledWith(serviceError);
+  });
+
+  it('logs the application error when Sentry cannot load', async () => {
+    const log = spyOn(console, 'error');
+    const sdkError = new Error('SDK unavailable');
+    const applicationError = new Error('application failure');
+    loadSentry.and.returnValue(Promise.reject(sdkError));
+
+    const service = TestBed.inject(SentryService);
+    service.handleError(applicationError);
+    await new Promise(resolve => setTimeout(resolve, 0));
+
+    expect(log).toHaveBeenCalledWith(applicationError);
   });
 
   it('initializes the SDK lazily and retries after module loading fails', async () => {

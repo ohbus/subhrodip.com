@@ -8,8 +8,6 @@ export type SentrySdkLoader = () => Promise<Sentry>;
 export type SentryModuleLoader = () => Promise<[Sentry, BrowserSentry]>;
 type SentryInitializer = (Sentry: Sentry, BrowserSentry: BrowserSentry) => void;
 
-let traceService: InstanceType<Sentry['TraceService']> | undefined;
-
 function initializeSentrySdk(Sentry: Sentry, BrowserSentry: BrowserSentry): void {
   Sentry.init({
     dsn: 'https://4f29550ef10adebdad8d531fed0276cd@o4512236975554560.ingest.de.sentry.io/4512236984860752',
@@ -56,10 +54,6 @@ export const SENTRY_SDK_LOADER = new InjectionToken<SentrySdkLoader>('SENTRY_SDK
   factory: getSentryLoader
 });
 
-function ensureTraceService(Sentry: Sentry, router: Router): void {
-  traceService ??= new Sentry.TraceService(router);
-}
-
 export function initializeSentry(loader: SentrySdkLoader): void {
   void loader().catch(console.error);
 }
@@ -74,6 +68,7 @@ export function captureSentryException(error: unknown, loader: SentrySdkLoader):
 export class SentryService {
   private sentryModule?: Promise<Sentry>;
   private errorHandler?: Promise<SentryErrorHandler>;
+  private traceService?: InstanceType<Sentry['TraceService']>;
 
   constructor(
     @Inject(SENTRY_SDK_LOADER) private readonly loadSdk: SentrySdkLoader,
@@ -93,7 +88,7 @@ export class SentryService {
   private getErrorHandler(): Promise<SentryErrorHandler> {
     this.errorHandler ??= this.loadSentrySdk()
       .then(Sentry => {
-        ensureTraceService(Sentry, this.router);
+        this.ensureTraceService(Sentry);
         return Sentry.createErrorHandler();
       })
       .catch(error => {
@@ -103,14 +98,23 @@ export class SentryService {
     return this.errorHandler;
   }
 
+  private ensureTraceService(Sentry: Sentry): void {
+    this.traceService ??= new Sentry.TraceService(this.router);
+  }
+
   captureException(error: unknown): void {
     void this.loadSentrySdk()
-      .then(Sentry => Sentry.captureException(error))
+      .then(Sentry => {
+        this.ensureTraceService(Sentry);
+        return Sentry.captureException(error);
+      })
       .catch(console.error);
   }
 
   handleError(error: unknown): void {
-    void this.getErrorHandler().then(handler => handler.handleError(error)).catch(console.error);
+    void this.getErrorHandler()
+      .then(handler => handler.handleError(error))
+      .catch(() => console.error(error));
   }
 }
 
