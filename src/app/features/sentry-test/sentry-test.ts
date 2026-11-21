@@ -1,9 +1,15 @@
 import { ChangeDetectionStrategy, Component, inject, InjectionToken } from '@angular/core';
-import * as Sentry from '@sentry/angular';
+import {
+  captureSentryException,
+  SENTRY_SDK_LOADER
+} from '../../core/services/sentry.service';
 
-export const SENTRY_CAPTURE_EXCEPTION = new InjectionToken<typeof Sentry.captureException>(
+export const SENTRY_CAPTURE_EXCEPTION = new InjectionToken<(error: unknown) => void>(
   'SENTRY_CAPTURE_EXCEPTION',
-  { providedIn: 'root', factory: () => Sentry.captureException }
+  { providedIn: 'root', factory: () => {
+    const loadSentry = inject(SENTRY_SDK_LOADER);
+    return (error: unknown) => captureSentryException(error, loadSentry);
+  } }
 );
 
 @Component({
