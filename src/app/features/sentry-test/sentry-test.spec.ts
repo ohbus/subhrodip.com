@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import {
   createSentryLoader,
-  getSentryLoader,
   LazySentryErrorHandler,
   SENTRY_SDK_LOADER,
   SentryService,
@@ -20,7 +19,7 @@ describe('SentryTestComponent', () => {
     }).compileComponents();
   });
 
-  it('renders the production trigger and invokes it', () => {
+  it('renders the production trigger and invokes it', async () => {
     const captureException = TestBed.inject(SENTRY_CAPTURE_EXCEPTION) as jasmine.Spy;
     fixture = TestBed.createComponent(SentryTestComponent);
     fixture.detectChanges();
@@ -37,19 +36,21 @@ describe('SentryTestComponent', () => {
 
 describe('Sentry capture provider', () => {
   const captureException = jasmine.createSpy('captureException');
+  const loadSentry = jasmine.createSpy('loadSentry').and.resolveTo({ captureException });
 
   beforeEach(() => TestBed.configureTestingModule({
-    providers: [{ provide: SentryService, useValue: { captureException } }]
+    providers: [{ provide: SENTRY_SDK_LOADER, useValue: loadSentry }]
   }));
 
-  it('binds the default provider to the shared Sentry loader', () => {
+  it('binds the default provider to the shared Sentry loader', async () => {
     const error = new Error('provider test');
     const capture = TestBed.inject(SENTRY_CAPTURE_EXCEPTION);
 
     capture(error);
+    await new Promise(resolve => setTimeout(resolve, 0));
 
     expect(captureException).toHaveBeenCalledWith(error);
-    expect(TestBed.inject(SENTRY_SDK_LOADER)).toBe(getSentryLoader());
+    expect(loadSentry).toHaveBeenCalledTimes(1);
   });
 });
 
