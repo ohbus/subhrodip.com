@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const ISSUE_REFERENCE = /(?:tracking\s+issue\s*:|refs?\b|clos(?:e|es|ed|ing)?\b|fix(?:e|es|ed|ing)?\b|resolv(?:e|es|ed|ing)?\b)\s*#(\d+)/gi;
 
@@ -19,6 +21,9 @@ export function validatePullRequest(payload) {
   return { exempt: false, issues };
 }
 
+const isMainModule =
+  process.argv[1] !== undefined && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
 function selfTest() {
   assert.deepEqual(issueNumbers('Tracking issue: #15'), [15]);
   assert.deepEqual(issueNumbers('Refs #21 and closes #22'), [21, 22]);
@@ -32,10 +37,10 @@ function selfTest() {
   }).issues, [23]);
 }
 
-if (process.argv.includes('--self-test')) {
+if (isMainModule && process.argv.includes('--self-test')) {
   selfTest();
   console.log('Issue-reference self-test passed.');
-} else if (process.argv.includes('--event')) {
+} else if (isMainModule && process.argv.includes('--event')) {
   const eventPath = process.argv[process.argv.indexOf('--event') + 1];
   const result = validatePullRequest(JSON.parse(fs.readFileSync(eventPath, 'utf8')));
   if (result.exempt) {
