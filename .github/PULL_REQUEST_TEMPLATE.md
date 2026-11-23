@@ -12,6 +12,7 @@ OpenSpec change: `openspec/changes/`
 
 - [ ] `npm run build`
 - [ ] `npm run test:coverage`
+- [ ] `npm run prepare:production`
 - [ ] `npm run verify:production`
 - [ ] `npm run smoke:production`
 - [ ] `openspec validate --all --strict` (when OpenSpec artifacts changed)

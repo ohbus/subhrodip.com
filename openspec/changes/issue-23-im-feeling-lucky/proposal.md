@@ -6,11 +6,11 @@ Tracking issue: #23
 
 ## Why
 
-The secondary home search action is not connected to a deterministic destination.
+The secondary home action already calls `onExperience()` and navigates deterministically to the declared `/experience` route. The change should confirm and test that behavior instead of rewiring an existing destination.
 
 ## What Changes
 
-Wire the button to a predictable secondary-search destination, such as a project or resume route, and test that navigation without random behavior.
+Retain `/experience` as the documented destination and add focused navigation coverage for click and keyboard activation.
 
 ## Capabilities
 

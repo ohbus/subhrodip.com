@@ -3,7 +3,7 @@
 ## Font loading
 
 - [ ] 1.1 Audit `src/index.html` and global font declarations for duplicate or missing hints.
-- [ ] 1.2 Apply explicit swap-friendly loading while preserving the current visual stack.
+- [ ] 1.2 Add explicit generic fallback fonts to the configured stacks while preserving the current web fonts.
 
 ## Verification
 

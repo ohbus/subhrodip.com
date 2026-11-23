@@ -24,11 +24,11 @@ The GitHub Pages deployment workflow SHALL deploy only from the `master` push wo
 - **WHEN** a successful `master` deployment completes
 - **THEN** the prepared browser artifact is deployed to GitHub Pages and the workflow summary identifies the deployed commit
 
-### Requirement: Deployment-safe coordination
+### Requirement: Deployment-safe coordination (planned)
 
 Coordination checks SHALL run with read-only permissions and SHALL not execute untrusted fork code in the issue-reference gate.
 
 #### Scenario: A pull request lacks a tracker
 
-- **WHEN** a non-Dependabot pull request has no issue reference
+- **WHEN** the coordination gate is enabled and a non-Dependabot pull request has no issue reference
 - **THEN** the dedicated coordination check fails before review can be considered complete

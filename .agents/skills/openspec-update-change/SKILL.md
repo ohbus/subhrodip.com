@@ -78,6 +78,10 @@ This workflow revises artifacts that already exist; it never creates missing one
      5. Use a create operation that fails if the target already exists. If `instruction` delegates creation to another skill or command, invoke it only if it can honor the confirmed path and these guardrails; otherwise stop. If any check fails or the confirmed draft is no longer valid, stop and reconcile with the user rather than replacing existing content or choosing a different path.
    - If the change is already coherent, say so and propose no revisions.
 
+   A revised requirement is not implemented merely because its old task is
+   checked. If a revision changes behavior, reopen the affected task or add a
+   new implementation task so apply cannot finish until the revision is done.
+
 5. **Confirm and apply, one artifact at a time**
    - This step performs every artifact write in this workflow; no earlier step edits an artifact.
    - Show each proposed revision and why - including the requested edit drafted in step 4. Write only after the user confirms.

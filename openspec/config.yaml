@@ -4,7 +4,7 @@ context: |
   Language: en
   All artifacts must be written in en.
   Keep OpenSpec structural headings and SHALL/MUST keywords in English.
-  This repository is an Angular 22 standalone-component portfolio using Tailwind CSS.
+  This repository is an Angular 21.2 standalone-component portfolio using Tailwind CSS.
   Application code is under src/app, static assets are under public, and production
   verification scripts are under tools.
   GitHub Issues are the canonical work tracker. Every active change must include a

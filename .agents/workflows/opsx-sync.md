@@ -146,7 +146,9 @@ In both branches, never create the root as a side effect: do not run `openspec i
         otherwise give checkout-scoped recovery guidance.
 
       **RENAMED Requirements:**
-      - Find the FROM requirement, rename to TO
+      - If FROM exists and TO does not, rename FROM to TO.
+      - If FROM is absent and TO exists, the rename is already applied; make no change.
+      - If both or neither exists, stop and report a conflict instead of guessing.
 
       **`## Purpose` in the delta:**
       - The main spec already has one and it is authoritative - leave it alone

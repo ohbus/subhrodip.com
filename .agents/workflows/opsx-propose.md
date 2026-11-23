@@ -130,6 +130,12 @@ In both branches, never create the root as a side effect: do not run `openspec i
       - Dependencies are enablers, not gates: if a required artifact is still `blocked` only because you skipped a conditional dependency, write it anyway
       - Stop when every artifact in the required set is `done`, `skipped`, or was deliberately skipped
 
+      Before reporting completion, read the proposal's `### New Capabilities` and
+      `### Modified Capabilities` lists and verify that every named capability has
+      its own spec file under the change's `specs/` artifact. A non-empty glob or
+      `specs: done` is not enough when the proposal names multiple capabilities.
+      Create each missing spec or report the change as incomplete.
+
    c. **If an artifact requires user input** (unclear context):
       - Ask the user to clarify
       - Then continue with creation

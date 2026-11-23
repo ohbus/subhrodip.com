@@ -8,12 +8,12 @@ Define the search-inspired home and results experience used to navigate portfoli
 
 ### Requirement: Search navigation
 
-The home page SHALL accept a query and provide navigation to the search results experience while preserving the search-engine-inspired visual hierarchy.
+The home page SHALL provide a search-style control and navigation to the results experience while preserving the search-engine-inspired visual hierarchy. Query entry and forwarding are planned behavior.
 
-#### Scenario: A user submits a query
+#### Scenario: A visitor activates the home search control
 
-- **WHEN** a user submits the home search form
-- **THEN** the application navigates to the results route with the query available to the results view
+- **WHEN** a visitor activates the home search button
+- **THEN** the application navigates to `/search` without query data
 
 ### Requirement: Search result composition
 

@@ -1,6 +1,5 @@
 name: Technical investigation
 description: Capture an audit, verification, or architecture question
-title: ""
 labels:
   - documentation
 body:

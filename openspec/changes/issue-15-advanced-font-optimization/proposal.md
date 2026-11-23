@@ -6,11 +6,11 @@ Tracking issue: #15
 
 ## Why
 
-The current Google Fonts links can delay first paint and do not explicitly control font swap behavior.
+The current Google Fonts links already request `display=swap`, but the configured font families do not include explicit generic fallback fonts. Delayed or unavailable web fonts can therefore produce inconsistent fallback text metrics.
 
 ## What Changes
 
-Retain required preconnects, make font-display behavior explicit, and verify FCP in production output.
+Retain the existing preconnects and `display=swap` behavior, add explicit generic fallback stacks, and verify FCP in production output.
 
 ## Capabilities
 
