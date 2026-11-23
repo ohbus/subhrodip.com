@@ -94,6 +94,13 @@ In both branches, never create the root as a side effect: do not run `openspec i
 
    Use a todo list to track progress through the artifacts.
 
+   When `specs` is in the required set, read the proposal's `### New
+   Capabilities` and `### Modified Capabilities` lists before creating dependent
+   artifacts. Verify that every named capability has its own spec file under the
+   change's `specs/` artifact, creating missing specs first and refreshing
+   status before continuing. When `specs` is not required by the selected
+   schema, skip this check.
+
    Loop through artifacts in dependency order (artifacts with no pending dependencies first):
 
    a. **For each artifact that is `ready` (dependencies satisfied)**:
@@ -129,12 +136,6 @@ In both branches, never create the root as a side effect: do not run `openspec i
       - Skip one only when `status` already reports it `skipped`, or when its own `instruction` says it is conditional: run `openspec instructions <artifact-id> --change "<name>" --json` and skip only if its `instruction` field marks it optional (e.g. "create only if..."). Spec-driven's `design.md` qualifies; `specs` qualifies only via the `skipped` status above, never by your own judgment. Tell the user, and do not reconsider it
       - Dependencies are enablers, not gates: if a required artifact is still `blocked` only because you skipped a conditional dependency, write it anyway
       - Stop when every artifact in the required set is `done`, `skipped`, or was deliberately skipped
-
-      Before reporting completion, read the proposal's `### New Capabilities` and
-      `### Modified Capabilities` lists and verify that every named capability has
-      its own spec file under the change's `specs/` artifact. A non-empty glob or
-      `specs: done` is not enough when the proposal names multiple capabilities.
-      Create each missing spec or report the change as incomplete.
 
    c. **If an artifact requires user input** (unclear context):
       - Ask the user to clarify

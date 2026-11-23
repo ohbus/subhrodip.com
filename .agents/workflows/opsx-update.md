@@ -71,12 +71,13 @@ This workflow revises artifacts that already exist; it never creates missing one
    - If the change is already coherent, say so and propose no revisions.
 
    A revised requirement is not implemented merely because its old task is
-   checked. If a revision changes behavior, reopen the affected task or add a
-   new implementation task so apply cannot finish until the revision is done.
+   checked. If a revision changes behavior, pair the requirement edit with a
+   reopened or new implementation task. Treat that pair as one revision group:
+   if the task edit is rejected, do not write the requirement edit.
 
 5. **Confirm and apply, one artifact at a time**
    - This step performs every artifact write in this workflow; no earlier step edits an artifact.
-   - Show each proposed revision and why - including the requested edit drafted in step 4. Write only after the user confirms.
+   - Show each proposed revision and why - including the requested edit drafted in step 4. Write only after the user confirms each revision group. A behavior-changing requirement and its reopened or new implementation task are one group and must be written together; rejecting the task rejects the requirement edit too.
    - If the user rejects a revision, do not write it - leave that artifact unchanged.
    - When a substantial rewrite is needed, get that artifact's rules and template first:
      ```bash
