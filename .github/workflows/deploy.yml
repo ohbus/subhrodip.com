@@ -21,7 +21,31 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  coordination:
+    name: Master coordination
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout coordination utilities
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Run parser self-tests
+        run: |
+          node tools/check-issue-reference.mjs --self-test
+          node tools/check-master-reference.mjs --self-test
+
+      - name: Require issue or associated PR
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node tools/check-master-reference.mjs --event "$GITHUB_EVENT_PATH"
+
   build:
+    needs: coordination
+    if: ${{ always() && (needs.coordination.result == 'success' || needs.coordination.result == 'skipped') }}
+    outputs:
+      deployed_sha: ${{ steps.metadata.outputs.sha }}
     permissions:
       contents: read
       id-token: write
@@ -34,6 +58,10 @@ jobs:
         with:
           ref: ${{ inputs.ref || github.sha }}
 
+      - name: Capture deployed commit
+        id: metadata
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
@@ -42,6 +70,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Audit dependencies
+        run: npm audit --audit-level=low
 
       - name: Build project
         run: npm run build
@@ -96,7 +127,24 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    if: ${{ always() && needs.build.result == 'success' }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      - name: Report deployed commit and associated PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEPLOYED_SHA: ${{ needs.build.outputs.deployed_sha }}
+        run: |
+          prs="$(gh api \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "repos/${GITHUB_REPOSITORY}/commits/${DEPLOYED_SHA}/pulls" \
+            --jq 'if length == 0 then "None" else map("#" + (.number|tostring) + " — " + .title)|join(", ") end')"
+          {
+            echo '## Deployment coordination'
+            echo "- Commit: \`${DEPLOYED_SHA}\`"
+            echo "- Associated PR(s): ${prs}"
+          } >> "$GITHUB_STEP_SUMMARY"
