@@ -94,12 +94,12 @@ In both branches, never create the root as a side effect: do not run `openspec i
 
    Use a todo list to track progress through the artifacts.
 
-   When `specs` is in the required set, read the proposal's `### New
+   When `specs` is in the required set and is not skipped, read the proposal's `### New
    Capabilities` and `### Modified Capabilities` lists before creating dependent
    artifacts. Verify that every named capability has its own spec file under the
    change's `specs/` artifact, creating missing specs first and refreshing
    status before continuing. When `specs` is not required by the selected
-   schema, skip this check.
+   schema or is skipped, skip this check and leave the skipped artifact absent.
 
    Loop through artifacts in dependency order (artifacts with no pending dependencies first):
 
