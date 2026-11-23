@@ -16,7 +16,7 @@ Archive a completed change in the experimental workflow.
 
 **Project check:** These steps expect a project that already uses OpenSpec. Before the first step that writes anything (`new change`, `archive`, `sync specs`, or authoring an artifact file), confirm the project has a root: run `openspec list --json` (with `--store <id>` when a store is selected, since the store is then the root) and read `root`. A root object means the project is set up. `"root": null` means it is not - there is no `openspec/` directory here, and a write such as `openspec new change` would create one as a side effect. The command also exits non-zero, which is that answer rather than a broken CLI, so read the JSON instead of retrying or working around it.
 
-One `"root": null` is not automatically a setup failure. Inspect the `status` diagnostics returned by `openspec list --json`; if an error reports a declared or invalid store (for example, a message starting with `Declared in` or `Invalid store declaration in` and naming this project's `openspec/config.yaml` or `config.yml`), stop before writing and show its `message` and `fix`. Only treat the project as uninitialized when the diagnostics confirm that no root or store declaration applies.
+Inspect the `status` diagnostics returned by `openspec list --json`. Treat the project as uninitialized only when the error code is `no_openspec_root`; for any other error, including selected or default store failures such as `store_identity_mismatch`, stop before writing and show every error's `message` and `fix`.
 
 Otherwise, with no root, what happens next depends on how this workflow was reached:
 
