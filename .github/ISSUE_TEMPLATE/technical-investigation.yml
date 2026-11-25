@@ -1,0 +1,25 @@
+name: Technical investigation
+description: Capture an audit, verification, or architecture question
+labels:
+  - documentation
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question or hypothesis
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Investigation scope
+      description: State the systems, routes, artifacts, and evidence to inspect.
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision record
+      description: What decision or follow-up should the investigation produce?
+    validations:
+      required: true
