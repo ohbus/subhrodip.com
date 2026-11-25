@@ -3,7 +3,7 @@ import { AppContent } from '../models/content.model';
 export const BN_CONTENT: AppContent = {
   common: {
     name: 'শুভ্রদীপ মহান্ত',
-    brand: 'শুভ্রদীপ',
+    brand: 'Subhrodip',
     roles: [
       'সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার',
       'ক্লাউড আর্কিটেকচার কনসালটেন্ট',
