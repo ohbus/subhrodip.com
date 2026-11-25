@@ -37,8 +37,8 @@ Welcome to the source code of my personal portfolio and professional background.
 To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
-Make sure you have Node.js installed (v20 LTS recommended).
-*   [Node.js](https://nodejs.org/en/) (v20.x or higher)
+Make sure you have a Node.js version supported by Angular 22.
+*   [Node.js](https://nodejs.org/en/) (v22.22.3+, v24.15.0+, or v26+)
 *   npm (v10.x or higher)
 
 ### Installation

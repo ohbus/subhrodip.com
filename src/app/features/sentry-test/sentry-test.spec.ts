@@ -1,5 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import * as Sentry from '@sentry/angular';
+import { Router } from '@angular/router';
+import {
+  createSentryLoader,
+  LazySentryErrorHandler,
+  SENTRY_SDK_LOADER,
+  SentryService,
+} from '../../core/services/sentry.service';
+import { captureSentryException, initializeSentry } from '../../core/services/sentry.service';
 import { SENTRY_CAPTURE_EXCEPTION, SentryTestComponent } from './sentry-test';
 
 describe('SentryTestComponent', () => {
@@ -12,7 +19,7 @@ describe('SentryTestComponent', () => {
     }).compileComponents();
   });
 
-  it('renders the production trigger and invokes it', () => {
+  it('renders the production trigger and invokes it', async () => {
     const captureException = TestBed.inject(SENTRY_CAPTURE_EXCEPTION) as jasmine.Spy;
     fixture = TestBed.createComponent(SentryTestComponent);
     fixture.detectChanges();
@@ -28,9 +35,151 @@ describe('SentryTestComponent', () => {
 });
 
 describe('Sentry capture provider', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  const captureException = jasmine.createSpy('captureException');
+  const loadSentry = jasmine.createSpy('loadSentry').and.resolveTo({ captureException });
 
-  it('binds the default provider to Sentry.captureException', () => {
-    expect(TestBed.inject(SENTRY_CAPTURE_EXCEPTION)).toBe(Sentry.captureException);
+  beforeEach(() => TestBed.configureTestingModule({
+    providers: [{ provide: SENTRY_SDK_LOADER, useValue: loadSentry }]
+  }));
+
+  it('binds the default provider to the shared Sentry loader', async () => {
+    const error = new Error('provider test');
+    const capture = TestBed.inject(SENTRY_CAPTURE_EXCEPTION);
+
+    capture(error);
+    await new Promise(resolve => setTimeout(resolve, 0));
+
+    expect(captureException).toHaveBeenCalledWith(error);
+    expect(loadSentry).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('lazy Sentry monitoring', () => {
+  let loadSentry: jasmine.Spy;
+  let captureException: jasmine.Spy;
+  let handleError: jasmine.Spy;
+  let createErrorHandler: jasmine.Spy;
+  let traceRouter: Router | undefined;
+  const router = {} as Router;
+
+  beforeEach(() => {
+    traceRouter = undefined;
+    captureException = jasmine.createSpy('captureException');
+    handleError = jasmine.createSpy('handleError');
+    createErrorHandler = jasmine.createSpy('createErrorHandler').and.returnValue({ handleError });
+    class FakeTraceService {
+      constructor(router: Router) {
+        traceRouter = router;
+      }
+    }
+    loadSentry = jasmine.createSpy('loadSentry').and.resolveTo({
+      captureException,
+      createErrorHandler,
+      TraceService: FakeTraceService
+    });
+    TestBed.configureTestingModule({
+      providers: [
+        { provide: SENTRY_SDK_LOADER, useValue: loadSentry },
+        { provide: Router, useValue: router }
+      ]
+    });
+  });
+
+  it('initializes the shared loader once and delivers errors to the SDK', async () => {
+    const serviceError = new Error('service test');
+    const handlerError = new Error('handler test');
+
+    const service = TestBed.inject(SentryService);
+    const errorHandler = new LazySentryErrorHandler(service);
+    service.captureException(serviceError);
+    errorHandler.handleError(handlerError);
+    await new Promise(resolve => setTimeout(resolve, 0));
+
+    expect(loadSentry).toHaveBeenCalledTimes(1);
+    expect(traceRouter).toBe(router);
+    expect(captureException).toHaveBeenCalledWith(serviceError);
+    expect(createErrorHandler).toHaveBeenCalledTimes(1);
+    expect(handleError).toHaveBeenCalledWith(handlerError);
+  });
+
+  it('retries after the SDK loader fails', async () => {
+    spyOn(console, 'error');
+    const firstError = new Error('first load failed');
+    const serviceError = new Error('service retry');
+    loadSentry.and.returnValues(Promise.reject(firstError), Promise.resolve({
+      captureException,
+      createErrorHandler,
+      TraceService: class {
+        constructor(router: Router) {
+          traceRouter = router;
+        }
+      }
+    }));
+
+    const service = TestBed.inject(SentryService);
+    await Promise.resolve();
+    await Promise.resolve();
+    service.captureException(serviceError);
+    await new Promise(resolve => setTimeout(resolve, 0));
+
+    expect(loadSentry).toHaveBeenCalledTimes(2);
+    expect(traceRouter).toBe(router);
+    expect(captureException).toHaveBeenCalledWith(serviceError);
+  });
+
+  it('logs the application error when Sentry cannot load', async () => {
+    const log = spyOn(console, 'error');
+    const sdkError = new Error('SDK unavailable');
+    const applicationError = new Error('application failure');
+    loadSentry.and.returnValue(Promise.reject(sdkError));
+
+    const service = TestBed.inject(SentryService);
+    service.handleError(applicationError);
+    await new Promise(resolve => setTimeout(resolve, 0));
+
+    expect(log).toHaveBeenCalledWith(applicationError);
+  });
+
+  it('initializes the SDK lazily and retries after module loading fails', async () => {
+    const init = jasmine.createSpy('init');
+    const browserTracingIntegration = jasmine.createSpy('browserTracingIntegration').and.returnValue({});
+    const replayIntegration = jasmine.createSpy('replayIntegration').and.returnValue({});
+    const captureException = jasmine.createSpy('captureException');
+    const fakeSentry = { init, browserTracingIntegration, captureException };
+    const fakeBrowserSentry = { replayIntegration };
+    const firstError = new Error('module loading failed');
+    const loadModules = jasmine.createSpy('loadModules').and.returnValues(
+      Promise.reject(firstError),
+      Promise.resolve([fakeSentry, fakeBrowserSentry])
+    );
+    const loadSentry = createSentryLoader(loadModules);
+    const log = spyOn(console, 'error');
+
+    initializeSentry(loadSentry);
+    await new Promise(resolve => setTimeout(resolve, 0));
+    expect(log).toHaveBeenCalled();
+
+    const error = new Error('loader retry');
+    initializeSentry(loadSentry);
+    captureSentryException(error, loadSentry);
+    await new Promise(resolve => setTimeout(resolve, 0));
+
+    expect(loadModules).toHaveBeenCalledTimes(2);
+    expect(init).toHaveBeenCalledWith(jasmine.objectContaining({
+      environment: 'production',
+      tracesSampleRate: 0.1
+    }));
+    expect(browserTracingIntegration).toHaveBeenCalledTimes(1);
+    expect(replayIntegration).toHaveBeenCalledTimes(1);
+    expect(captureException).toHaveBeenCalledWith(error);
+  });
+
+  it('supports the default dynamic module loader with a controlled initializer', async () => {
+    const initialize = jasmine.createSpy('initialize');
+    const loadSentry = createSentryLoader(undefined, initialize);
+
+    await loadSentry();
+
+    expect(initialize).toHaveBeenCalledTimes(1);
   });
 });
